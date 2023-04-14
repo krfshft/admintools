@@ -75,6 +75,7 @@ AdminUtils.buttons = {
 		{ "DropOne", "Spell_shadow_unsummonbuilding", "Abandon current quest (warning: no confirmation)" },
 		{ "DropAll", "Spell_shadow_unsummonbuilding", "Abandon all quests (warning: no confirmation)" },
 		{ "QuestComplete", "Inv_misc_trophy_argent" },
+		{ "HideChat", "Inv_letter_02", "Toggle display of the default chat frame" },
 	},
 	Summon = {
 		{ "Ghoul", "Spell_shadow_animatedead" },
@@ -2148,9 +2149,9 @@ end
 
 function AdminUtils.UnbindFunctionKeys()
 	print("pre unbind loop")
-	for i = 1, 3 do
+	for i = 1, 12 do
 		local functionKeyName = "F" .. i
-		local action = GetBindingAction(functionKeyName)
+		local key1, key2 = GetBindingKey(functionKeyName)
 
 		if action ~= "" then
 			local key1, key2 = GetBindingKey(action)
@@ -2164,14 +2165,25 @@ function AdminUtils.UnbindFunctionKeys()
 			end
 		end
 
-		--if key1 == nil then key1 = "nil" end
-		--if key2 == nil then key2 = "nil" end
-		--print("unbinding (1,2): " .. key1 .. ", " .. key2)
-		
-		if action == nil then action = "nil" end
-		print("unbinding action: " .. action)
+
+		-- Overwrite Toggle Autorun, Sit/Move Down, and Toggle Mouselook keybindings
+		local toggleAutorunKey1, toggleAutorunKey2 = GetBindingKey("TOGGLEAUTORUN")
+		local sitStandKey1, sitStandKey2 = GetBindingKey("SITORSTAND")
+		local toggleMouselookKey1, toggleMouselookKey2 = GetBindingKey("TOGGLEMOUSELOOK")
+
+		if toggleAutorunKey1 then SetBinding(toggleAutorunKey1, nil) end
+		if toggleAutorunKey2 then SetBinding(toggleAutorunKey2, nil) end
+		if sitStandKey1 then SetBinding(sitStandKey1, nil) end
+		if sitStandKey2 then SetBinding(sitStandKey2, nil) end
+		if toggleMouselookKey1 then SetBinding(toggleMouselookKey1, nil) end
+		if toggleMouselookKey2 then SetBinding(toggleMouselookKey2, nil) end
+
+		SetBinding("R", "TOGGLEAUTORUN")
+		SetBinding("X", "SITORSTAND")
+		SetBinding(";", "TOGGLEMOUSELOOK")
+
 	end
-	SaveBindings(1) -- Save the keybinding (2 for account-wide keybindings)
+	SaveBindings(2) -- Save the keybinding (2 for account-wide keybindings)
 end
 
 
@@ -2297,6 +2309,7 @@ end
 
 function AdminUtils.MakeButton(button, formParent, buttonsCategory, hOffset, vOffset)
 	local icon = nil
+	local tooltipText = nil
 	
 	if button == nil then
 		error("How is MakeButton() being called with a nil button?")
@@ -2305,6 +2318,7 @@ function AdminUtils.MakeButton(button, formParent, buttonsCategory, hOffset, vOf
 	if type(button) == "table" then
 		icon = button[2]		
 		button = button[1]
+		tooltipText = button[3]
 	end
 	
 	local function CraftingHandler(formParent, button)
@@ -2329,9 +2343,10 @@ function AdminUtils.MakeButton(button, formParent, buttonsCategory, hOffset, vOf
 	end)
 
 	btn:SetScript("OnEnter", function(self)
+		local txt = tooltipText and tooltipText or button
 		GameTooltip:SetOwner(self, "ANCHOR_TOP")
 		GameTooltip:SetPoint("BOTTOM", self, "TOP", 0, 5)
-		GameTooltip:SetText(button, 1, 1, 1)
+		GameTooltip:SetText(txt, 1, 1, 1)
 		GameTooltip:Show()
 	end)
 
@@ -2540,7 +2555,7 @@ local function BuildOverlay()
 		local function SetButtonKeybinding(buttonName, key, customAction)
 			SetBinding(key, nil)
 			SetBinding(key, customAction)
-			SaveBindings(1) -- Save the keybinding (2 for account-wide keybindings)
+			SaveBindings(2) -- Save the keybinding (2 for account-wide keybindings)
 		end
 
 		-- Create the button
@@ -2578,7 +2593,7 @@ local function BuildOverlay()
 				local buttonNumber = tonumber(name:match("AdminTools_ActionButton(%d+)"))
 				if buttonNumber then
 					SetBinding("BUTTON" .. buttonNumber, "ADMIN_TOOLS_ACTION" .. buttonNumber)
-					SaveBindings(1)
+					SaveBindings(2)
 				else
 					customFunc()
 				end
@@ -2600,91 +2615,91 @@ local function BuildOverlay()
 	end
 	
 	-- Row 1
-	OverlayButton("AdminOverlayBtnActions",  5, -5, overlay, "Open AdminTools Actions Panel", 	
+	OverlayButton("AdminOverlayBtn1",  5, -5, overlay, "Open AdminTools Actions Panel", 	
 		"Ability_rogue_tricksofthetrade",
 		ActionsMenu, 
 		"BUTTON1"
 	)
-	OverlayButton("AdminOverlayBtnContent", 45, -5, overlay, "Open AdminTools Content Panel", 
+	OverlayButton("AdminOverlayBtn2", 45, -5, overlay, "Open AdminTools Content Panel", 
 		"Ability_rogue_tricksofthetrade",
 		ContentMenu, 
 		"BUTTON2"
 	)
-	OverlayButton("AdminOverlayBtnConfig",  85, -5, overlay, "Open AdminTools Config Panel", 
+	OverlayButton("AdminOverlayBtn3",  85, -5, overlay, "Open AdminTools Config Panel", 
 		"Inv_misc_wrench_01",
 		ConfigMenu, 
 		"BUTTON3"
 	)
-	OverlayButton("AdminOverlayBtnGmFlyOn", 125, -5, overlay, "Enable GM mode and flying", 
-		"Ability_vanish",
-		AdminUtils.buttonFunction(nil, "Action", "Fly"), 
+	OverlayButton("AdminOverlayBtn4", 125, -5, overlay, "Rain", 
+		"Spell_frost_summonwaterelemental",
+		AdminUtils.buttonFunction(nil, "Weather", "LightRain"), 
 		"BUTTON4"
 	)
-	OverlayButton("AdminOverlayBtnGmFlyOff", 165, -5, overlay, "Disable GM mode and flying", 
+	OverlayButton("AdminOverlayBtn5", 165, -5, overlay, "Enable GM mode and flying", 
 		"Ability_vanish",
-		AdminUtils.buttonFunction(nil, "Action", "Land"), 
+		AdminUtils.buttonFunction(nil, "Action", "Fly"), 
 		"BUTTON5"
 	)
-	OverlayButton("AdminOverlayBtnChat", 205, -5, overlay, "Toggle Chat", 
-		"Inv_letter_02",
-		AdminUtils.buttonFunction(nil, "Action", "HideChat"), 
+	OverlayButton("AdminOverlayBtn6", 205, -5, overlay, "Disable GM mode and flying", 
+		"Ability_vanish",
+		AdminUtils.buttonFunction(nil, "Action", "Land"), 
 		"BUTTON6"
 	)
 
 	-- Row 2
-	OverlayButton("AdminOverlayBtnWalkSlow", 5, -45, overlay, "Walk slowly, barely moving at all", 
+	OverlayButton("AdminOverlayBtn7", 5, -45, overlay, "Walk slowly, barely moving at all", 
 		"Ability_rogue_sprint",
 		AdminUtils.buttonFunction(nil, "Action", "SlowWalk"), 
 		"BUTTON7"
 	)
-	OverlayButton("AdminOverlayBtnWalkNormally", 45, -45, overlay, "Walk normally", 
+	OverlayButton("AdminOverlayBtn8", 45, -45, overlay, "Walk normally", 
 		"Ability_rogue_sprint",
 		AdminUtils.buttonFunction(nil, "Action", "Walk"), 
 		"BUTTON8"
 	)
-	OverlayButton("AdminOverlayBtnPowerwalk", 85, -45, overlay, "Powerwalk", 
+	OverlayButton("AdminOverlayBtn9", 85, -45, overlay, "Powerwalk", 
 		"Ability_rogue_sprint",
 		AdminUtils.buttonFunction(nil, "Action", "FastWalk"), 
 		"BUTTON9"
 	)
-	OverlayButton("AdminOverlayBtnJog", 125, -45, overlay, "Jog", 
+	OverlayButton("AdminOverlayBtn10", 125, -45, overlay, "Jog", 
 		"Ability_rogue_sprint",
 		AdminUtils.buttonFunction(nil, "Action", "Jog"), 
 		"BUTTON10"
 	)
-	OverlayButton("AdminOverlayBtnDash", 165, -45, overlay, "Dash", 
+	OverlayButton("AdminOverlayBtn11", 165, -45, overlay, "Dash", 
 		"Spell_fire_burningspeed",
 		AdminUtils.buttonFunction(nil, "Action", "Dash"), 
 		"BUTTON11"
 	)
-	OverlayButton("AdminOverlayBtnStealth", 205, -45, overlay, "Toggle Stealth", 
+	OverlayButton("AdminOverlayBtn12", 205, -45, overlay, "Toggle Stealth", 
 		"Ability_stealth",
 		AdminUtils.buttonFunction(nil, "Action", "Stealth"), 
 		"BUTTON12"
 	)
 	
 	-- Row 3
-	OverlayButton("AdminOverlayBtnDie",  5, -85, overlay, "Kill targeted creature", 	
+	OverlayButton("AdminOverlayBtn13",  5, -85, overlay, "Kill targeted creature", 	
 		"Inv_staff_78",
 		AdminUtils.buttonFunction(nil, "Action", "KillCreature") 
 	)
-	OverlayButton("AdminOverlayBtnRespawn", 45, -85, overlay, "Respawn targeted dead creature", 
+	OverlayButton("AdminOverlayBtn14", 45, -85, overlay, "Respawn targeted dead creature", 
 		"Spell_shaman_blessingofeternals",
 		AdminUtils.buttonFunction(nil, "Action", "RespawnCreature") 
 	)
-	OverlayButton("AdminOverlayBtnDelCreature",  85, -85, overlay, "Delete targeted creature instance from the DB (warning: no confirmation)", 
+	OverlayButton("AdminOverlayBtn15",  85, -85, overlay, "Delete targeted creature instance from the DB (warning: no confirmation)", 
 		"Spell_holy_searinglightpriest",
 		AdminUtils.buttonFunction(nil, "Action", "DeleteCreature") 
 	)
-	OverlayButton("AdminOverlayBtnNearObjects", 125, -85, overlay, "Get gobjects within 20 yards", 
+	OverlayButton("AdminOverlayBtn16", 125, -85, overlay, "Get gobjects within 20 yards", 
 		"Inv_sigil_mimiron",
 		AdminUtils.buttonFunction(nil, "Management", "NearObjects") 
 	)
-	OverlayButton("AdminOverlayBtnDelNearObj", 165, -85, overlay, "Delete the nearest (within 2 yards) gobject (warning: no confirmation)", 
+	OverlayButton("AdminOverlayBtn17", 165, -85, overlay, "Delete the nearest (within 2 yards) gobject (warning: no confirmation)", 
 		"Inv_sigil_mimiron",
 		AdminUtils.buttonFunction(nil, "Management", "DeleteNearestObj") 
 	)
-	OverlayButton("AdminOverlayBtnDelLastObj", 205, -85, overlay, "Delete the most recently added gobject (warning: no confirmation)", 
+	OverlayButton("AdminOverlayBtn18", 205, -85, overlay, "Delete the most recently added gobject (warning: no confirmation)", 
 		"Inv_sigil_mimiron",
 		AdminUtils.buttonFunction(nil, "Management", "DeleteLastObj") 
 	)
@@ -2780,15 +2795,15 @@ function AdminTools_Action3()
 end
 
 function AdminTools_Action4()
-	AdminUtils.buttonFunction(nil, "Action", "Fly")()
+	AdminUtils.buttonFunction(nil, "Weather", "LightRain")
 end
 
 function AdminTools_Action5()
-	AdminUtils.buttonFunction(nil, "Action", "Land")()
+	AdminUtils.buttonFunction(nil, "Action", "Fly")()
 end
 
 function AdminTools_Action6()
-	AdminUtils.buttonFunction(nil, "Action", "HideChat")()
+	AdminUtils.buttonFunction(nil, "Action", "Land")()	
 end
 
 function AdminTools_Action7()
@@ -2816,24 +2831,20 @@ function AdminTools_Action12()
 end
 
 local function AddonInit()
-	PrintKeyBindingsForActions({"AdminActionsPanelBtn", "AdminContentPanelBtn", "AdminConfigPanelBtn"})
-
 	local overlay = BuildOverlay()
-	SetBindingClick("F1", "AdminOverlayBtnActions")
-	SetBindingClick("F2", "AdminOverlayBtnContent")
-	SetBindingClick("F3", "AdminOverlayBtnConfig")
-	SetBindingClick("F4", "AdminOverlayBtnGmFlyOn")
-	SetBindingClick("F5", "AdminOverlayBtnGmFlyOff")
-	SetBindingClick("F6", "AdminOverlayBtnChat")
-	SetBindingClick("F7", "AdminOverlayBtnWalkSlow")
-	SetBindingClick("F8", "AdminOverlayBtnWalkNormally")
-	SetBindingClick("F9", "AdminOverlayBtnPowerwalk")
-	SetBindingClick("F10", "AdminOverlayBtnJog")
-	SetBindingClick("F11", "AdminOverlayBtnDash")
-	SetBindingClick("F12", "AdminOverlayBtnStealth")
-	SaveBindings(1) -- Save the keybinding (2 for account-wide keybindings)
-	
-	
+	SetBindingClick("F1", "AdminOverlayBtn1")
+	SetBindingClick("F2", "AdminOverlayBtn2")
+	SetBindingClick("F3", "AdminOverlayBtn3")
+	SetBindingClick("F4", "AdminOverlayBtn4")
+	SetBindingClick("F5", "AdminOverlayBtn5")
+	SetBindingClick("F6", "AdminOverlayBtn6")
+	SetBindingClick("F7", "AdminOverlayBtn7")
+	SetBindingClick("F8", "AdminOverlayBtn8")
+	SetBindingClick("F9", "AdminOverlayBtn9")
+	SetBindingClick("F10", "AdminOverlayBtn10")
+	SetBindingClick("F11", "AdminOverlayBtn11")
+	SetBindingClick("F12", "AdminOverlayBtn12")
+	SaveBindings(2) -- Save the keybinding (2 for account-wide keybindings)
 end
 
 local function runApp()
