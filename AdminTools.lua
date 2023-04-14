@@ -2131,6 +2131,45 @@ function AdminUtils.delayedRun(delay, func, ...)
 	return true;
 end
 
+function AdminUtils.UnbindFunctionKeys()
+	print("pre unbind loop")
+	for i = 1, 12 do
+		local functionKeyName = "F" .. i
+		local action = GetBindingAction(functionKeyName)
+
+		if action ~= "" then
+			local key1, key2 = GetBindingKey(action)
+
+			if key1 then
+				SetBinding(key1, nil)
+			end
+
+			if key2 then
+				SetBinding(key2, nil)
+			end
+		end
+
+		--if key1 == nil then key1 = "nil" end
+		--if key2 == nil then key2 = "nil" end
+		--print("unbinding (1,2): " .. key1 .. ", " .. key2)
+		
+		if action == nil then action = "nil" end
+		print("unbinding action: " .. action)
+	end
+	SaveBindings(2) -- Save the keybinding (2 for account-wide keybindings)
+end
+
+
+local function PrintKeyBindingsForActions(actions)
+	for _, action in ipairs(actions) do
+		local key1, key2 = GetBindingKey(action)
+		if key1 == nil then key1 = "nil" end
+		if key2 == nil then key2 = "nil" end
+		print("Keybindings for action " .. action .. ": " .. key1 .. ", " .. key2)
+	end
+end
+
+
 function AdminUtils.cmd(command)
 	SendChatMessage(command, "SAY")
 end
@@ -2482,9 +2521,10 @@ local function BuildOverlay()
 	local overlay = CreateOverlay()
 
 	local function OverlayButton(name, hOffset, vOffset, overlay, tooltipText, iconPath, customFunc, buttonBind)
-		local function SetButtonKeybinding(buttonName, key)
+		-- Function to create keybinding for a button
+		local function SetButtonKeybinding(buttonName, key, customAction)
 			SetBinding(key, nil)
-			SetBindingClick(key, buttonName)
+			SetBinding(key, customAction)
 			SaveBindings(2) -- Save the keybinding (2 for account-wide keybindings)
 		end
 
@@ -2522,9 +2562,15 @@ local function BuildOverlay()
 			customFunc()
 		end)
 
+		-- Create a secure action button
+		local secureActionButton = CreateFrame("Button", name .. "Secure", overlay, "SecureActionButtonTemplate")
+		secureActionButton:SetAttribute("type", "macro")
+		secureActionButton:SetAttribute("macrotext", "/click " .. name)
+		secureActionButton:Hide()
+
 		-- Set keybinding for the button
 		if buttonBind ~= nil then
-			SetButtonKeybinding(name, buttonBind)
+			SetButtonKeybinding(name, buttonBind, "MACRO " .. name .. "Secure")
 		end
 	end
 	
@@ -2615,7 +2661,7 @@ local function BuildOverlay()
 		AdminUtils.buttonFunction(nil, "Management", "DeleteLastObj") 
 	)
 
-
+	return overlay
 end
 
 -- The purpose of this function is to save me having to configure addons and 
@@ -2709,7 +2755,27 @@ DeleteLastObjectIfFlagged()
 -- The overlay fades out but is always present, and it's first 12 buttons
 -- are automatically hotkeyed to F1-F12, in theory. In practice the hotkeys
 -- are unreliable when limited to the 3.3.5 compatible api.
-BuildOverlay()
+
+local function AddonInit()
+	AdminUtils.UnbindFunctionKeys()
+	PrintKeyBindingsForActions({"AdminActionsPanelBtn", "AdminContentPanelBtn", "AdminConfigPanelBtn"})
+	
+
+	local overlay = BuildOverlay()
+	SetBindingClick("F1", "AdminActionsPanelBtn")
+	SetBindingClick("F2", "AdminContentPanelBtn")
+	SetBindingClick("F3", "AdminConfigPanelBtn")
+	SetBindingClick("F4", "AdminOverlayBtnGmFlyOn")
+	SetBindingClick("F5", "AdminOverlayBtnGmFlyOff")
+	SetBindingClick("F6", "AdminOverlayBtnChat")
+	SetBindingClick("F7", "AdminOverlayBtnWalkSlow")
+	SetBindingClick("F8", "AdminOverlayBtnWalkNormally")
+	SetBindingClick("F9", "AdminOverlayBtnPowerwalk")
+	SetBindingClick("F10", "AdminOverlayBtnJog")
+	SetBindingClick("F11", "AdminOverlayBtnDash")
+	SetBindingClick("F12", "AdminOverlayBtnStealth")
+	SaveBindings(2) -- Save the keybinding (2 for account-wide keybindings)
+end
 
 -- Attempt to write my preferred settings for other addons
 --WriteOtherAddonSettings()
@@ -2717,3 +2783,4 @@ BuildOverlay()
 -- Adds a bunch of talents from other classes automatically on login. IMBA
 AutorunAddTalents()
 
+AddonInit()
