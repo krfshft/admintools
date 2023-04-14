@@ -1974,17 +1974,18 @@ AdminUtils.buttonFunctions = {
 
 -- Localized Keybinding Names
 BINDING_HEADER_ADMIN_TOOLS       = "Admin Tools";
-BINDING_NAME_ADMIN_TOOLS_ACTION  = "Open Actions Panel";
-BINDING_NAME_ADMIN_TOOLS_CONTENT = "Open Content Panel";
-BINDING_NAME_ADMIN_TOOLS_CONFIG  = "Open Configuration Panel";
-BINDING_NAME_ADMIN_TOOLS_ACTION5 = "Open Actions Panel 5";
-BINDING_NAME_ADMIN_TOOLS_ACTION6 = "Open Actions Panel 6";
-BINDING_NAME_ADMIN_TOOLS_ACTION7 = "Open Actions Panel 7";
-BINDING_NAME_ADMIN_TOOLS_ACTION8 = "Open Actions Panel 8";
-BINDING_NAME_ADMIN_TOOLS_ACTION9 = "Open Actions Panel 9";
-BINDING_NAME_ADMIN_TOOLS_ACTION10 = "Open Actions Panel 10";
-BINDING_NAME_ADMIN_TOOLS_ACTION11 = "Open Actions Panel 11";
-BINDING_NAME_ADMIN_TOOLS_ACTION12 = "Open Actions Panel 12";
+BINDING_NAME_ADMIN_TOOLS_ACTION1 = "AdminTools_Action1";
+BINDING_NAME_ADMIN_TOOLS_ACTION2 = "AdminTools_Action2";
+BINDING_NAME_ADMIN_TOOLS_ACTION3 = "AdminTools_Action3";
+BINDING_NAME_ADMIN_TOOLS_ACTION4 = "AdminTools_Action4";
+BINDING_NAME_ADMIN_TOOLS_ACTION5 = "AdminTools_Action5";
+BINDING_NAME_ADMIN_TOOLS_ACTION6 = "AdminTools_Action6";
+BINDING_NAME_ADMIN_TOOLS_ACTION7 = "AdminTools_Action7";
+BINDING_NAME_ADMIN_TOOLS_ACTION8 = "AdminTools_Action8";
+BINDING_NAME_ADMIN_TOOLS_ACTION9 = "AdminTools_Action9";
+BINDING_NAME_ADMIN_TOOLS_ACTION10 = "AdminTools_Action10";
+BINDING_NAME_ADMIN_TOOLS_ACTION11 = "AdminTools_Action11";
+BINDING_NAME_ADMIN_TOOLS_ACTION12 = "AdminTools_Action12";
 
 local waitTable = {};
 local waitFrame = nil;
@@ -2601,15 +2602,18 @@ local function BuildOverlay()
 	-- Row 1
 	OverlayButton("AdminOverlayBtnActions",  5, -5, overlay, "Open AdminTools Actions Panel", 	
 		"Ability_rogue_tricksofthetrade",
-		ActionsMenu, "BUTTON1"
+		ActionsMenu, 
+		"BUTTON1"
 	)
 	OverlayButton("AdminOverlayBtnContent", 45, -5, overlay, "Open AdminTools Content Panel", 
 		"Ability_rogue_tricksofthetrade",
-		ContentMenu, "BUTTON2"
+		ContentMenu, 
+		"BUTTON2"
 	)
 	OverlayButton("AdminOverlayBtnConfig",  85, -5, overlay, "Open AdminTools Config Panel", 
 		"Inv_misc_wrench_01",
-		ConfigMenu, "BUTTON3"
+		ConfigMenu, 
+		"BUTTON3"
 	)
 	OverlayButton("AdminOverlayBtnGmFlyOn", 125, -5, overlay, "Enable GM mode and flying", 
 		"Ability_vanish",
@@ -2776,9 +2780,53 @@ AdminUtils.SetupSettingsDB()
 -- created will be used to delete it
 DeleteLastObjectIfFlagged()
 
--- The overlay fades out but is always present, and it's first 12 buttons
--- are automatically hotkeyed to F1-F12, in theory. In practice the hotkeys
--- are unreliable when limited to the 3.3.5 compatible api.
+function AdminTools_Action1()
+	ActionsMenu()
+end
+
+function AdminTools_Action2()
+	ContentMenu()
+end
+
+function AdminTools_Action3()
+	ConfigMenu()
+end
+
+function AdminTools_Action4()
+	AdminUtils.buttonFunction(nil, "Action", "Fly")()
+end
+
+function AdminTools_Action5()
+	AdminUtils.buttonFunction(nil, "Action", "Land")()
+end
+
+function AdminTools_Action6()
+	AdminUtils.buttonFunction(nil, "Action", "HideChat")()
+end
+
+function AdminTools_Action7()
+	AdminUtils.buttonFunction(nil, "Action", "SlowWalk")()
+end
+
+function AdminTools_Action8()
+	AdminUtils.buttonFunction(nil, "Action", "Walk")()
+end
+
+function AdminTools_Action9()
+	AdminUtils.buttonFunction(nil, "Action", "FastWalk")()
+end
+
+function AdminTools_Action10()
+	AdminUtils.buttonFunction(nil, "Action", "Jog")()
+end
+
+function AdminTools_Action11()
+	AdminUtils.buttonFunction(nil, "Action", "Dash")()
+end
+
+function AdminTools_Action12()
+	AdminUtils.buttonFunction(nil, "Action", "Stealth")()
+end
 
 local function AddonInit()
 	AdminUtils.UnbindFunctionKeys()
