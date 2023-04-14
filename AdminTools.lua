@@ -2767,19 +2767,6 @@ local function WriteOtherAddonSettings()
 
 end
 
-----------------------------------------------------------------start main file
-
--- When user opens quest log, save the ID so that quest can be completed or 
--- deleted
-SaveQuestFromLogDetails()
-
--- Initialize settings for this addon
-AdminUtils.SetupSettingsDB()
-
--- If the button was pressed, the server message saying what object was 
--- created will be used to delete it
-DeleteLastObjectIfFlagged()
-
 function AdminTools_Action1()
 	ActionsMenu()
 end
@@ -2832,9 +2819,9 @@ local function AddonInit()
 	PrintKeyBindingsForActions({"AdminActionsPanelBtn", "AdminContentPanelBtn", "AdminConfigPanelBtn"})
 
 	local overlay = BuildOverlay()
-	SetBindingClick("F1", "AdminActionsPanelBtn")
-	SetBindingClick("F2", "AdminContentPanelBtn")
-	SetBindingClick("F3", "AdminConfigPanelBtn")
+	SetBindingClick("F1", "AdminOverlayBtnActions")
+	SetBindingClick("F2", "AdminOverlayBtnContent")
+	SetBindingClick("F3", "AdminOverlayBtnConfig")
 	SetBindingClick("F4", "AdminOverlayBtnGmFlyOn")
 	SetBindingClick("F5", "AdminOverlayBtnGmFlyOff")
 	SetBindingClick("F6", "AdminOverlayBtnChat")
@@ -2849,10 +2836,26 @@ local function AddonInit()
 	
 end
 
--- Attempt to write my preferred settings for other addons
---WriteOtherAddonSettings()
+local function runApp()
 
--- Adds a bunch of talents from other classes automatically on login. IMBA
-AutorunAddTalents()
+	-- When user opens quest log, save the ID so that quest can be completed or 
+	-- deleted
+	SaveQuestFromLogDetails()
 
-AddonInit()
+	-- Initialize settings for this addon
+	AdminUtils.SetupSettingsDB()
+
+	-- If the button was pressed, the server message saying what object was 
+	-- created will be used to delete it
+	DeleteLastObjectIfFlagged()
+		
+	-- Attempt to write my preferred settings for other addons
+	--WriteOtherAddonSettings()
+
+	-- Adds a bunch of talents from other classes automatically on login. IMBA
+	AutorunAddTalents()
+
+	AddonInit()
+end
+
+runApp()
