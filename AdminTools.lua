@@ -70,12 +70,13 @@ AdminUtils.buttons = {
 		{ "HeirloomsWrath", "Item_icecrownringc" },
 		{ "HeirloomsLegion", "Item_icecrownringc" },
 		{ "HeirloomUpgrades", "Item_icecrownringc" },		
-		{ "Keys", "Inv_misc_key_12" },
+		{ "Keys", "Inv_misc_key_08" },
 		
 		{ "DropOne", "Spell_shadow_unsummonbuilding", "Abandon current quest (warning: no confirmation)" },
 		{ "DropAll", "Spell_shadow_unsummonbuilding", "Abandon all quests (warning: no confirmation)" },
 		{ "QuestComplete", "Inv_misc_trophy_argent" },
-		{ "HideChat", "Inv_letter_02", "Toggle display of the default chat frame" },
+		{ "HideChat", "Inv_letter_11", "Toggle display of the default chat frame" },
+		{ "Who", "Achievement_guildperk_everybodysfriend" },
 	},
 	Summon = {
 		{ "Ghoul", "Spell_shadow_animatedead" },
@@ -150,20 +151,20 @@ AdminUtils.buttons = {
 		{ "npcbUnhide", "Ability_stealth" },
 	},
 	Tele = {
-		{ "Home1", "Achievement_zone_hillsbradfoothills" },
-		{ "Home2", "Achievement_zone_hillsbradfoothills" },
-		{ "Home3", "Achievement_zone_hillsbradfoothills" },
-		{ "Home4", "Achievement_zone_hillsbradfoothills" },
-		{ "Home5", "Achievement_zone_hillsbradfoothills" },
-		{ "Home6", "Achievement_zone_hillsbradfoothills" },
-		{ "Home7", "Achievement_zone_hillsbradfoothills" },
-		{ "Camp1", "Achievement_zone_howlingfjord_10" },
-		{ "Camp2", "Achievement_zone_howlingfjord_10" },
+		{ "Home1", "Achievement_zone_sholazar_04" },
+		{ "Home2", "Achievement_zone_sholazar_02" },
+		{ "Home3", "Achievement_zone_sholazar_06" },
+		{ "Home4", "Achievement_zone_sholazar_09" },
+		{ "Home5", "Achievement_zone_grizzlyhills_06" },
+		{ "Home6", "Achievement_zone_zuldrak_04" },
+		{ "Home7", "Achievement_zone_grizzlyhills_10" },
+		{ "Camp1", "Achievement_zone_hillsbradfoothills" },
+		{ "Camp2", "Achievement_zone_howlingfjord_11" },
 		{ "Camp3", "Achievement_zone_howlingfjord_10" },
-		{ "Camp4", "Achievement_zone_howlingfjord_10" },
-		{ "Camp5", "Achievement_zone_howlingfjord_10" },
-		{ "Camp6", "Achievement_zone_howlingfjord_10" },
-		{ "Camp7", "Achievement_zone_howlingfjord_10" },
+		{ "Camp4", "Achievement_zone_howlingfjord_03" },
+		{ "Camp5", "Achievement_zone_grizzlyhills_04" },
+		{ "Camp6", "Achievement_zone_sholazar_05" },
+		{ "Camp7", "Achievement_zone_dragonblight_03" },
 		{ "Stormwind", "Achievement_zone_elwynnforest" },
 		{ "Ironforge", "Achievement_zone_dunmorogh" },
 		{ "Darnassus", "Achievement_zone_darnassus" },
@@ -179,20 +180,20 @@ AdminUtils.buttons = {
 		{ "Return",  "Spell_arcane_portalstormwind" },
 	},
 	TeleSet = {
-		{ "Home1Set", "Achievement_zone_hillsbradfoothills" },
-		{ "Home2Set", "Achievement_zone_hillsbradfoothills" },
-		{ "Home3Set", "Achievement_zone_hillsbradfoothills" },
-		{ "Home4Set", "Achievement_zone_hillsbradfoothills" },
-		{ "Home5Set", "Achievement_zone_hillsbradfoothills" },
-		{ "Home6Set", "Achievement_zone_hillsbradfoothills" },
-		{ "Home7Set", "Achievement_zone_hillsbradfoothills" },
-		{ "Camp1Set", "Achievement_zone_howlingfjord_10" },
-		{ "Camp2Set", "Achievement_zone_howlingfjord_10" },
+		{ "Home1Set", "Achievement_zone_sholazar_04" },
+		{ "Home2Set", "Achievement_zone_sholazar_02" },
+		{ "Home3Set", "Achievement_zone_sholazar_06" },
+		{ "Home4Set", "Achievement_zone_sholazar_09" },
+		{ "Home5Set", "Achievement_zone_grizzlyhills_06" },
+		{ "Home6Set", "Achievement_zone_zuldrak_04" },
+		{ "Home7Set", "Achievement_zone_grizzlyhills_10" },
+		{ "Camp1Set", "Achievement_zone_hillsbradfoothills" },
+		{ "Camp2Set", "Achievement_zone_howlingfjord_11" },
 		{ "Camp3Set", "Achievement_zone_howlingfjord_10" },
-		{ "Camp4Set", "Achievement_zone_howlingfjord_10" },
-		{ "Camp5Set", "Achievement_zone_howlingfjord_10" },
-		{ "Camp6Set", "Achievement_zone_howlingfjord_10" },
-		{ "Camp7Set", "Achievement_zone_howlingfjord_10" },
+		{ "Camp4Set", "Achievement_zone_howlingfjord_03" },
+		{ "Camp5Set", "Achievement_zone_grizzlyhills_04" },
+		{ "Camp6Set", "Achievement_zone_sholazar_05" },
+		{ "Camp7Set", "Achievement_zone_dragonblight_03" },
 	},
 	NPC = {
 		{ "Banker", "Inv_misc_grouplooking" },
@@ -308,7 +309,7 @@ AdminUtils.buttons = {
 		{ "ApothecaryBottle", "Trade_alchemy" },
 		{ "ApothecaryBookshelf", "Trade_alchemy" },
 		{ "EmptyShelf", "Inv_misc_bag_12" },
-		{ "Rug2", "Inv_misc_bag_12" },
+		{ "Rug2", "Ability_mount_flyingcarpet" },
 		{ "Chair", "Inv_misc_bag_12" },
 		{ "PaddedChair", "Inv_misc_bag_12" },
 		{ "ElfChair", "Inv_misc_bag_12" },
@@ -317,14 +318,14 @@ AdminUtils.buttons = {
 		{ "GreyBench", "Inv_misc_bag_12" },
 		{ "RoughTable", "Inv_misc_bag_12" },
 		{ "InnBarrel", "Inv_misc_bag_12" },
-		{ "Armoire", "Inv_misc_bag_12" },
-		{ "Footlocker", "Inv_misc_bag_12" },
+		{ "Armoire", "Inv_misc_enggizmos_17" },
+		{ "Footlocker", "Inv_misc_enggizmos_17" },
 	},
 	Camp2 = {
 		{ "SittingLog", "Inv_misc_bag_12" },
 		{ "Campfire", "Spell_fire_fire" },
 		{ "Bonfire", "Inv_summerfest_firespirit" },
-		{ "WeaponRack", "Inv_misc_bag_12" },
+		{ "WeaponRack", "Inv_sword_04" },
 		{ "Bunkbed", "Inv_misc_bag_12" },
 		{ "CanopyBed", "Inv_misc_bag_12" },
 		{ "StandingTorch", "Inv_torch_lit" },
@@ -335,16 +336,16 @@ AdminUtils.buttons = {
 		{ "Jar1", "Inv_misc_bag_12" },
 		{ "Jar2", "Inv_misc_bag_12" },
 		{ "Jar3", "Inv_misc_bag_12" },
-		{ "CampMug", "Inv_drink_032" },
+		{ "CampMug", "Inv_drink_03" },
 		{ "CampJug", "Inv_misc_bag_12" },
 		{ "Jug1", "Inv_misc_bag_12" },
 		{ "BookPile", "Inv_misc_book_08" },
 		{ "BookPile2", "Inv_misc_book_08" },
 		{ "BookOpen", "Inv_misc_book_08" },
+		{ "SecretDoorBooks", "Inv_misc_book_08" },
 		{ "Bookshelf", "Inv_misc_book_08" },
 		{ "BookshelfEmpty", "Inv_misc_bag_12" },
-		{ "SecretDoorBooks", "Inv_misc_bag_12" },
-		{ "PotbellyStove", "Inv_misc_bag_12" },
+		{ "PotbellyStove", "Spell_fire_flameshock" },
 		{ "Spotlight", "Inv_misc_bag_12" },
 		{ "SpotlightCeiling", "Inv_misc_bag_12" },
 		{ "MetalPlatform", "Inv_misc_bag_12" },
@@ -353,25 +354,28 @@ AdminUtils.buttons = {
 		{ "LargeTent", "Inv_misc_bag_12" },
 		{ "ColorfulTent", "Inv_misc_bag_12" },
 		{ "StormwindWagon", "Inv_misc_bag_12" },
-		{ "KegWagon", "Inv_misc_bag_12" },
-		{ "HordeKegWagon", "Inv_misc_bag_12" },
+		{ "KegWagon", "Inv_cask_04" },
+		{ "HordeKegWagon", "Inv_cask_04" },
 	},
 	Buildings = {
 		{ "HordeTent", "Inv_misc_bag_12" },
 		{ "SenjinTent", "Inv_misc_bag_12" },
 		{ "ShadowsightTower", "Inv_misc_bag_12" },
-		{ "SnowyTower", "Inv_misc_bag_12" },
+		{ "SnowyTower", "Achievement_zone_icecrown_06" },
 		{ "NewAvalonMill", "Inv_misc_bag_12" },
-		{ "GardenHouse", "Inv_misc_bag_12" },
-		{ "Inn", "Inv_misc_bag_12" },
-		{ "Barracks", "Inv_misc_bag_12" },
-		{ "Armory", "Inv_misc_bag_12" },
-		{ "Barn", "Inv_misc_bag_12" },
-		{ "Stable", "Inv_misc_bag_12" },
-		{ "Engineering", "Inv_misc_bag_12" },
-		{ "Mill", "Inv_misc_bag_12" },
-		{ "TradingPost", "Inv_misc_bag_12" },
-		{ "SparringArena", "Inv_misc_bag_12" },
+		{ "GardenHouse", "Achievement_zone_ironforge" },
+		{ "Inn", "Achievement_zone_ironforge" },
+		{ "Barracks", "Achievement_zone_ironforge" },
+		{ "Armory", "Achievement_zone_ironforge" },
+		{ "Barn", "Achievement_zone_ironforge" },
+		{ "Stable", "Achievement_zone_ironforge" },
+		{ "Engineering", "Achievement_zone_ironforge" },
+		{ "Mill", "Achievement_zone_ironforge" },
+		{ "TradingPost", "Achievement_zone_ironforge" },
+		{ "SparringArena", "Achievement_zone_ironforge" },
+	},
+	Addons = {
+		{ "Baggins", "Inv_misc_bag_07_black" },
 	},
 	Management = {
 		{ "NearObjects", "Inv_sigil_mimiron" },
@@ -1013,6 +1017,9 @@ AdminUtils.buttonFunctions = {
 			else
 				print("No quest selected.")
 			end
+		end,
+		Who = function()
+			SendWho("1-80 " .. GetRealZoneText())
 		end,
 	},
 	Summon = {
@@ -1968,7 +1975,24 @@ AdminUtils.buttonFunctions = {
 			AdminUtils.cmd(".gobject delete " .. lastObjectId)
 			lastObjectId = 0
 		end,
-
+	},
+	Addons = {
+		Baggins = function()
+			if IsAddOnLoaded("Baggins") then
+				Baggins:ShowOptions()
+			else
+				print("Baggins addon is not loaded.")
+			end
+		end,
+		Bartender = function()
+		
+		end,
+		mobinfo = function()
+		
+		end,
+		atlas = function()
+		
+		end,
 	},
 }
 
@@ -2050,7 +2074,7 @@ local function ActionsMenu()
 	AdminUtils.MakeButtonColumn(f, "Summon", AdminUtils.buttons.Summon,       1, 6)
 	
 	AdminUtils.MakeButtonColumn(f, "Action", AdminUtils.buttons.Action2,      2)
-	AdminUtils.MakeButtonColumn(f, "Pet", AdminUtils.buttons.Pet,             2, 5)
+	AdminUtils.MakeButtonColumn(f, "Addons", AdminUtils.buttons.Addons,       2, 6)
 	AdminUtils.MakeButtonColumn(f, "Weather", AdminUtils.buttons.Weather,     2, 8)
 
 	AdminUtils.MakeButtonColumn(f, "Crafting", AdminUtils.buttons.Crafting,   3)
@@ -2060,6 +2084,7 @@ local function ActionsMenu()
 	AdminUtils.MakeButtonColumn(f, "NPCBot", AdminUtils.buttons.NPCBot,       4, 8)	
 	
 	AdminUtils.MakeButtonColumn(f, "TeleSet", AdminUtils.buttons.TeleSet,     5)
+	AdminUtils.MakeButtonColumn(f, "Pet", AdminUtils.buttons.Pet,             5, 6)
 end
 
 local function ContentMenu()
@@ -2147,6 +2172,50 @@ function AdminUtils.delayedRun(delay, func, ...)
 	return true;
 end
 
+function AdminUtils.UnbindFunctionKeys()
+	print("pre unbind loop")
+	for i = 1, 12 do
+		local functionKeyName = "F" .. i
+		local action = GetBindingAction(functionKeyName)
+
+		if action ~= "" then
+			local key1, key2 = GetBindingKey(action)
+
+			if key1 then
+				SetBinding(key1, nil)
+			end
+
+			if key2 then
+				SetBinding(key2, nil)
+			end
+		end
+
+		--if key1 == nil then key1 = "nil" end
+		--if key2 == nil then key2 = "nil" end
+		--print("unbinding (1,2): " .. key1 .. ", " .. key2)
+
+		if action == nil then action = "nil" end
+		print("unbinding action: " .. action)
+	end
+	SaveBindings(2) -- Save the keybinding (2 for account-wide keybindings)
+end
+
+function AdminUtils.FinalBindKeys()
+	SetBindingClick("F1", "AdminOverlayBtn1")
+	SetBindingClick("F2", "AdminOverlayBtn2")
+	SetBindingClick("F3", "AdminOverlayBtn3")
+	SetBindingClick("F4", "AdminOverlayBtn4")
+	SetBindingClick("F5", "AdminOverlayBtn5")
+	SetBindingClick("F6", "AdminOverlayBtn6")
+	SetBindingClick("F7", "AdminOverlayBtn7")
+	SetBindingClick("F8", "AdminOverlayBtn8")
+	SetBindingClick("F9", "AdminOverlayBtn9")
+	SetBindingClick("F10", "AdminOverlayBtn10")
+	SetBindingClick("F11", "AdminOverlayBtn11")
+	SetBindingClick("F12", "AdminOverlayBtn12")
+	SaveBindings(2) -- Save the keybinding (2 for account-wide keybindings)
+
+end
 
 local function PrintKeyBindingsForActions(actions)
 	for _, action in ipairs(actions) do
@@ -2799,22 +2868,13 @@ local function runApp()
 	-- Adds a bunch of talents from other classes automatically on login. IMBA
 	AutorunAddTalents()
 
-	LoadBindings(2)
-
+	-- Trying to make this addon always take ownership of F keys but it's not
+	-- going well
+	--LoadBindings(1)
+	--AdminUtils.UnbindFunctionKeys()
 	local overlay = BuildOverlay()
-	SetBindingClick("F1", "AdminOverlayBtn1")
-	SetBindingClick("F2", "AdminOverlayBtn2")
-	SetBindingClick("F3", "AdminOverlayBtn3")
-	SetBindingClick("F4", "AdminOverlayBtn4")
-	SetBindingClick("F5", "AdminOverlayBtn5")
-	SetBindingClick("F6", "AdminOverlayBtn6")
-	SetBindingClick("F7", "AdminOverlayBtn7")
-	SetBindingClick("F8", "AdminOverlayBtn8")
-	SetBindingClick("F9", "AdminOverlayBtn9")
-	SetBindingClick("F10", "AdminOverlayBtn10")
-	SetBindingClick("F11", "AdminOverlayBtn11")
-	SetBindingClick("F12", "AdminOverlayBtn12")
-	SaveBindings(2) -- Save the keybinding (2 for account-wide keybindings)
+	--AdminUtils.FinalBindKeys()
+
 end
 
 runApp()
