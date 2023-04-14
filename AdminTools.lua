@@ -1972,6 +1972,20 @@ AdminUtils.buttonFunctions = {
 }
 
 
+-- Localized Keybinding Names
+BINDING_HEADER_ADMIN_TOOLS       = "Admin Tools";
+BINDING_NAME_ADMIN_TOOLS_ACTION  = "Open Actions Panel";
+BINDING_NAME_ADMIN_TOOLS_CONTENT = "Open Content Panel";
+BINDING_NAME_ADMIN_TOOLS_CONFIG  = "Open Configuration Panel";
+BINDING_NAME_ADMIN_TOOLS_ACTION5 = "Open Actions Panel 5";
+BINDING_NAME_ADMIN_TOOLS_ACTION6 = "Open Actions Panel 6";
+BINDING_NAME_ADMIN_TOOLS_ACTION7 = "Open Actions Panel 7";
+BINDING_NAME_ADMIN_TOOLS_ACTION8 = "Open Actions Panel 8";
+BINDING_NAME_ADMIN_TOOLS_ACTION9 = "Open Actions Panel 9";
+BINDING_NAME_ADMIN_TOOLS_ACTION10 = "Open Actions Panel 10";
+BINDING_NAME_ADMIN_TOOLS_ACTION11 = "Open Actions Panel 11";
+BINDING_NAME_ADMIN_TOOLS_ACTION12 = "Open Actions Panel 12";
+
 local waitTable = {};
 local waitFrame = nil;
 
@@ -2559,7 +2573,17 @@ local function BuildOverlay()
 		
 		iconButton:SetScript("OnClick", function(self)
 			print("*click*")
-			customFunc()
+			if IsShiftKeyDown() then
+				local buttonNumber = tonumber(name:match("AdminTools_ActionButton(%d+)"))
+				if buttonNumber then
+					SetBinding("BUTTON" .. buttonNumber, "ADMIN_TOOLS_ACTION" .. buttonNumber)
+					SaveBindings(2)
+				else
+					customFunc()
+				end
+			else
+				customFunc()
+			end
 		end)
 
 		-- Create a secure action button
@@ -2577,62 +2601,62 @@ local function BuildOverlay()
 	-- Row 1
 	OverlayButton("AdminOverlayBtnActions",  5, -5, overlay, "Open AdminTools Actions Panel", 	
 		"Ability_rogue_tricksofthetrade",
-		ActionsMenu, "F1"
+		ActionsMenu, "BUTTON1"
 	)
 	OverlayButton("AdminOverlayBtnContent", 45, -5, overlay, "Open AdminTools Content Panel", 
 		"Ability_rogue_tricksofthetrade",
-		ContentMenu, "F2"
+		ContentMenu, "BUTTON2"
 	)
 	OverlayButton("AdminOverlayBtnConfig",  85, -5, overlay, "Open AdminTools Config Panel", 
 		"Inv_misc_wrench_01",
-		ConfigMenu, "F3"
+		ConfigMenu, "BUTTON3"
 	)
 	OverlayButton("AdminOverlayBtnGmFlyOn", 125, -5, overlay, "Enable GM mode and flying", 
 		"Ability_vanish",
 		AdminUtils.buttonFunction(nil, "Action", "Fly"), 
-		"F4"
+		"BUTTON4"
 	)
 	OverlayButton("AdminOverlayBtnGmFlyOff", 165, -5, overlay, "Disable GM mode and flying", 
 		"Ability_vanish",
 		AdminUtils.buttonFunction(nil, "Action", "Land"), 
-		"F5"
+		"BUTTON5"
 	)
 	OverlayButton("AdminOverlayBtnChat", 205, -5, overlay, "Toggle Chat", 
 		"Inv_letter_02",
 		AdminUtils.buttonFunction(nil, "Action", "HideChat"), 
-		"F6"
+		"BUTTON6"
 	)
 
 	-- Row 2
 	OverlayButton("AdminOverlayBtnWalkSlow", 5, -45, overlay, "Walk slowly, barely moving at all", 
 		"Ability_rogue_sprint",
 		AdminUtils.buttonFunction(nil, "Action", "SlowWalk"), 
-		"F7"
+		"BUTTON7"
 	)
 	OverlayButton("AdminOverlayBtnWalkNormally", 45, -45, overlay, "Walk normally", 
 		"Ability_rogue_sprint",
 		AdminUtils.buttonFunction(nil, "Action", "Walk"), 
-		"F8"
+		"BUTTON8"
 	)
 	OverlayButton("AdminOverlayBtnPowerwalk", 85, -45, overlay, "Powerwalk", 
 		"Ability_rogue_sprint",
 		AdminUtils.buttonFunction(nil, "Action", "FastWalk"), 
-		"F9"
+		"BUTTON9"
 	)
 	OverlayButton("AdminOverlayBtnJog", 125, -45, overlay, "Jog", 
 		"Ability_rogue_sprint",
 		AdminUtils.buttonFunction(nil, "Action", "Jog"), 
-		"F10"
+		"BUTTON10"
 	)
 	OverlayButton("AdminOverlayBtnDash", 165, -45, overlay, "Dash", 
 		"Spell_fire_burningspeed",
 		AdminUtils.buttonFunction(nil, "Action", "Dash"), 
-		"F11"
+		"BUTTON11"
 	)
 	OverlayButton("AdminOverlayBtnStealth", 205, -45, overlay, "Toggle Stealth", 
 		"Ability_stealth",
 		AdminUtils.buttonFunction(nil, "Action", "Stealth"), 
-		"F12"
+		"BUTTON12"
 	)
 	
 	-- Row 3
