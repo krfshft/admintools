@@ -2147,45 +2147,6 @@ function AdminUtils.delayedRun(delay, func, ...)
 	return true;
 end
 
-function AdminUtils.UnbindFunctionKeys()
-	print("pre unbind loop")
-	for i = 1, 12 do
-		local functionKeyName = "F" .. i
-		local key1, key2 = GetBindingKey(functionKeyName)
-
-		if action ~= "" then
-			local key1, key2 = GetBindingKey(action)
-
-			if key1 then
-				SetBinding(key1, nil)
-			end
-
-			if key2 then
-				SetBinding(key2, nil)
-			end
-		end
-
-
-		-- Overwrite Toggle Autorun, Sit/Move Down, and Toggle Mouselook keybindings
-		local toggleAutorunKey1, toggleAutorunKey2 = GetBindingKey("TOGGLEAUTORUN")
-		local sitStandKey1, sitStandKey2 = GetBindingKey("SITORSTAND")
-		local toggleMouselookKey1, toggleMouselookKey2 = GetBindingKey("TOGGLEMOUSELOOK")
-
-		if toggleAutorunKey1 then SetBinding(toggleAutorunKey1, nil) end
-		if toggleAutorunKey2 then SetBinding(toggleAutorunKey2, nil) end
-		if sitStandKey1 then SetBinding(sitStandKey1, nil) end
-		if sitStandKey2 then SetBinding(sitStandKey2, nil) end
-		if toggleMouselookKey1 then SetBinding(toggleMouselookKey1, nil) end
-		if toggleMouselookKey2 then SetBinding(toggleMouselookKey2, nil) end
-
-		SetBinding("R", "TOGGLEAUTORUN")
-		SetBinding("X", "SITORSTAND")
-		SetBinding(";", "TOGGLEMOUSELOOK")
-
-	end
-	SaveBindings(2) -- Save the keybinding (2 for account-wide keybindings)
-end
-
 
 local function PrintKeyBindingsForActions(actions)
 	for _, action in ipairs(actions) do
@@ -2555,7 +2516,6 @@ local function BuildOverlay()
 		local function SetButtonKeybinding(buttonName, key, customAction)
 			SetBinding(key, nil)
 			SetBinding(key, customAction)
-			SaveBindings(2) -- Save the keybinding (2 for account-wide keybindings)
 		end
 
 		-- Create the button
@@ -2589,17 +2549,7 @@ local function BuildOverlay()
 		
 		iconButton:SetScript("OnClick", function(self)
 			print("*click*")
-			if IsShiftKeyDown() then
-				local buttonNumber = tonumber(name:match("AdminTools_ActionButton(%d+)"))
-				if buttonNumber then
-					SetBinding("BUTTON" .. buttonNumber, "ADMIN_TOOLS_ACTION" .. buttonNumber)
-					SaveBindings(2)
-				else
-					customFunc()
-				end
-			else
-				customFunc()
-			end
+			customFunc()
 		end)
 
 		-- Create a secure action button
@@ -2830,23 +2780,6 @@ function AdminTools_Action12()
 	AdminUtils.buttonFunction(nil, "Action", "Stealth")()
 end
 
-local function AddonInit()
-	local overlay = BuildOverlay()
-	SetBindingClick("F1", "AdminOverlayBtn1")
-	SetBindingClick("F2", "AdminOverlayBtn2")
-	SetBindingClick("F3", "AdminOverlayBtn3")
-	SetBindingClick("F4", "AdminOverlayBtn4")
-	SetBindingClick("F5", "AdminOverlayBtn5")
-	SetBindingClick("F6", "AdminOverlayBtn6")
-	SetBindingClick("F7", "AdminOverlayBtn7")
-	SetBindingClick("F8", "AdminOverlayBtn8")
-	SetBindingClick("F9", "AdminOverlayBtn9")
-	SetBindingClick("F10", "AdminOverlayBtn10")
-	SetBindingClick("F11", "AdminOverlayBtn11")
-	SetBindingClick("F12", "AdminOverlayBtn12")
-	SaveBindings(2) -- Save the keybinding (2 for account-wide keybindings)
-end
-
 local function runApp()
 
 	-- When user opens quest log, save the ID so that quest can be completed or 
@@ -2866,7 +2799,22 @@ local function runApp()
 	-- Adds a bunch of talents from other classes automatically on login. IMBA
 	AutorunAddTalents()
 
-	AddonInit()
+	LoadBindings(2)
+
+	local overlay = BuildOverlay()
+	SetBindingClick("F1", "AdminOverlayBtn1")
+	SetBindingClick("F2", "AdminOverlayBtn2")
+	SetBindingClick("F3", "AdminOverlayBtn3")
+	SetBindingClick("F4", "AdminOverlayBtn4")
+	SetBindingClick("F5", "AdminOverlayBtn5")
+	SetBindingClick("F6", "AdminOverlayBtn6")
+	SetBindingClick("F7", "AdminOverlayBtn7")
+	SetBindingClick("F8", "AdminOverlayBtn8")
+	SetBindingClick("F9", "AdminOverlayBtn9")
+	SetBindingClick("F10", "AdminOverlayBtn10")
+	SetBindingClick("F11", "AdminOverlayBtn11")
+	SetBindingClick("F12", "AdminOverlayBtn12")
+	SaveBindings(2) -- Save the keybinding (2 for account-wide keybindings)
 end
 
 runApp()

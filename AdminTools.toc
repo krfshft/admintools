@@ -9,3 +9,4 @@
 ## SavedVariablesPerCharacter: AdminToolsDB
 
 AdminTools.lua
+AdminToolsBindings.xml
