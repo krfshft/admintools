@@ -2148,7 +2148,7 @@ end
 
 function AdminUtils.UnbindFunctionKeys()
 	print("pre unbind loop")
-	for i = 1, 12 do
+	for i = 1, 3 do
 		local functionKeyName = "F" .. i
 		local action = GetBindingAction(functionKeyName)
 
@@ -2171,7 +2171,7 @@ function AdminUtils.UnbindFunctionKeys()
 		if action == nil then action = "nil" end
 		print("unbinding action: " .. action)
 	end
-	SaveBindings(2) -- Save the keybinding (2 for account-wide keybindings)
+	SaveBindings(1) -- Save the keybinding (2 for account-wide keybindings)
 end
 
 
@@ -2540,7 +2540,7 @@ local function BuildOverlay()
 		local function SetButtonKeybinding(buttonName, key, customAction)
 			SetBinding(key, nil)
 			SetBinding(key, customAction)
-			SaveBindings(2) -- Save the keybinding (2 for account-wide keybindings)
+			SaveBindings(1) -- Save the keybinding (2 for account-wide keybindings)
 		end
 
 		-- Create the button
@@ -2578,7 +2578,7 @@ local function BuildOverlay()
 				local buttonNumber = tonumber(name:match("AdminTools_ActionButton(%d+)"))
 				if buttonNumber then
 					SetBinding("BUTTON" .. buttonNumber, "ADMIN_TOOLS_ACTION" .. buttonNumber)
-					SaveBindings(2)
+					SaveBindings(1)
 				else
 					customFunc()
 				end
@@ -2829,9 +2829,7 @@ function AdminTools_Action12()
 end
 
 local function AddonInit()
-	AdminUtils.UnbindFunctionKeys()
 	PrintKeyBindingsForActions({"AdminActionsPanelBtn", "AdminContentPanelBtn", "AdminConfigPanelBtn"})
-	
 
 	local overlay = BuildOverlay()
 	SetBindingClick("F1", "AdminActionsPanelBtn")
@@ -2846,7 +2844,9 @@ local function AddonInit()
 	SetBindingClick("F10", "AdminOverlayBtnJog")
 	SetBindingClick("F11", "AdminOverlayBtnDash")
 	SetBindingClick("F12", "AdminOverlayBtnStealth")
-	SaveBindings(2) -- Save the keybinding (2 for account-wide keybindings)
+	SaveBindings(1) -- Save the keybinding (2 for account-wide keybindings)
+	
+	
 end
 
 -- Attempt to write my preferred settings for other addons
