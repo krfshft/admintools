@@ -2111,7 +2111,7 @@ AdminUtils.adminToolsBindings = {
 }
 
 -- Localized Keybinding Names
-BINDING_HEADER_ADMIN_TOOLS       = "Admin Tools";
+BINDING_HEADER_ADMINTOOLS = "Admin Tools";
 BINDING_NAME_ADMINTOOLS_1_BINDING = "Action 1";
 BINDING_NAME_ADMINTOOLS_2_BINDING = "Action 2";
 BINDING_NAME_ADMINTOOLS_3_BINDING = "Action 3";
@@ -2136,6 +2136,8 @@ BINDING_NAME_ADMINTOOLS_21_BINDING = "Action 21";
 BINDING_NAME_ADMINTOOLS_22_BINDING = "Action 22";
 BINDING_NAME_ADMINTOOLS_23_BINDING = "Action 23";
 BINDING_NAME_ADMINTOOLS_24_BINDING = "Action 24";
+
+
 
 local waitTable = {};
 local waitFrame = nil;
@@ -3104,6 +3106,7 @@ local function runApp()
 	-- Initialize settings for this addon
 	AdminUtils.SetupSettingsDB()
 
+
 	-- If the button was pressed, the server message saying what object was 
 	-- created will be used to delete it
 	DeleteLastObjectIfFlagged()
@@ -3116,18 +3119,9 @@ local function runApp()
 
 	local overlay = BuildOverlay()
 
-	-- Make the key bindings show up in game UI
-	local frame = CreateFrame("Frame")
-	frame:RegisterEvent("ADDON_LOADED")
-	frame:SetScript("OnEvent", function(self, event, addonName)
-		if event == "ADDON_LOADED" and addonName == "AdminTools" then
-			AdminUtils.RegisterAdminToolsBindings()
-		end
-	end)
-
 	-- Register the key bindings
 	for _, binding in ipairs(AdminUtils.adminToolsBindings) do
-		--SetBindingClick(binding.key, binding.name)
+		SetBindingClick(binding.key, binding.name)
 	end
 end
 
