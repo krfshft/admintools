@@ -2064,7 +2064,7 @@ AdminUtils.buttonFunctions = {
 	Addons = {
 		Baggins = function()
 			if IsAddOnLoaded("Baggins") then
-				Baggins:ShowOptions()
+				AdminUtils:VarDump(Baggins)
 			else
 				print("Baggins addon is not loaded.")
 			end
