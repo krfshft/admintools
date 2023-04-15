@@ -49,16 +49,21 @@ AdminUtils.buttons = {
 		{ "Shrink", "Inv_misc_toy_04" },
 		{ "UberHeal", "Spell_holy_auramastery" },
 		{ "Dispell", "Ability_hunter_beastwithin" },
-		{ "Morph", "Ability_warlock_demonicpower" },
-		{ "Unmorph", "Ability_hunter_beastwithin" },
-		{ "Immolate", "Spell_fire_burnout" },
+		--{ "Morph", "Ability_warlock_demonicpower" },
+		--{ "Unmorph", "Ability_hunter_beastwithin" },
+		--{ "Immolate", "Spell_fire_burnout" },
 		{ "Douse", "Inv_drink_19" },
 		{ "Hat", "Inv_helmet_119" },
 		{ "Cloak", "Inv_misc_cape_18" },
 		{ "Frostpath", "Spell_deathknight_pathoffrost" },
-		{ "FrostPresence", "Spell_deathknight_frostpresence" },
-		{ "BloodPresence", "Spell_deathknight_bloodpresence" }, 
-		{ "UnholyPresence", "Spell_deathknight_unholypresence" },
+		--{ "FrostPresence", "Spell_deathknight_frostpresence" },
+		--{ "BloodPresence", "Spell_deathknight_bloodpresence" }, 
+		--{ "UnholyPresence", "Spell_deathknight_unholypresence" },
+		{ "KillCreature", "Inv_staff_78", },
+		{ "RespawnCreature", "Spell_shaman_blessingofeternals", },
+		{ "DeleteCreature", "Spell_holy_searinglightpriest", },
+		{ "HDCVars", "Inv_gizmo_01", "Sets game engine settings for high view distance and foliage density" },
+		{ "HDLiteCVars", "Inv_gizmo_01", "Sets game engine settings for high view distance and foliage density" },
 	},
 	Action2 = {
 		{ "GearsWrath", "Inv_misc_bag_07_black" },
@@ -76,7 +81,7 @@ AdminUtils.buttons = {
 		{ "DropAll", "Spell_shadow_unsummonbuilding", "Abandon all quests (warning: no confirmation)" },
 		{ "QuestComplete", "Inv_misc_trophy_argent" },
 		{ "HideChat", "Inv_letter_11", "Toggle display of the default chat frame" },
-		{ "Who", "Achievement_guildperk_everybodysfriend" },
+		{ "Who", "Achievement_guildperk_havegroup-willtravel" },
 	},
 	Summon = {
 		{ "Ghoul", "Spell_shadow_animatedead" },
@@ -91,8 +96,6 @@ AdminUtils.buttons = {
 		{ "InfernalLegion", "Spell_shadow_summoninfernal" },
 		{ "Doomguard1", "Ability_warlock_demonicempowerment" },
 		{ "Doomguard2", "Ability_warlock_demonicempowerment" },
-		{ "BasicCampfire", "Spell_fire_fire" },
-		{ "ClearSky", "Achievement_zone_arathihighlands_01" },
 	},
 	Pet = {
 		{ "TameBeast", "Ability_hunter_beasttaming" },
@@ -111,10 +114,12 @@ AdminUtils.buttons = {
 		{ "LightSand", "Achievement_zone_dustwallowmarsh" },
 		{ "Snow", "Achievement_zone_stormpeaks_01" },
 		{ "LightSnow", "Achievement_zone_stormpeaks_01" },
+		{ "ClearSky", "Achievement_zone_arathihighlands_01" },
 	},
 	Crafting = {
 		{ "First Aid", "Inv_misc_bandage_01" }, 
 		{ "Cooking", "Inv_misc_food_95_grainbread" },
+		{ "Basic Campfire", "Spell_fire_fire" },
 		{ "Alchemy", "Trade_alchemy" },
 		{ "Enchanting", "Trade_engraving", },
 		{ "Jewelcrafting", "Inv_box_02" },
@@ -122,7 +127,7 @@ AdminUtils.buttons = {
 		{ "Tailoring", "Trade_tailoring" }, 
 		{ "Leatherworking", "Trade_leatherworking" },
 		{ "Blacksmithing", "Trade_blacksmithing" },
-		{ "Engineering", "Trade_engineering" },
+		{ "Engineering", "Inv_misc_wrench_01" },
 		{ "Runeforging", "Inv_weapon_shortblade_92" },
 		{ "Smelting", "Spell_fire_flameblades" },
 		{ "Milling", "Ability_miling" }, 
@@ -378,9 +383,11 @@ AdminUtils.buttons = {
 		{ "Baggins", "Inv_misc_bag_07_black" },
 	},
 	Management = {
-		{ "NearObjects", "Inv_sigil_mimiron" },
-		{ "DeleteNearestObj", "Inv_sigil_mimiron" },
-		{ "DeleteLastObj",	"Inv_sigil_mimiron" },
+		{ "NearObjects", "Trade_engineering", "List gobjects within 20 yards" },
+		{ "DeleteNearestObj", "Inv_sigil_mimiron", 
+			"Delete the nearest (within 2 yards) gobject (warning: no confirmation)" },
+		{ "DeleteLastObj",	"Inv_sigil_mimiron", 
+			"Delete the most recently added gobject (warning: no confirmation)" },
 	},
 }
 
@@ -1021,6 +1028,30 @@ AdminUtils.buttonFunctions = {
 		Who = function()
 			SendWho("1-80 " .. GetRealZoneText())
 		end,
+		HDCVars = function()
+			SetCVar("violencelevel", 5)
+			SetCVar("overridefarclip", 1)
+			SetCVar("farclip", 1600)
+			SetCVar("horizonfarclip", 6226)
+			SetCVar("groundeffectdensity", 256)
+			SetCVar("groundeffectdist", 140)
+			SetCVar("smallcull", 0)
+			SetCVar("skycloudlod", 3)
+			SetCVar("characterAmbient", 1)
+			SetCVar("spelleffectlevel", 2)
+		end,
+		HDLiteCVars = function()
+			SetCVar("overridefarclip", 1)
+			SetCVar("farclip", 800)
+			SetCVar("horizonfarclip", 3113)
+			SetCVar("groundeffectdensity", 256)
+			SetCVar("groundeffectdist", 140)
+			SetCVar("smallcull", 0)
+			SetCVar("skycloudlod", 3)
+			SetCVar("characterAmbient", 1)
+			SetCVar("spelleffectlevel", 2)
+		end,
+		
 	},
 	Summon = {
 		Ghoul = function()
@@ -1115,7 +1146,7 @@ AdminUtils.buttonFunctions = {
 		LightSand = function()
 			AdminUtils.cmd(".wchange 2 0.45")
 		end,
-		Clear = function()
+		ClearSky = function()
 			AdminUtils.cmd(".wchange 1 0")
 			AdminUtils.cmd(".wchange 2 0")
 			AdminUtils.cmd(".wchange 3 0")
@@ -1962,7 +1993,7 @@ AdminUtils.buttonFunctions = {
 	},
 	Management = {
 		NearObjects = function()
-			AdminUtils.cmd(".gobject near")
+			AdminUtils.cmd(".gobject near 20")
 		end,
 		DeleteNearestObj = function()
 			AdminUtils.deleteNearestObject = true
@@ -1995,7 +2026,6 @@ AdminUtils.buttonFunctions = {
 		end,
 	},
 }
-
 
 -- Localized Keybinding Names
 BINDING_HEADER_ADMIN_TOOLS       = "Admin Tools";
@@ -2070,21 +2100,22 @@ local function ActionsMenu()
 	PlaySound(416)
 	local f = ButtonPanel("ActionsFrame", 960, 405)
 	
-	AdminUtils.MakeButtonColumn(f, "Action", AdminUtils.buttons.Action,       1)
-	AdminUtils.MakeButtonColumn(f, "Summon", AdminUtils.buttons.Summon,       1, 6)
+	AdminUtils.MakeButtonColumn(f, "Action", AdminUtils.buttons.Action,         1)
+	AdminUtils.MakeButtonColumn(f, "Summon", AdminUtils.buttons.Summon,         1, 6)
 	
-	AdminUtils.MakeButtonColumn(f, "Action", AdminUtils.buttons.Action2,      2)
-	AdminUtils.MakeButtonColumn(f, "Addons", AdminUtils.buttons.Addons,       2, 6)
-	AdminUtils.MakeButtonColumn(f, "Weather", AdminUtils.buttons.Weather,     2, 8)
+	AdminUtils.MakeButtonColumn(f, "Action", AdminUtils.buttons.Action2,        2)
+	AdminUtils.MakeButtonColumn(f, "Addons", AdminUtils.buttons.Addons,         2, 6)
+	AdminUtils.MakeButtonColumn(f, "Weather", AdminUtils.buttons.Weather,       2, 8)
 
-	AdminUtils.MakeButtonColumn(f, "Crafting", AdminUtils.buttons.Crafting,   3)
-	AdminUtils.MakeButtonColumn(f, "PlayerBot", AdminUtils.buttons.PlayerBot, 3, 7)
+	AdminUtils.MakeButtonColumn(f, "Crafting", AdminUtils.buttons.Crafting,     3)
+	AdminUtils.MakeButtonColumn(f, "PlayerBot", AdminUtils.buttons.PlayerBot,   3, 7)
 	
-	AdminUtils.MakeButtonColumn(f, "Tele", AdminUtils.buttons.Tele,           4)
-	AdminUtils.MakeButtonColumn(f, "NPCBot", AdminUtils.buttons.NPCBot,       4, 8)	
+	AdminUtils.MakeButtonColumn(f, "Tele", AdminUtils.buttons.Tele,             4)
+	AdminUtils.MakeButtonColumn(f, "NPCBot", AdminUtils.buttons.NPCBot,         4, 8)	
 	
-	AdminUtils.MakeButtonColumn(f, "TeleSet", AdminUtils.buttons.TeleSet,     5)
-	AdminUtils.MakeButtonColumn(f, "Pet", AdminUtils.buttons.Pet,             5, 6)
+	AdminUtils.MakeButtonColumn(f, "TeleSet", AdminUtils.buttons.TeleSet,       5)
+	AdminUtils.MakeButtonColumn(f, "Pet", AdminUtils.buttons.Pet,               5, 6)
+	AdminUtils.MakeButtonColumn(f, "Management", AdminUtils.buttons.Management, 5, 9)
 end
 
 local function ContentMenu()
@@ -2225,7 +2256,6 @@ local function PrintKeyBindingsForActions(actions)
 		print("Keybindings for action " .. action .. ": " .. key1 .. ", " .. key2)
 	end
 end
-
 
 function AdminUtils.cmd(command)
 	SendChatMessage(command, "SAY")
@@ -2644,9 +2674,9 @@ local function BuildOverlay()
 		ContentMenu, 
 		"BUTTON2"
 	)
-	OverlayButton("AdminOverlayBtn3",  85, -5, overlay, "Open AdminTools Config Panel", 
-		"Inv_misc_wrench_01",
-		ConfigMenu, 
+	OverlayButton("AdminOverlayBtn3",  85, -5, overlay, "Respawn targeted dead creature", 
+		"Spell_shaman_blessingofeternals",
+		AdminUtils.buttonFunction(nil, "Action", "RespawnCreature"), 
 		"BUTTON3"
 	)
 	OverlayButton("AdminOverlayBtn4", 125, -5, overlay, "Rain", 
@@ -2698,29 +2728,35 @@ local function BuildOverlay()
 	)
 	
 	-- Row 3
-	OverlayButton("AdminOverlayBtn13",  5, -85, overlay, "Kill targeted creature", 	
-		"Inv_staff_78",
-		AdminUtils.buttonFunction(nil, "Action", "KillCreature") 
+	OverlayButton("AdminOverlayBtn13",  5, -85, overlay, "Frost Presence", 	
+		"Spell_deathknight_frostpresence",
+		AdminUtils.buttonFunction(nil, "Action", "FrostPresence"),
+		"BUTTON19"
 	)
-	OverlayButton("AdminOverlayBtn14", 45, -85, overlay, "Respawn targeted dead creature", 
-		"Spell_shaman_blessingofeternals",
-		AdminUtils.buttonFunction(nil, "Action", "RespawnCreature") 
+	OverlayButton("AdminOverlayBtn14", 45, -85, overlay, "Blood Presence", 
+		"Spell_deathknight_bloodpresence",
+		AdminUtils.buttonFunction(nil, "Action", "BloodPresence"),
+		"BUTTON20"
 	)
-	OverlayButton("AdminOverlayBtn15",  85, -85, overlay, "Delete targeted creature instance from the DB (warning: no confirmation)", 
-		"Spell_holy_searinglightpriest",
-		AdminUtils.buttonFunction(nil, "Action", "DeleteCreature") 
+	OverlayButton("AdminOverlayBtn15",  85, -85, overlay, "Unholy Presence", 
+		"Spell_deathknight_unholypresence",
+		AdminUtils.buttonFunction(nil, "Action", "UnholyPresence"),
+		"BUTTON21"
 	)
-	OverlayButton("AdminOverlayBtn16", 125, -85, overlay, "Get gobjects within 20 yards", 
-		"Inv_sigil_mimiron",
-		AdminUtils.buttonFunction(nil, "Management", "NearObjects") 
+	OverlayButton("AdminOverlayBtn16", 125, -85, overlay, "Draw upon the energies of the fel to transform into a demon", 
+		"Ability_warlock_demonicpower",
+		AdminUtils.buttonFunction(nil, "Action", "Morph"),
+		"BUTTON22"
 	)
-	OverlayButton("AdminOverlayBtn17", 165, -85, overlay, "Delete the nearest (within 2 yards) gobject (warning: no confirmation)", 
-		"Inv_sigil_mimiron",
-		AdminUtils.buttonFunction(nil, "Management", "DeleteNearestObj") 
+	OverlayButton("AdminOverlayBtn17", 165, -85, overlay, "Ignite the air around your body with intense flames", 
+		"Spell_fire_burnout",
+		AdminUtils.buttonFunction(nil, "Action", "Immolate"),
+		"BUTTON23"
 	)
-	OverlayButton("AdminOverlayBtn18", 205, -85, overlay, "Delete the most recently added gobject (warning: no confirmation)", 
-		"Inv_sigil_mimiron",
-		AdminUtils.buttonFunction(nil, "Management", "DeleteLastObj") 
+	OverlayButton("AdminOverlayBtn18", 205, -85, overlay, "Expel the fel energy from your party to return to normal form", 
+		"Ability_hunter_beastwithin",
+		AdminUtils.buttonFunction(nil, "Action", "Unmorph"),
+		"BUTTON24"
 	)
 
 	return overlay
