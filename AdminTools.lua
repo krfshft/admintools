@@ -2084,30 +2084,30 @@ AdminUtils.buttonFunctions = {
 }
 
 AdminUtils.adminToolsBindings = {
-    {name = "ADMINTOOLS_1_BINDING", description = "Admin Tools Function Key 1"},
-    {name = "ADMINTOOLS_2_BINDING", description = "Admin Tools Function Key 2"},
-    {name = "ADMINTOOLS_3_BINDING", description = "Admin Tools Function Key 3"},
-    {name = "ADMINTOOLS_4_BINDING", description = "Admin Tools Function Key 4"},
-    {name = "ADMINTOOLS_5_BINDING", description = "Admin Tools Function Key 5"},
-    {name = "ADMINTOOLS_6_BINDING", description = "Admin Tools Function Key 6"},
-    {name = "ADMINTOOLS_7_BINDING", description = "Admin Tools Function Key 7"},
-    {name = "ADMINTOOLS_8_BINDING", description = "Admin Tools Function Key 8"},
-    {name = "ADMINTOOLS_9_BINDING", description = "Admin Tools Function Key 9"},
-    {name = "ADMINTOOLS_10_BINDING", description = "Admin Tools Function Key 10"},
-    {name = "ADMINTOOLS_11_BINDING", description = "Admin Tools Function Key 11"},
-    {name = "ADMINTOOLS_12_BINDING", description = "Admin Tools Function Key 12"},
-    {name = "ADMINTOOLS_13_BINDING", description = "Admin Tools Function Key 13"},
-    {name = "ADMINTOOLS_14_BINDING", description = "Admin Tools Function Key 14"},
-    {name = "ADMINTOOLS_15_BINDING", description = "Admin Tools Function Key 15"},
-    {name = "ADMINTOOLS_16_BINDING", description = "Admin Tools Function Key 16"},
-    {name = "ADMINTOOLS_17_BINDING", description = "Admin Tools Function Key 17"},
-    {name = "ADMINTOOLS_18_BINDING", description = "Admin Tools Function Key 18"},
-    {name = "ADMINTOOLS_19_BINDING", description = "Admin Tools Function Key 19"},
-    {name = "ADMINTOOLS_20_BINDING", description = "Admin Tools Function Key 20"},
-    {name = "ADMINTOOLS_21_BINDING", description = "Admin Tools Function Key 21"},
-    {name = "ADMINTOOLS_22_BINDING", description = "Admin Tools Function Key 22"},
-    {name = "ADMINTOOLS_23_BINDING", description = "Admin Tools Function Key 23"},
-    {name = "ADMINTOOLS_24_BINDING", description = "Admin Tools Function Key 24"},
+	{key = "F1", buttonName = "ADMINTOOLS_1_BINDING"},
+	{key = "F2", buttonName = "ADMINTOOLS_2_BINDING"},
+	{key = "F3", buttonName = "ADMINTOOLS_3_BINDING"},
+	{key = "F4", buttonName = "ADMINTOOLS_4_BINDING"},
+	{key = "F5", buttonName = "ADMINTOOLS_5_BINDING"},
+	{key = "F6", buttonName = "ADMINTOOLS_6_BINDING"},
+	{key = "F7", buttonName = "ADMINTOOLS_7_BINDING"},
+	{key = "F8", buttonName = "ADMINTOOLS_8_BINDING"},
+	{key = "F9", buttonName = "ADMINTOOLS_9_BINDING"},
+	{key = "F10", buttonName = "ADMINTOOLS_10_BINDING"},
+	{key = "F11", buttonName = "ADMINTOOLS_11_BINDING"},
+	{key = "F12", buttonName = "ADMINTOOLS_12_BINDING"},
+	{key = "F13", buttonName = "ADMINTOOLS_13_BINDING"},
+	{key = "F14", buttonName = "ADMINTOOLS_14_BINDING"},
+	{key = "F15", buttonName = "ADMINTOOLS_15_BINDING"},
+	{key = "F16", buttonName = "ADMINTOOLS_16_BINDING"},
+	{key = "F17", buttonName = "ADMINTOOLS_17_BINDING"},
+	{key = "F18", buttonName = "ADMINTOOLS_18_BINDING"},
+	{key = "F19", buttonName = "ADMINTOOLS_19_BINDING"},
+	{key = "F20", buttonName = "ADMINTOOLS_20_BINDING"},
+	{key = "F21", buttonName = "ADMINTOOLS_21_BINDING"},
+	{key = "F22", buttonName = "ADMINTOOLS_22_BINDING"},
+	{key = "F23", buttonName = "ADMINTOOLS_23_BINDING"},
+	{key = "F24", buttonName = "ADMINTOOLS_24_BINDING"},
 }
 
 -- Localized Keybinding Names
@@ -2316,12 +2316,6 @@ function AdminUtils.RunBinding(binding, target)
 	elseif binding == "ADMINTOOLS_24_BINDING" then
 		target:GetParent().secureButtons[24]:Click()
 	end
-end
-
-function AdminUtils.RegisterAdminToolsBindings()
-    for _, bindingInfo in ipairs(AdminUtils.adminToolsBindings) do
-        --BlizzardOptionsPanel_AddKeybinding(bindingInfo.description, bindingInfo.name)
-    end	
 end
 
 
@@ -3121,7 +3115,7 @@ local function runApp()
 
 	-- Register the key bindings
 	for _, binding in ipairs(AdminUtils.adminToolsBindings) do
-		SetBindingClick(binding.key, binding.name)
+		SetBindingClick(binding.key, binding.buttonName)
 	end
 end
 
