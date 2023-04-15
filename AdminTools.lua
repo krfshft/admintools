@@ -2061,7 +2061,6 @@ AdminUtils.buttonFunctions = {
 			SetCVar("spelleffectlevel", 2)
 		end,
 	},
-	},
 	Addons = {
 		Baggins = function()
 			if IsAddOnLoaded("Baggins") then
