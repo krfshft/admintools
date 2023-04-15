@@ -1,0 +1,29 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ http://wowprogramming.com/FrameXML/UI.xsd">
+	<Script file="AdminToolsBindings.lua"/>
+	<Bindings>
+		<Binding name="ADMINTOOLS_1_BINDING" description="Admin Tools Function Key 1" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_2_BINDING" description="Admin Tools Function Key 2" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_3_BINDING" description="Admin Tools Function Key 3" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_4_BINDING" description="Admin Tools Function Key 4" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_5_BINDING" description="Admin Tools Function Key 5" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_6_BINDING" description="Admin Tools Function Key 6" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_7_BINDING" description="Admin Tools Function Key 7" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_8_BINDING" description="Admin Tools Function Key 8" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_9_BINDING" description="Admin Tools Function Key 9" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_10_BINDING" description="Admin Tools Function Key 10" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_11_BINDING" description="Admin Tools Function Key 11" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_12_BINDING" description="Admin Tools Function Key 12" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_13_BINDING" description="Admin Tools Function Key 13" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_14_BINDING" description="Admin Tools Function Key 14" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_15_BINDING" description="Admin Tools Function Key 15" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_16_BINDING" description="Admin Tools Function Key 16" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_17_BINDING" description="Admin Tools Function Key 17" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_18_BINDING" description="Admin Tools Function Key 18" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_19_BINDING" description="Admin Tools Function Key 19" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_20_BINDING" description="Admin Tools Function Key 20" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_21_BINDING" description="Admin Tools Function Key 21" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_22_BINDING" description="Admin Tools Function Key 22" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_23_BINDING" description="Admin Tools Function Key 23" runOnUp="true"/>
+		<Binding name="ADMINTOOLS_24_BINDING" description="Admin Tools Function Key 24" runOnUp="true"/>
+	</Bindings>
+</Ui>

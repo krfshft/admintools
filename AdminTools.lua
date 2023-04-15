@@ -2081,20 +2081,59 @@ AdminUtils.buttonFunctions = {
 	},
 }
 
+AdminUtils.adminToolsBindings = {
+    {name = "ADMINTOOLS_1_BINDING", description = "Admin Tools Function Key 1"},
+    {name = "ADMINTOOLS_2_BINDING", description = "Admin Tools Function Key 2"},
+    {name = "ADMINTOOLS_3_BINDING", description = "Admin Tools Function Key 3"},
+    {name = "ADMINTOOLS_4_BINDING", description = "Admin Tools Function Key 4"},
+    {name = "ADMINTOOLS_5_BINDING", description = "Admin Tools Function Key 5"},
+    {name = "ADMINTOOLS_6_BINDING", description = "Admin Tools Function Key 6"},
+    {name = "ADMINTOOLS_7_BINDING", description = "Admin Tools Function Key 7"},
+    {name = "ADMINTOOLS_8_BINDING", description = "Admin Tools Function Key 8"},
+    {name = "ADMINTOOLS_9_BINDING", description = "Admin Tools Function Key 9"},
+    {name = "ADMINTOOLS_10_BINDING", description = "Admin Tools Function Key 10"},
+    {name = "ADMINTOOLS_11_BINDING", description = "Admin Tools Function Key 11"},
+    {name = "ADMINTOOLS_12_BINDING", description = "Admin Tools Function Key 12"},
+    {name = "ADMINTOOLS_13_BINDING", description = "Admin Tools Function Key 13"},
+    {name = "ADMINTOOLS_14_BINDING", description = "Admin Tools Function Key 14"},
+    {name = "ADMINTOOLS_15_BINDING", description = "Admin Tools Function Key 15"},
+    {name = "ADMINTOOLS_16_BINDING", description = "Admin Tools Function Key 16"},
+    {name = "ADMINTOOLS_17_BINDING", description = "Admin Tools Function Key 17"},
+    {name = "ADMINTOOLS_18_BINDING", description = "Admin Tools Function Key 18"},
+    {name = "ADMINTOOLS_19_BINDING", description = "Admin Tools Function Key 19"},
+    {name = "ADMINTOOLS_20_BINDING", description = "Admin Tools Function Key 20"},
+    {name = "ADMINTOOLS_21_BINDING", description = "Admin Tools Function Key 21"},
+    {name = "ADMINTOOLS_22_BINDING", description = "Admin Tools Function Key 22"},
+    {name = "ADMINTOOLS_23_BINDING", description = "Admin Tools Function Key 23"},
+    {name = "ADMINTOOLS_24_BINDING", description = "Admin Tools Function Key 24"},
+}
+
 -- Localized Keybinding Names
 BINDING_HEADER_ADMIN_TOOLS       = "Admin Tools";
-BINDING_NAME_ADMIN_TOOLS_ACTION1 = "AdminTools_Action1";
-BINDING_NAME_ADMIN_TOOLS_ACTION2 = "AdminTools_Action2";
-BINDING_NAME_ADMIN_TOOLS_ACTION3 = "AdminTools_Action3";
-BINDING_NAME_ADMIN_TOOLS_ACTION4 = "AdminTools_Action4";
-BINDING_NAME_ADMIN_TOOLS_ACTION5 = "AdminTools_Action5";
-BINDING_NAME_ADMIN_TOOLS_ACTION6 = "AdminTools_Action6";
-BINDING_NAME_ADMIN_TOOLS_ACTION7 = "AdminTools_Action7";
-BINDING_NAME_ADMIN_TOOLS_ACTION8 = "AdminTools_Action8";
-BINDING_NAME_ADMIN_TOOLS_ACTION9 = "AdminTools_Action9";
-BINDING_NAME_ADMIN_TOOLS_ACTION10 = "AdminTools_Action10";
-BINDING_NAME_ADMIN_TOOLS_ACTION11 = "AdminTools_Action11";
-BINDING_NAME_ADMIN_TOOLS_ACTION12 = "AdminTools_Action12";
+BINDING_NAME_ADMINTOOLS_1_BINDING = "Action 1";
+BINDING_NAME_ADMINTOOLS_2_BINDING = "Action 2";
+BINDING_NAME_ADMINTOOLS_3_BINDING = "Action 3";
+BINDING_NAME_ADMINTOOLS_4_BINDING = "Action 4";
+BINDING_NAME_ADMINTOOLS_5_BINDING = "Action 5";
+BINDING_NAME_ADMINTOOLS_6_BINDING = "Action 6";
+BINDING_NAME_ADMINTOOLS_7_BINDING = "Action 7";
+BINDING_NAME_ADMINTOOLS_8_BINDING = "Action 8";
+BINDING_NAME_ADMINTOOLS_9_BINDING = "Action 9";
+BINDING_NAME_ADMINTOOLS_10_BINDING = "Action 10";
+BINDING_NAME_ADMINTOOLS_11_BINDING = "Action 11";
+BINDING_NAME_ADMINTOOLS_12_BINDING = "Action 12";
+BINDING_NAME_ADMINTOOLS_13_BINDING = "Action 13";
+BINDING_NAME_ADMINTOOLS_14_BINDING = "Action 14";
+BINDING_NAME_ADMINTOOLS_15_BINDING = "Action 15";
+BINDING_NAME_ADMINTOOLS_16_BINDING = "Action 16";
+BINDING_NAME_ADMINTOOLS_17_BINDING = "Action 17";
+BINDING_NAME_ADMINTOOLS_18_BINDING = "Action 18";
+BINDING_NAME_ADMINTOOLS_19_BINDING = "Action 19";
+BINDING_NAME_ADMINTOOLS_20_BINDING = "Action 20";
+BINDING_NAME_ADMINTOOLS_21_BINDING = "Action 21";
+BINDING_NAME_ADMINTOOLS_22_BINDING = "Action 22";
+BINDING_NAME_ADMINTOOLS_23_BINDING = "Action 23";
+BINDING_NAME_ADMINTOOLS_24_BINDING = "Action 24";
 
 local waitTable = {};
 local waitFrame = nil;
@@ -2222,6 +2261,66 @@ local function ConfigMenu()
 	AdminUtils.VarDump(AdminToolsDB.profiles[AdminToolsDB.activeProfile])
 end
 
+function AdminUtils.RunBinding(binding, target)
+	print("Running binding " .. binding)
+	if binding == "ADMINTOOLS_1_BINDING" then
+		target:GetParent().secureButtons[1]:Click()
+	elseif binding == "ADMINTOOLS_2_BINDING" then
+		target:GetParent().secureButtons[2]:Click()
+	elseif binding == "ADMINTOOLS_3_BINDING" then
+		target:GetParent().secureButtons[3]:Click()
+	elseif binding == "ADMINTOOLS_4_BINDING" then
+		target:GetParent().secureButtons[4]:Click()
+	elseif binding == "ADMINTOOLS_5_BINDING" then
+		target:GetParent().secureButtons[5]:Click()
+	elseif binding == "ADMINTOOLS_6_BINDING" then
+		target:GetParent().secureButtons[6]:Click()
+	elseif binding == "ADMINTOOLS_7_BINDING" then
+		target:GetParent().secureButtons[7]:Click()
+	elseif binding == "ADMINTOOLS_8_BINDING" then
+		target:GetParent().secureButtons[8]:Click()
+	elseif binding == "ADMINTOOLS_9_BINDING" then
+		target:GetParent().secureButtons[9]:Click()
+	elseif binding == "ADMINTOOLS_10_BINDING" then
+		target:GetParent().secureButtons[10]:Click()
+	elseif binding == "ADMINTOOLS_11_BINDING" then
+		target:GetParent().secureButtons[11]:Click()
+	elseif binding == "ADMINTOOLS_12_BINDING" then
+		target:GetParent().secureButtons[12]:Click()
+	elseif binding == "ADMINTOOLS_13_BINDING" then
+		target:GetParent().secureButtons[13]:Click()
+	elseif binding == "ADMINTOOLS_14_BINDING" then
+		target:GetParent().secureButtons[14]:Click()
+	elseif binding == "ADMINTOOLS_15_BINDING" then
+		target:GetParent().secureButtons[15]:Click()
+	elseif binding == "ADMINTOOLS_16_BINDING" then
+		target:GetParent().secureButtons[16]:Click()
+	elseif binding == "ADMINTOOLS_17_BINDING" then
+		target:GetParent().secureButtons[17]:Click()
+	elseif binding == "ADMINTOOLS_18_BINDING" then
+		target:GetParent().secureButtons[18]:Click()
+	elseif binding == "ADMINTOOLS_19_BINDING" then
+		target:GetParent().secureButtons[19]:Click()
+	elseif binding == "ADMINTOOLS_20_BINDING" then
+		target:GetParent().secureButtons[20]:Click()
+	elseif binding == "ADMINTOOLS_21_BINDING" then
+		target:GetParent().secureButtons[21]:Click()
+	elseif binding == "ADMINTOOLS_22_BINDING" then
+		target:GetParent().secureButtons[22]:Click()
+	elseif binding == "ADMINTOOLS_23_BINDING" then
+		target:GetParent().secureButtons[23]:Click()
+	elseif binding == "ADMINTOOLS_24_BINDING" then
+		target:GetParent().secureButtons[24]:Click()
+	end
+end
+
+function AdminUtils.RegisterAdminToolsBindings()
+    for _, bindingInfo in ipairs(AdminUtils.adminToolsBindings) do
+        BlizzardOptionsPanel_AddKeybinding(bindingInfo.description, bindingInfo.name)
+    end
+end
+
+
 function AdminUtils.AddVendorItems(items)
 	for idx = 1, #items do
 		AdminUtils.cmd(".npc additem " .. items[idx])
@@ -2257,51 +2356,6 @@ function AdminUtils.delayedRun(delay, func, ...)
 	end
 	tinsert(waitTable,{delay,func,{...}});
 	return true;
-end
-
-function AdminUtils.UnbindFunctionKeys()
-	print("pre unbind loop")
-	for i = 1, 12 do
-		local functionKeyName = "F" .. i
-		local action = GetBindingAction(functionKeyName)
-
-		if action ~= "" then
-			local key1, key2 = GetBindingKey(action)
-
-			if key1 then
-				SetBinding(key1, nil)
-			end
-
-			if key2 then
-				SetBinding(key2, nil)
-			end
-		end
-
-		--if key1 == nil then key1 = "nil" end
-		--if key2 == nil then key2 = "nil" end
-		--print("unbinding (1,2): " .. key1 .. ", " .. key2)
-
-		if action == nil then action = "nil" end
-		print("unbinding action: " .. action)
-	end
-	SaveBindings(2) -- Save the keybinding (2 for account-wide keybindings)
-end
-
-function AdminUtils.FinalBindKeys()
-	SetBindingClick("F1", "AdminOverlayBtn1")
-	SetBindingClick("F2", "AdminOverlayBtn2")
-	SetBindingClick("F3", "AdminOverlayBtn3")
-	SetBindingClick("F4", "AdminOverlayBtn4")
-	SetBindingClick("F5", "AdminOverlayBtn5")
-	SetBindingClick("F6", "AdminOverlayBtn6")
-	SetBindingClick("F7", "AdminOverlayBtn7")
-	SetBindingClick("F8", "AdminOverlayBtn8")
-	SetBindingClick("F9", "AdminOverlayBtn9")
-	SetBindingClick("F10", "AdminOverlayBtn10")
-	SetBindingClick("F11", "AdminOverlayBtn11")
-	SetBindingClick("F12", "AdminOverlayBtn12")
-	SaveBindings(2) -- Save the keybinding (2 for account-wide keybindings)
-
 end
 
 local function PrintKeyBindingsForActions(actions)
@@ -2661,6 +2715,32 @@ local function BuildOverlay()
 		overlay:RegisterForDrag("LeftButton")
 		overlay:SetScript("OnDragStart", overlay.StartMoving)
 		overlay:SetScript("OnDragStop", overlay.StopMovingOrSizing)
+		
+		local function GetBindingFromClick(key)
+			local numBindings = 24
+			for i = 1, numBindings do
+				local bindingName = "ADMINTOOLS_" .. i .. "_BINDING"
+				local bindingKey = GetBindingKey(bindingName)
+				if bindingKey and bindingKey == key then
+					return bindingName
+				end
+			end
+			return nil
+		end
+		
+		overlay:SetScript("OnKeyDown", function(self, key)
+			local binding = GetBindingFromClick(key)
+			if binding then
+				AdminUtils.RunBinding(binding, self)
+			end
+		end)
+
+		overlay:SetScript("OnKeyUp", function(self, key)
+			local binding = GetBindingFromClick(key)
+			if binding then
+				AdminUtils.RunBinding(binding, self)
+			end
+		end)
 		overlay:SetAlpha(0)
 		return overlay
 	end
@@ -2714,7 +2794,8 @@ local function BuildOverlay()
 
 		-- Set keybinding for the button
 		if buttonBind ~= nil then
-			SetButtonKeybinding(name, buttonBind, "MACRO " .. name .. "Secure")
+			local bindName = name .. "_BINDING"
+			SetButtonKeybinding(bindName, buttonBind, "MACRO " .. bindName .. "Secure")
 		end
 	end
 	
@@ -2783,35 +2864,35 @@ local function BuildOverlay()
 	)
 	
 	-- Row 3
-	OverlayButton("AdminOverlayBtn13",  5, -85, overlay, "Frost Presence", 	
+	OverlayButton("ADMINTOOLS_19",  5, -85, overlay, "Frost Presence", 	
 		"Spell_deathknight_frostpresence",
 		AdminUtils.buttonFunction(nil, "Action", "FrostPresence"),
-		"BUTTON19"
+		"ADMINTOOLS_19"
 	)
-	OverlayButton("AdminOverlayBtn14", 45, -85, overlay, "Blood Presence", 
+	OverlayButton("ADMINTOOLS_20", 45, -85, overlay, "Blood Presence", 
 		"Spell_deathknight_bloodpresence",
 		AdminUtils.buttonFunction(nil, "Action", "BloodPresence"),
-		"BUTTON20"
+		"ADMINTOOLS_20"
 	)
-	OverlayButton("AdminOverlayBtn15",  85, -85, overlay, "Unholy Presence", 
+	OverlayButton("ADMINTOOLS_21",  85, -85, overlay, "Unholy Presence", 
 		"Spell_deathknight_unholypresence",
 		AdminUtils.buttonFunction(nil, "Action", "UnholyPresence"),
-		"BUTTON21"
+		"ADMINTOOLS_21"
 	)
-	OverlayButton("AdminOverlayBtn16", 125, -85, overlay, "Draw upon the energies of the fel to transform into a demon", 
+	OverlayButton("ADMINTOOLS_22", 125, -85, overlay, "Draw upon the energies of the fel to transform into a demon", 
 		"Ability_warlock_demonicpower",
 		AdminUtils.buttonFunction(nil, "Action", "Morph"),
-		"BUTTON22"
+		"ADMINTOOLS_22"
 	)
-	OverlayButton("AdminOverlayBtn17", 165, -85, overlay, "Ignite the air around your body with intense flames", 
-		"Spell_fire_burnout",
-		AdminUtils.buttonFunction(nil, "Action", "Immolate"),
-		"BUTTON23"
-	)
-	OverlayButton("AdminOverlayBtn18", 205, -85, overlay, "Expel the fel energy from your party to return to normal form", 
+	OverlayButton("ADMINTOOLS_23", 165, -85, overlay, "Expel the fel energy from your party to return to normal form", 
 		"Ability_hunter_beastwithin",
 		AdminUtils.buttonFunction(nil, "Action", "Unmorph"),
-		"BUTTON24"
+		"ADMINTOOLS_23"
+	)
+	OverlayButton("ADMINTOOLS_24", 205, -85, overlay, "Ignite the air around your body with intense flames", 
+		"Spell_fire_burnout",
+		AdminUtils.buttonFunction(nil, "Action", "Immolate"),
+		"ADMINTOOLS_24"
 	)
 
 	return overlay
@@ -2892,52 +2973,124 @@ local function WriteOtherAddonSettings()
 
 end
 
-function AdminTools_Action1()
+function AdminTools_1()
 	ActionsMenu()
 end
 
-function AdminTools_Action2()
+function AdminTools_2()
 	ContentMenu()
 end
 
-function AdminTools_Action3()
+function AdminTools_3()
 	ConfigMenu()
 end
 
-function AdminTools_Action4()
+function AdminTools_4()
 	AdminUtils.buttonFunction(nil, "Weather", "LightRain")
 end
 
-function AdminTools_Action5()
+function AdminTools_5()
 	AdminUtils.buttonFunction(nil, "Action", "Fly")()
 end
 
-function AdminTools_Action6()
+function AdminTools_6()
 	AdminUtils.buttonFunction(nil, "Action", "Land")()	
 end
 
-function AdminTools_Action7()
+function AdminTools_7()
 	AdminUtils.buttonFunction(nil, "Action", "SlowWalk")()
 end
 
-function AdminTools_Action8()
+function AdminTools_8()
 	AdminUtils.buttonFunction(nil, "Action", "Walk")()
 end
 
-function AdminTools_Action9()
+function AdminTools_9()
 	AdminUtils.buttonFunction(nil, "Action", "FastWalk")()
 end
 
-function AdminTools_Action10()
+function AdminTools_10()
 	AdminUtils.buttonFunction(nil, "Action", "Jog")()
 end
 
-function AdminTools_Action11()
+function AdminTools_11()
 	AdminUtils.buttonFunction(nil, "Action", "Dash")()
 end
 
-function AdminTools_Action12()
+function AdminTools_12()
 	AdminUtils.buttonFunction(nil, "Action", "Stealth")()
+end
+
+function AdminTools_ADMINTOOLS_1()
+end
+
+function AdminTools_ADMINTOOLS_2()
+end
+
+function AdminTools_ADMINTOOLS_3()
+end
+
+function AdminTools_ADMINTOOLS_4()
+end
+
+function AdminTools_ADMINTOOLS_5()
+end
+
+function AdminTools_ADMINTOOLS_6()
+end
+
+function AdminTools_ADMINTOOLS_7()
+end
+
+function AdminTools_ADMINTOOLS_8()
+end
+
+function AdminTools_ADMINTOOLS_9()
+end
+
+function AdminTools_ADMINTOOLS_10()
+end
+
+function AdminTools_ADMINTOOLS_11()
+end
+
+function AdminTools_ADMINTOOLS_12()
+end
+
+function AdminTools_ADMINTOOLS_13()
+end
+
+function AdminTools_ADMINTOOLS_14()
+end
+
+function AdminTools_ADMINTOOLS_15()
+end
+
+function AdminTools_ADMINTOOLS_16()
+end
+
+function AdminTools_ADMINTOOLS_17()
+end
+
+function AdminTools_ADMINTOOLS_18()
+end
+
+function AdminTools_ADMINTOOLS_19()
+end
+
+function AdminTools_ADMINTOOLS_20()
+end
+
+function AdminTools_ADMINTOOLS_21()
+end
+
+function AdminTools_ADMINTOOLS_22()
+end
+
+function AdminTools_ADMINTOOLS_23()
+end
+
+function AdminTools_ADMINTOOLS_24()
 end
 
 local function runApp()
@@ -2959,13 +3112,17 @@ local function runApp()
 	-- Adds a bunch of talents from other classes automatically on login. IMBA
 	AutorunAddTalents()
 
-	-- Trying to make this addon always take ownership of F keys but it's not
-	-- going well
-	--LoadBindings(1)
-	--AdminUtils.UnbindFunctionKeys()
 	local overlay = BuildOverlay()
-	--AdminUtils.FinalBindKeys()
 
+	-- Make the key bindings show up in game UI
+	local frame = CreateFrame("Frame")
+	frame:RegisterEvent("ADDON_LOADED")
+	frame:SetScript("OnEvent", function(self, event, addonName)
+		if event == "ADDON_LOADED" and addonName == "YourAddonName" then
+			AdminUtils.RegisterAdminToolsBindings()
+		end
+	end)	
+	
 end
 
 runApp()
