@@ -669,7 +669,7 @@ AdminUtils.buttonFunctions = {
 				
 				--Warlock-----------------------------------
 				--imp, voidwalker, succubus, felhunter, felguard, infernal, doomguard
-				--688, 697, 712, 691, 30146, 1122, 22865,
+				688, 697, 712, 691, 30146, 1122, 22865,
 				
 				--Drain Soul 1
 				1120,
@@ -1584,33 +1584,6 @@ AdminUtils.buttonFunctions = {
 				--Mark of the champion 2, Eye of the Dead, 
 				23207, 23047, 
 			})
-		end,
-		GoblinPlatform = function()
-			AdminUtils.cmd(".gobject add 202872")
-		end,
-		ApothecaryTent = function()
-			AdminUtils.cmd(".gobject add 190667")
-		end,
-		ApothecaryBloodSet = function()
-			AdminUtils.cmd(".gobject add 190677")
-		end,
-		GreyBench = function()
-			AdminUtils.cmd(".gobject add 192224")
-		end,
-		RoughTable = function()
-			AdminUtils.cmd(".gobject add 181305")
-		end,
-		ApothecaryBench = function()
-			AdminUtils.cmd(".gobject add 190694")
-		end,
-		InnBarrel = function()
-			AdminUtils.cmd(".gobject add 179973")
-		end,
-		Armoire = function()
-			AdminUtils.cmd(".gobject add 183267")
-		end,
-		Footlocker = function()
-			AdminUtils.cmd(".gobject add 183266")
 		end,	
 	},
 	Minerals = {
@@ -1963,6 +1936,35 @@ AdminUtils.buttonFunctions = {
 		FishingChair = function()
 			AdminUtils.cmd(".gobject add 186475")
 		end,
+
+		GoblinPlatform = function()
+			AdminUtils.cmd(".gobject add 202872")
+		end,
+		ApothecaryTent = function()
+			AdminUtils.cmd(".gobject add 190667")
+		end,
+		ApothecaryBloodSet = function()
+			AdminUtils.cmd(".gobject add 190677")
+		end,
+		GreyBench = function()
+			AdminUtils.cmd(".gobject add 192224")
+		end,
+		RoughTable = function()
+			AdminUtils.cmd(".gobject add 181305")
+		end,
+		ApothecaryBench = function()
+			AdminUtils.cmd(".gobject add 190694")
+		end,
+		InnBarrel = function()
+			AdminUtils.cmd(".gobject add 179973")
+		end,
+		Armoire = function()
+			AdminUtils.cmd(".gobject add 183267")
+		end,
+		Footlocker = function()
+			AdminUtils.cmd(".gobject add 183266")
+		end,
+
 	},
 	Buildings = {
 		HordeTent = function()
@@ -2316,8 +2318,8 @@ end
 
 function AdminUtils.RegisterAdminToolsBindings()
     for _, bindingInfo in ipairs(AdminUtils.adminToolsBindings) do
-        BlizzardOptionsPanel_AddKeybinding(bindingInfo.description, bindingInfo.name)
-    end
+        --BlizzardOptionsPanel_AddKeybinding(bindingInfo.description, bindingInfo.name)
+    end	
 end
 
 
@@ -3118,11 +3120,15 @@ local function runApp()
 	local frame = CreateFrame("Frame")
 	frame:RegisterEvent("ADDON_LOADED")
 	frame:SetScript("OnEvent", function(self, event, addonName)
-		if event == "ADDON_LOADED" and addonName == "YourAddonName" then
+		if event == "ADDON_LOADED" and addonName == "AdminTools" then
 			AdminUtils.RegisterAdminToolsBindings()
 		end
-	end)	
-	
+	end)
+
+	-- Register the key bindings
+	for _, binding in ipairs(AdminUtils.adminToolsBindings) do
+		--SetBindingClick(binding.key, binding.name)
+	end
 end
 
 runApp()
