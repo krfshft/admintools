@@ -59,11 +59,6 @@ AdminUtils.buttons = {
 		--{ "FrostPresence", "Spell_deathknight_frostpresence" },
 		--{ "BloodPresence", "Spell_deathknight_bloodpresence" }, 
 		--{ "UnholyPresence", "Spell_deathknight_unholypresence" },
-		{ "KillCreature", "Inv_staff_78", },
-		{ "RespawnCreature", "Spell_shaman_blessingofeternals", },
-		{ "DeleteCreature", "Spell_holy_searinglightpriest", },
-		{ "HDCVars", "Inv_gizmo_01", "Sets game engine settings for high view distance and foliage density" },
-		{ "HDLiteCVars", "Inv_gizmo_01", "Sets game engine settings for high view distance and foliage density" },
 	},
 	Action2 = {
 		{ "GearsWrath", "Inv_misc_bag_07_black" },
@@ -136,14 +131,16 @@ AdminUtils.buttons = {
 	},
 	PlayerBot = {
 		{ "Summon", "Ability_hunter_beastcall" },
-		{ "Follow", "Ability_hunter_beastcall" },
 		{ "Guard", "Ability_rogue_feigndeath" },
 		{ "Stay", "Spell_nature_timestop" },
 		{ "Free", "Spell_nature_massteleport" },
-		{ "TalkRepairSell", "Inv_gizmo_02" },
-		{ "RPGFull", "Inv_gizmo_02" },
-		{ "RPGLite", "Inv_gizmo_02" },
-		{ "RPGOff", "Inv_gizmo_02" },
+		{ "RPGFull", "Inv_shirt_purple_01" },
+		{ "RPGLite", "Inv_shirt_grey_01" },
+		{ "RPGOff", "Inv_shirt_black_01" },
+		{ "TalkRepairSell", "Achievement_reputation_01" },
+		{ "Talk", "Achievement_character_human_female" },
+		{ "Repair", "Inv_hammer_20" },
+		{ "Sell", "Inv_misc_coin_02" },
 		{ "RTSC", "Inv_gizmo_02" },
 	},	
 	NPCBot = {
@@ -155,6 +152,10 @@ AdminUtils.buttons = {
 		{ "npcbWalk", "Spell_fire_burningspeed" },
 		{ "npcbHide", "Ability_stealth" },
 		{ "npcbUnhide", "Ability_stealth" },
+		{ "npcbSummon", "Ability_hunter_beastcall" },
+		{ "npcbStopFully", "Spell_nature_timestop" },
+		{ "npcbStandstill", "Spell_nature_timestop" },
+		
 	},
 	Tele = {
 		{ "Home1", "Achievement_zone_sholazar_04" },
@@ -384,11 +385,16 @@ AdminUtils.buttons = {
 		{ "Baggins", "Inv_misc_bag_07_black" },
 	},
 	Management = {
+		{ "KillCreature", "Inv_staff_78", },
+		{ "RespawnCreature", "Spell_shaman_blessingofeternals", },
+		{ "DeleteCreature", "Inv_sigil_mimiron", },
 		{ "NearObjects", "Trade_engineering", "List gobjects within 20 yards" },
 		{ "DeleteNearestObj", "Inv_sigil_mimiron", 
 			"Delete the nearest (within 2 yards) gobject (warning: no confirmation)" },
 		{ "DeleteLastObj",	"Inv_sigil_mimiron", 
 			"Delete the most recently added gobject (warning: no confirmation)" },
+		{ "HDCVars", "Inv_gizmo_01", "Sets game engine settings for high view distance and foliage density" },
+		{ "HDLiteCVars", "Inv_gizmo_01", "Sets game engine settings for high view distance and foliage density" },
 	},
 }
 
@@ -471,16 +477,6 @@ AdminUtils.buttonFunctions = {
 		end,
 		Stealth = function()
 			AdminUtils.cmd(".cast 10032")
-		end,
-		KillCreature = function()
-			AdminUtils.cmd(".die")
-		end,
-		RespawnCreature = function()
-			AdminUtils.cmd(".respawn")
-			AdminUtils.cmd(".revive")
-		end,
-		DeleteCreature = function()
-			AdminUtils.cmd(".npc delete")
 		end,
 		DropAll = function()
 			for i=1,GetNumQuestLogEntries() do 
@@ -1149,26 +1145,13 @@ AdminUtils.buttonFunctions = {
 	PlayerBot = {
 		Summon = function()
 			AdminUtils.pcmd('summon')
-			-- this teleports npcbots to you, like playerbot summon above
-			AdminUtils.cmd(".npcb rec tele")
-			
-			-- if targeted, will make npcbot res itself
-			AdminUtils.cmd(".npcb revive")
-
-		end,
-		Follow = function()
 			AdminUtils.pcmd('follow')
-			AdminUtils.cmd(".npcb co follow")
 		end,
 		Guard = function()
 			AdminUtils.pcmd('guard')
-			--npcbot IDLE mode
-			AdminUtils.cmd(".npcb co stopfully")
 		end,
 		Stay = function()
 			AdminUtils.pcmd('stay')
-			--npcbot STAY mode, I don't know how it's different from IDLE mode
-			AdminUtils.cmd(".npcb co standstill")
 		end,
 		Free = function()
 			AdminUtils.pcmd('free')
@@ -1189,6 +1172,15 @@ AdminUtils.buttonFunctions = {
 			AdminUtils.pcmd('repair')
 			AdminUtils.pcmd('s')
 			AdminUtils.pcmd('talk')
+		end,
+		Talk = function()
+			AdminUtils.pcmd('talk')
+		end,
+		Repair = function()
+			AdminUtils.pcmd('repair')
+		end,
+		Sell = function()
+			AdminUtils.pcmd('s')
 		end,
 
 	},
@@ -1216,7 +1208,6 @@ AdminUtils.buttonFunctions = {
 			AdminUtils.cmd(".npcb distance 12")
 			AdminUtils.cmd(".npcb distance attack 35")
 		end,
-	
 		npcbWalk = function()
 			AdminUtils.cmd(".npcb co walk")
 		end,
@@ -1225,7 +1216,25 @@ AdminUtils.buttonFunctions = {
 		end,
 		npcbUnhide = function()
 			AdminUtils.cmd(".npcb unhide")
-		end,	},
+		end,
+		npcbSummon = function()
+			-- this teleports npcbots to you, like playerbot summon above
+			AdminUtils.cmd(".npcb rec tele")
+			
+			-- if targeted, will make npcbot res itself
+			AdminUtils.cmd(".npcb revive")
+			
+			AdminUtils.cmd(".npcb co follow")
+		end,
+		npcbStopFully = function()
+			--npcbot IDLE mode
+			AdminUtils.cmd(".npcb co stopfully")
+		end,
+		npcbStandstill = function()
+			--npcbot STAY mode, I don't know how it's different from IDLE mode
+			AdminUtils.cmd(".npcb co standstill")
+		end,
+	},
 	NPC = {
 		Banker = function()
 			AdminUtils.cmd(".npc add 5060")
@@ -1986,6 +1995,16 @@ AdminUtils.buttonFunctions = {
 		end,		
 	},
 	Management = {
+		KillCreature = function()
+			AdminUtils.cmd(".die")
+		end,
+		RespawnCreature = function()
+			AdminUtils.cmd(".respawn")
+			AdminUtils.cmd(".revive")
+		end,
+		DeleteCreature = function()
+			AdminUtils.cmd(".npc delete")
+		end,
 		NearObjects = function()
 			AdminUtils.cmd(".gobject near 20")
 		end,
@@ -2095,21 +2114,23 @@ local function ActionsMenu()
 	local f = ButtonPanel("ActionsFrame", 960, 405)
 	
 	AdminUtils.MakeButtonColumn(f, "Action", AdminUtils.buttons.Action,         1)
-	AdminUtils.MakeButtonColumn(f, "Summon", AdminUtils.buttons.Summon,         1, 6)
+	AdminUtils.MakeButtonColumn(f, "Pet", AdminUtils.buttons.Pet,               1, 4)	
+	AdminUtils.MakeButtonColumn(f, "Summon", AdminUtils.buttons.Summon,         1, 7)
 	
 	AdminUtils.MakeButtonColumn(f, "Action", AdminUtils.buttons.Action2,        2)
-	AdminUtils.MakeButtonColumn(f, "Addons", AdminUtils.buttons.Addons,         2, 6)
-	AdminUtils.MakeButtonColumn(f, "Weather", AdminUtils.buttons.Weather,       2, 8)
+	AdminUtils.MakeButtonColumn(f, "NPCBot", AdminUtils.buttons.NPCBot,         2, 7)	
 
 	AdminUtils.MakeButtonColumn(f, "Crafting", AdminUtils.buttons.Crafting,     3)
-	AdminUtils.MakeButtonColumn(f, "PlayerBot", AdminUtils.buttons.PlayerBot,   3, 7)
+	AdminUtils.MakeButtonColumn(f, "PlayerBot", AdminUtils.buttons.PlayerBot,   3, 6)
 	
 	AdminUtils.MakeButtonColumn(f, "Tele", AdminUtils.buttons.Tele,             4)
-	AdminUtils.MakeButtonColumn(f, "NPCBot", AdminUtils.buttons.NPCBot,         4, 8)	
+	AdminUtils.MakeButtonColumn(f, "Weather", AdminUtils.buttons.Weather,       4, 8)
 	
 	AdminUtils.MakeButtonColumn(f, "TeleSet", AdminUtils.buttons.TeleSet,       5)
-	AdminUtils.MakeButtonColumn(f, "Pet", AdminUtils.buttons.Pet,               5, 6)
-	AdminUtils.MakeButtonColumn(f, "Management", AdminUtils.buttons.Management, 5, 9)
+	AdminUtils.MakeButtonColumn(f, "Management", AdminUtils.buttons.Management, 5, 8)
+
+
+	--AdminUtils.MakeButtonColumn(f, "Addons", AdminUtils.buttons.Addons,         2, 6)
 end
 
 local function ContentMenu()
@@ -2641,7 +2662,6 @@ local function BuildOverlay()
 		end
 		
 		iconButton:SetScript("OnClick", function(self)
-			print("*click*")
 			customFunc()
 		end)
 
@@ -2670,7 +2690,7 @@ local function BuildOverlay()
 	)
 	OverlayButton("AdminOverlayBtn3",  85, -5, overlay, "Respawn targeted dead creature", 
 		"Spell_shaman_blessingofeternals",
-		AdminUtils.buttonFunction(nil, "Action", "RespawnCreature"), 
+		AdminUtils.buttonFunction(nil, "Management", "RespawnCreature"), 
 		"BUTTON3"
 	)
 	OverlayButton("AdminOverlayBtn4", 125, -5, overlay, "Rain", 
