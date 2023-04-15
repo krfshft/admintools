@@ -144,7 +144,7 @@ AdminUtils.buttons = {
 		{ "RTSC", "Inv_gizmo_02" },
 	},	
 	NPCBot = {
-		{ "npcbMerchant", "Inv_gizmo_02" },
+		{ "npcbMerchant", "Inv_misc_grouplooking" },
 		{ "npcbAdd", "Inv_gizmo_02" },
 		{ "npcbRemove", "Inv_gizmo_02" },
 		{ "npcbUnbind", "Inv_gizmo_02" },
@@ -218,9 +218,21 @@ AdminUtils.buttons = {
 		{ "OrgrimmarGrunt", "Ability_warrior_stalwartprotector" },
 		{ "UndercityGuard", "Ability_warrior_stalwartprotector" },
 		--Thunder Bluff, dunno other horde cities
-		
 		--Gadgetzan?
+
+		{ "LichKing", "Achievement_boss_lichking" },
+		{ "KelThuzad", "Achievement_boss_kelthuzad_01" },
+		{ "Illidan", "Achievement_boss_illidan" },
+		{ "Kaelthas", "Inv_misc_grouplooking" },
 		
+		{ "VarianWrynn", "Achievement_leader_king_varian_wrynn" },
+		{ "MagniBronzebeard", "Achievement_leader_king_magni_bronzebeard" },
+		{ "TyrandeWhisperwind", "Achievement_leader_tyrande_whisperwind" },
+		{ "Velen", "Achievement_leader_prophet_velen" },
+
+		{ "Thrall", "Inv_misc_grouplooking" },
+		{ "Sylvanas", "Achievement_leader_sylvanas" },
+		{ "CairnBloodhoof", "Achievement_leader_cairne-bloodhoof" },
 	},
 	ShopInv = {
 		{ "InvMinerals", "Inv_misc_bag_enchantedrunecloth" },
@@ -1025,23 +1037,7 @@ AdminUtils.buttonFunctions = {
 		end,
 		Who = function()
 			SendWho("1-80 " .. GetRealZoneText())
-		end,
-		HDCVars = function()
-			SetCVar("violencelevel", 5)
-			SetCVar("farclip", 1600)
-			SetCVar("groundeffectdensity", 256)
-			SetCVar("groundeffectdist", 140)
-			SetCVar("skycloudlod", 3)
-			SetCVar("spelleffectlevel", 2)
-		end,
-		HDLiteCVars = function()
-			SetCVar("farclip", 800)
-			SetCVar("groundeffectdensity", 256)
-			SetCVar("groundeffectdist", 140)
-			SetCVar("skycloudlod", 3)
-			SetCVar("spelleffectlevel", 2)
-		end,
-		
+		end,		
 	},
 	Summon = {
 		Ghoul = function()
@@ -1270,24 +1266,36 @@ AdminUtils.buttonFunctions = {
 		UndercityGuard = function()
 			AdminUtils.cmd(".npc add 16432")
 		end,
-		EmptyShelf = function()
-			AdminUtils.cmd(".gobject add 183268")
+		LichKing = function()
+			AdminUtils.cmd(".npc add 37857")
 		end,
-		Rug2 = function()
-			AdminUtils.cmd(".gobject add 180334")
+		VarianWrynn = function()
+			AdminUtils.cmd(".npc add ")
 		end,
-		Chair = function()
-			AdminUtils.cmd(".gobject add 10192")
+		MagniBronzebeard = function()
+			AdminUtils.cmd(".npc add ")
 		end,
-		PaddedChair = function()
-			AdminUtils.cmd(".gobject add 191887")
+		Velen = function()
+			AdminUtils.cmd(".npc add ")
 		end,
-		ElfChair = function()
-			AdminUtils.cmd(".gobject add 192003")
+		TyrandeWhisperwind = function()
+			AdminUtils.cmd(".npc add ")
 		end,
-		FishingChair = function()
-			AdminUtils.cmd(".gobject add 186475")
-		end,	
+		Thrall = function()
+			AdminUtils.cmd(".npc add ")
+		end,
+		Sylvanas = function()
+			AdminUtils.cmd(".npc add ")
+		end,
+		CairnBloodhoof = function()
+			AdminUtils.cmd(".npc add ")
+		end,
+		Illidan = function()
+			AdminUtils.cmd(".npc add ")
+		end,
+		Kaelthas = function()
+			AdminUtils.cmd(".npc add ")
+		end,
 	},
 	ShopInv = {
 		InvMinerals = function()
@@ -1937,6 +1945,24 @@ AdminUtils.buttonFunctions = {
 			AdminUtils.cmd(".gobject add 186257")
 		end,
 
+		EmptyShelf = function()
+			AdminUtils.cmd(".gobject add 183268")
+		end,
+		Rug2 = function()
+			AdminUtils.cmd(".gobject add 180334")
+		end,
+		Chair = function()
+			AdminUtils.cmd(".gobject add 10192")
+		end,
+		PaddedChair = function()
+			AdminUtils.cmd(".gobject add 191887")
+		end,
+		ElfChair = function()
+			AdminUtils.cmd(".gobject add 192003")
+		end,
+		FishingChair = function()
+			AdminUtils.cmd(".gobject add 186475")
+		end,
 	},
 	Buildings = {
 		HordeTent = function()
@@ -2019,6 +2045,22 @@ AdminUtils.buttonFunctions = {
 			AdminUtils.cmd(".gobject delete " .. lastObjectId)
 			lastObjectId = 0
 		end,
+		HDCVars = function()
+			SetCVar("violencelevel", 5)
+			SetCVar("farclip", 1600)
+			SetCVar("groundeffectdensity", 256)
+			SetCVar("groundeffectdist", 140)
+			SetCVar("skycloudlod", 3)
+			SetCVar("spelleffectlevel", 2)
+		end,
+		HDLiteCVars = function()
+			SetCVar("farclip", 800)
+			SetCVar("groundeffectdensity", 256)
+			SetCVar("groundeffectdist", 140)
+			SetCVar("skycloudlod", 3)
+			SetCVar("spelleffectlevel", 2)
+		end,
+	},
 	},
 	Addons = {
 		Baggins = function()
@@ -2121,7 +2163,7 @@ local function ActionsMenu()
 	AdminUtils.MakeButtonColumn(f, "NPCBot", AdminUtils.buttons.NPCBot,         2, 7)	
 
 	AdminUtils.MakeButtonColumn(f, "Crafting", AdminUtils.buttons.Crafting,     3)
-	AdminUtils.MakeButtonColumn(f, "PlayerBot", AdminUtils.buttons.PlayerBot,   3, 6)
+	AdminUtils.MakeButtonColumn(f, "PlayerBot", AdminUtils.buttons.PlayerBot,   3, 7)
 	
 	AdminUtils.MakeButtonColumn(f, "Tele", AdminUtils.buttons.Tele,             4)
 	AdminUtils.MakeButtonColumn(f, "Weather", AdminUtils.buttons.Weather,       4, 8)
@@ -2137,10 +2179,10 @@ local function ContentMenu()
 	local f = ButtonPanel("ContentToolsFrame", 962, 495)
 	
 	AdminUtils.MakeButtonColumn(f, "NPC", AdminUtils.buttons.NPC,               1)
-	AdminUtils.MakeButtonColumn(f, "ShopInv", AdminUtils.buttons.ShopInv,       1, 7)
+	AdminUtils.MakeButtonColumn(f, "ShopInv", AdminUtils.buttons.ShopInv,       1, 9)
 
 	AdminUtils.MakeButtonColumn(f, "Minerals", AdminUtils.buttons.Minerals,     2)
-	AdminUtils.MakeButtonColumn(f, "Buildings", AdminUtils.buttons.Buildings,   2, 6)
+	AdminUtils.MakeButtonColumn(f, "Buildings", AdminUtils.buttons.Buildings,   2, 8)
 
 	AdminUtils.MakeButtonColumn(f, "Herbs", AdminUtils.buttons.Herbs,           3)
 
