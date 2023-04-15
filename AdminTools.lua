@@ -3115,8 +3115,10 @@ local function runApp()
 
 	-- Register the key bindings
 	for _, binding in ipairs(AdminUtils.adminToolsBindings) do
-		SetBindingClick(binding.key, binding.buttonName)
+		SetBinding(binding.key, binding.buttonName)
 	end
+	--SaveBindings(GetCurrentBindingSet())
+	
 end
 
 runApp()
