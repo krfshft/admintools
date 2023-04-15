@@ -75,27 +75,28 @@ AdminUtils.buttons = {
 		{ "HeirloomsWrath", "Item_icecrownringc" },
 		{ "HeirloomsLegion", "Item_icecrownringc" },
 		{ "HeirloomUpgrades", "Item_icecrownringc" },		
-		{ "Keys", "Inv_misc_key_08" },
+		{ "Keys", "Inv_misc_key_11" },
 		
 		{ "DropOne", "Spell_shadow_unsummonbuilding", "Abandon current quest (warning: no confirmation)" },
 		{ "DropAll", "Spell_shadow_unsummonbuilding", "Abandon all quests (warning: no confirmation)" },
 		{ "QuestComplete", "Inv_misc_trophy_argent" },
 		{ "HideChat", "Inv_letter_11", "Toggle display of the default chat frame" },
-		{ "Who", "Achievement_guildperk_havegroup-willtravel" },
+		{ "MinimapToggle", "Inv_misc_map03", "Toggle display of the default chat frame" },
+		{ "Who", "Ability_eyeoftheowl" },
 	},
 	Summon = {
-		{ "Ghoul", "Spell_shadow_animatedead" },
 		{ "Imp", "Spell_shadow_summonimp" },
 		{ "Voidwalker", "Spell_shadow_summonvoidwalker" },
 		{ "Succubus", "Spell_shadow_summonsuccubus" },
 		{ "Felhunter", "Spell_shadow_summonfelhunter" },
 		{ "Felguard", "Spell_shadow_summonfelguard" },
-		{ "WaterElemental", "Spell_frost_summonwaterelemental_2" },
-		{ "FeralSpirit", "Spell_nature_spiritwolf" },
 		{ "InfernalWrath", "Spell_shadow_summoninfernal" },
 		{ "InfernalLegion", "Spell_shadow_summoninfernal" },
 		{ "Doomguard1", "Ability_warlock_demonicempowerment" },
 		{ "Doomguard2", "Ability_warlock_demonicempowerment" },
+		{ "Ghoul", "Spell_shadow_animatedead" },
+		{ "WaterElemental", "Spell_frost_summonwaterelemental_2" },
+		{ "FeralSpirit", "Spell_nature_spiritwolf" },
 	},
 	Pet = {
 		{ "TameBeast", "Ability_hunter_beasttaming" },
@@ -136,9 +137,9 @@ AdminUtils.buttons = {
 	PlayerBot = {
 		{ "Summon", "Ability_hunter_beastcall" },
 		{ "Follow", "Ability_hunter_beastcall" },
-		{ "Guard", "Spell_nature_timestop" },
+		{ "Guard", "Ability_rogue_feigndeath" },
 		{ "Stay", "Spell_nature_timestop" },
-		{ "Free", "Spell_nature_timestop" },
+		{ "Free", "Spell_nature_massteleport" },
 		{ "TalkRepairSell", "Inv_gizmo_02" },
 		{ "RPGFull", "Inv_gizmo_02" },
 		{ "RPGLite", "Inv_gizmo_02" },
@@ -175,13 +176,13 @@ AdminUtils.buttons = {
 		{ "Darnassus", "Achievement_zone_darnassus" },
 		{ "Orgrimmar", "Achievement_zone_durotar" },
 		{ "Undercity", "Achievement_zone_tirisfalglades_01" },
-		{ "Thunder Bluff", "Achievement_zone_mulgore_01" },
+		{ "Thunder Bluff", "Spell_arcane_teleportthunderbluff" },
 		{ "Silvermoon", "Achievement_zone_eversongwoods" },
 		{ "Shattrath", "Achievement_zone_terrokar" },
 		{ "Dalaran", "Achievement_zone_crystalsong_01" },
 		{ "GMIsland", "Achievement_zone_easternkingdoms_01" },
-		{ "Waypoint", "Spell_arcane_portalstormwind" },
-		{ "WaypointSet", "Spell_arcane_portalstormwind" },
+		{ "Waypoint", "Spell_arcane_portalexodar" },
+		{ "WaypointSet", "Inv_trinket_naxxramas06" },
 		{ "Return",  "Spell_arcane_portalstormwind" },
 	},
 	TeleSet = {
@@ -449,7 +450,8 @@ AdminUtils.buttonFunctions = {
 			ChatFrameMenuButton:Hide()			
 		end,
 		MinimapToggle = function()
-		
+			-- Calls a function I exposed in my copy of Hide_minimap addon
+			toggleMiniMap()
 		end,
 		SlowWalk = function()
 			AdminUtils.cmd(".modify speed 0.22")
@@ -1030,25 +1032,17 @@ AdminUtils.buttonFunctions = {
 		end,
 		HDCVars = function()
 			SetCVar("violencelevel", 5)
-			SetCVar("overridefarclip", 1)
 			SetCVar("farclip", 1600)
-			SetCVar("horizonfarclip", 6226)
 			SetCVar("groundeffectdensity", 256)
 			SetCVar("groundeffectdist", 140)
-			SetCVar("smallcull", 0)
 			SetCVar("skycloudlod", 3)
-			SetCVar("characterAmbient", 1)
 			SetCVar("spelleffectlevel", 2)
 		end,
 		HDLiteCVars = function()
-			SetCVar("overridefarclip", 1)
 			SetCVar("farclip", 800)
-			SetCVar("horizonfarclip", 3113)
 			SetCVar("groundeffectdensity", 256)
 			SetCVar("groundeffectdist", 140)
-			SetCVar("smallcull", 0)
 			SetCVar("skycloudlod", 3)
-			SetCVar("characterAmbient", 1)
 			SetCVar("spelleffectlevel", 2)
 		end,
 		
