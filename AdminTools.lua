@@ -2926,22 +2926,22 @@ local function BuildOverlay()
 	
 	-- Row 3
 	OverlayButton("ADMINTOOLS_13",  5, -85, overlay, "Tell both PlayerBots and NPCBots to attack your target", 	
-		"Spell_deathknight_bloodpresence",
+		"Ability_Hunter_Pet_Devilsaur",
 		AdminUtils.buttonFunction(nil, "AllBot", "Kill"),
 		"F13"
 	)
 	OverlayButton("ADMINTOOLS_14", 45, -85, overlay, "Summon your bots, tell them to follow you. If you target a dead NPCBot and use this, they will be revived.", 
-		"Spell_deathknight_bloodpresence",
+		"Ability_hunter_beastcall",
 		AdminUtils.buttonFunction(nil, "AllBot", "Return"),
 		"F14"
 	)
 	OverlayButton("ADMINTOOLS_15",  85, -85, overlay, "Places PlayerBot in guard state, places NPCBot in IDLE state", 
-		"Spell_deathknight_bloodpresence",
+		"Ability_rogue_feigndeath",
 		AdminUtils.buttonFunction(nil, "AllBot", "Guard"),
 		"F15"
 	)
 	OverlayButton("ADMINTOOLS_16", 125, -85, overlay, "Places PlayerBot in free state and enabled grind startegy. Does nothing for NPCBots.", 
-		"Spell_deathknight_bloodpresence",
+		"Spell_nature_massteleport",
 		AdminUtils.buttonFunction(nil, "AllBot", "Grind"),
 		"F16"
 	)
