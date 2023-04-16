@@ -2637,6 +2637,13 @@ local function AutorunAddTalents()
 			print("AdminTools: Detected AzerothCore")
 			serverInfoFrame:UnregisterEvent("CHAT_MSG_SYSTEM")
 			serverInfoDetected = true
+
+		elseif string.find(msg, "PraeviusCore") then
+			print("AdminTools: Detected PraeviusCore")
+			serverInfoFrame:UnregisterEvent("CHAT_MSG_SYSTEM")
+			serverInfoDetected = true
+
+
 		end
 	end
 
