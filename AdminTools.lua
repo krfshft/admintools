@@ -1142,21 +1142,25 @@ AdminUtils.buttonFunctions = {
 	},
 	AllBot = {
 		Kill = function()
-			AdminUtils.buttonFunctions.PlayerBot.Kill()
-			AdminUtils.buttonFunctions.NPCBot.Kill()
+			AdminUtils.pcmd('attack')	
+			AdminUtils.pcmd(".npcb command order cast auto_attack mytarget")
 		end,
 		Return = function()
-			AdminUtils.buttonFunctions.PlayerBot.ReturnFollow()
-			AdminUtils.buttonFunctions.NPCBot.ReturnFollow()
+			AdminUtils.pcmd('summon')
+			AdminUtils.pcmd('follow')
+			
+			AdminUtils.cmd(".npcb rec tele")
+			AdminUtils.cmd(".npcb revive")
+			AdminUtils.cmd(".npcb co follow")			
 		end,
 		Guard = function()
-			AdminUtils.buttonFunctions.PlayerBot.Guard()
-			AdminUtils.buttonFunctions.NPCBot.Guard()		
+			AdminUtils.pcmd('guard')
+
+			AdminUtils.cmd(".npcb co standstill")		
 		end,
 		Grind = function()
-			AdminUtils.buttonFunctions.PlayerBot.Free()
+			AdminUtils.pcmd('free')
 			AdminUtils.pcmd("nc +grind")
-			AdminUtils.buttonFunctions.NPCBot.Stay()
 		end,
 	},
 	PlayerBot = {
@@ -1207,6 +1211,7 @@ AdminUtils.buttonFunctions = {
 		end,
 		Free = function()
 			AdminUtils.pcmd('free')
+			AdminUtils.pcmd("nc +grind")
 		end,
 
 	},
@@ -1242,6 +1247,9 @@ AdminUtils.buttonFunctions = {
 		end,
 		npcbUnhide = function()
 			AdminUtils.cmd(".npcb unhide")
+		end,
+		npcbKill = function()
+			AdminUtils.pcmd(".npcb command order cast auto_attack mytarget")
 		end,
 		npcbReturnFollow = function()
 			-- this teleports npcbots to you, like playerbot summon above
@@ -2734,7 +2742,7 @@ local function BuildOverlay()
 
 	local function CreateOverlay()
 		local overlay = CreateFrame("Frame", "AdminToolsOverlay", UIParent)
-		overlay:SetSize(250, 170)
+		overlay:SetSize(250, 174)
 		overlay:SetPoint("CENTER", 330, -85)
 		overlay:SetBackdrop({
 			bgFile = "Interface/Tooltips/UI-Tooltip-Background",
@@ -2920,64 +2928,64 @@ local function BuildOverlay()
 	OverlayButton("ADMINTOOLS_13",  5, -85, overlay, "Tell both PlayerBots and NPCBots to attack your target", 	
 		"Spell_deathknight_bloodpresence",
 		AdminUtils.buttonFunction(nil, "AllBot", "Kill"),
-		"BUTTON13"
+		"F13"
 	)
 	OverlayButton("ADMINTOOLS_14", 45, -85, overlay, "Summon your bots, tell them to follow you. If you target a dead NPCBot and use this, they will be revived.", 
 		"Spell_deathknight_bloodpresence",
 		AdminUtils.buttonFunction(nil, "AllBot", "Return"),
-		"BUTTON14"
+		"F14"
 	)
 	OverlayButton("ADMINTOOLS_15",  85, -85, overlay, "Places PlayerBot in guard state, places NPCBot in IDLE state", 
 		"Spell_deathknight_bloodpresence",
 		AdminUtils.buttonFunction(nil, "AllBot", "Guard"),
-		"BUTTON15"
+		"F15"
 	)
 	OverlayButton("ADMINTOOLS_16", 125, -85, overlay, "Places PlayerBot in free state and enabled grind startegy. Does nothing for NPCBots.", 
 		"Spell_deathknight_bloodpresence",
 		AdminUtils.buttonFunction(nil, "AllBot", "Grind"),
-		"BUTTON16"
+		"F16"
 	)
 	OverlayButton("ADMINTOOLS_17", 165, -85, overlay, "Respawn targeted dead creature", 
 		"Spell_shaman_blessingofeternals",
 		AdminUtils.buttonFunction(nil, "Management", "RespawnCreature"),
-		"BUTTON17"
+		"F17"
 	)
 	OverlayButton("ADMINTOOLS_18", 205, -85, overlay, "Rain", 
 		"Spell_frost_summonwaterelemental",
 		AdminUtils.buttonFunction(nil, "Weather", "LightRain"), 
-		"BUTTON18"
+		"F18"
 	)
 
 	-- Row 4
 	OverlayButton("ADMINTOOLS_19",  5, -125, overlay, "Frost Presence", 	
 		"Spell_deathknight_frostpresence",
 		AdminUtils.buttonFunction(nil, "Action", "FrostPresence"),
-		"BUTTON19"
+		"F19"
 	)
 	OverlayButton("ADMINTOOLS_20", 45, -125, overlay, "Blood Presence", 
 		"Spell_deathknight_bloodpresence",
 		AdminUtils.buttonFunction(nil, "Action", "BloodPresence"),
-		"BUTTON20"
+		"F20"
 	)
 	OverlayButton("ADMINTOOLS_21",  85, -125, overlay, "Unholy Presence", 
 		"Spell_deathknight_unholypresence",
 		AdminUtils.buttonFunction(nil, "Action", "UnholyPresence"),
-		"BUTTON21"
+		"F21"
 	)
 	OverlayButton("ADMINTOOLS_22", 125, -125, overlay, "Draw upon the energies of the fel to transform into a demon", 
 		"Ability_warlock_demonicpower",
 		AdminUtils.buttonFunction(nil, "Action", "Morph"),
-		"BUTTON22"
+		"F22"
 	)
 	OverlayButton("ADMINTOOLS_23", 165, -125, overlay, "Expel the fel energy from your party to return to normal form", 
 		"Ability_hunter_beastwithin",
 		AdminUtils.buttonFunction(nil, "Action", "Unmorph"),
-		"BUTTON23"
+		"F23"
 	)
 	OverlayButton("ADMINTOOLS_24", 205, -125, overlay, "Ignite the air around your body with intense flames", 
 		"Spell_fire_burnout",
 		AdminUtils.buttonFunction(nil, "Action", "Immolate"),
-		"BUTTON24"
+		"F24"
 	)
 end
 
