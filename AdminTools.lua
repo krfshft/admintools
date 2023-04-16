@@ -2133,14 +2133,11 @@ AdminUtils.buttonFunctions = {
 
 
 function AdminUtils.IsClassicClient()
-	local version = GetAddOnMetadata("AdminTools", "X-Interface")
-	local classicVersions = { "1.12", "2.4.3", "3.3.5" }
-	for _, classicVersion in ipairs(classicVersions) do
-		if version == classicVersion then
-			return true
-		end
-	end
-	return false
+    local version = GetBuildInfo()
+    local majorVersion, minorVersion = strsplit(".", version)
+    majorVersion, minorVersion = tonumber(majorVersion), tonumber(minorVersion)
+
+    return (majorVersion < 4) or (majorVersion == 4 and minorVersion <= 3)
 end
 
 
@@ -2636,7 +2633,6 @@ function AdminUtils.buttonFunction(f, buttonType, buttonName)
 	return AdminUtils.buttonFunctions[buttonType][buttonName]
 end
 
-
 -- Automatically add talents each time player logs in. acore doesn't need this
 -- but cmangos does because it deletes invalid talents (or doesn't save them)
 local function AutorunAddTalents()
@@ -2783,7 +2779,7 @@ local function BuildOverlay()
 		if AdminUtils.IsClassicClient() then
 			overlay:EnableKeyboard(true)
 		else
-			overlay:EnableKeyboard(false)
+			overlay:EnableKeyboard(falseF)
 			overlay:SetPropagateKeyboardInput(true)
 		end
 		overlay:SetMovable(true)
@@ -2820,19 +2816,21 @@ local function BuildOverlay()
 		--	return nil
 		--end
 		
-		overlay:SetScript("OnKeyDown", function(self, key)
-			local binding = GetBindingFromClick(key)
-			if binding then
-				AdminUtils.RunBinding(binding, self)
-			end
-		end)
+		--overlay:SetScript("OnKeyDown", function(self, key)
+		--	local binding = GetBindingFromClick(key)
+		--	if binding then
+		--		AdminUtils.RunBinding(binding, self)
+		--	end
+		--end)
 
-		overlay:SetScript("OnKeyUp", function(self, key)
-			local binding = GetBindingFromClick(key)
-			if binding then
-				AdminUtils.RunBinding(binding, self)
-			end
-		end)
+		--overlay:SetScript("OnKeyUp", function(self, key)
+		--	local binding = GetBindingFromClick(key)
+		--	if binding then
+		--		AdminUtils.RunBinding(binding, self)
+		--	end
+		--end)
+		
+		
 		overlay:SetAlpha(0)
 		return overlay
 	end
@@ -3253,7 +3251,7 @@ local function runApp()
 		
 	-- Attempt to write my preferred settings for other addons
 	--WriteOtherAddonSettings()
-
+	
 	-- Adds a bunch of talents from other classes automatically on login. IMBA
 	AutorunAddTalents()
 
@@ -3263,7 +3261,6 @@ local function runApp()
 	for _, binding in ipairs(AdminUtils.adminToolsBindings) do
 		SetBinding(binding.key, binding.buttonName)
 	end
-	--SaveBindings(GetCurrentBindingSet())
 	
 end
 
