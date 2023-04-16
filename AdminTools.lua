@@ -130,18 +130,20 @@ AdminUtils.buttons = {
 		{ "Prospecting", "Inv_jewelcrafting_gem_38" },
 	},
 	PlayerBot = {
-		{ "Summon", "Ability_hunter_beastcall" },
-		{ "Guard", "Ability_rogue_feigndeath" },
-		{ "Stay", "Spell_nature_timestop" },
-		{ "Free", "Spell_nature_massteleport" },
 		{ "RPGFull", "Inv_shirt_purple_01" },
 		{ "RPGLite", "Inv_shirt_grey_01" },
 		{ "RPGOff", "Inv_shirt_black_01" },
+		{ "RTSC", "Inv_gizmo_02" },
+
 		{ "TalkRepairSell", "Achievement_reputation_01" },
 		{ "Talk", "Achievement_character_human_female" },
 		{ "Repair", "Inv_hammer_20" },
 		{ "Sell", "Inv_misc_coin_02" },
-		{ "RTSC", "Inv_gizmo_02" },
+
+		{ "Summon", "Ability_hunter_beastcall" },
+		{ "Guard", "Ability_rogue_feigndeath" },
+		{ "Stay", "Spell_nature_timestop" },
+		{ "Free", "Spell_nature_massteleport" },
 	},	
 	NPCBot = {
 		{ "npcbMerchant", "Inv_misc_grouplooking" },
@@ -232,7 +234,7 @@ AdminUtils.buttons = {
 
 		{ "Thrall", "Inv_misc_grouplooking" },
 		{ "Sylvanas", "Achievement_leader_sylvanas" },
-		{ "CairnBloodhoof", "Achievement_leader_cairne-bloodhoof" },
+		{ "CairnBloodhoof", "Inv_misc_grouplooking" },
 	},
 	ShopInv = {
 		{ "InvMinerals", "Inv_misc_bag_enchantedrunecloth" },
