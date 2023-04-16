@@ -2131,32 +2131,54 @@ AdminUtils.buttonFunctions = {
 	},
 }
 
+
+function AdminUtils.IsClassicClient()
+	local version = GetAddOnMetadata("AdminTools", "X-Interface")
+	local classicVersions = { "1.12", "2.4.3", "3.3.5" }
+	for _, classicVersion in ipairs(classicVersions) do
+		if version == classicVersion then
+			return true
+		end
+	end
+	return false
+end
+
+
 AdminUtils.adminToolsBindings = {
-	{key = "F1", buttonName = "ADMINTOOLS_1_BINDING"},
-	{key = "F2", buttonName = "ADMINTOOLS_2_BINDING"},
-	{key = "F3", buttonName = "ADMINTOOLS_3_BINDING"},
-	{key = "F4", buttonName = "ADMINTOOLS_4_BINDING"},
-	{key = "F5", buttonName = "ADMINTOOLS_5_BINDING"},
-	{key = "F6", buttonName = "ADMINTOOLS_6_BINDING"},
-	{key = "F7", buttonName = "ADMINTOOLS_7_BINDING"},
-	{key = "F8", buttonName = "ADMINTOOLS_8_BINDING"},
-	{key = "F9", buttonName = "ADMINTOOLS_9_BINDING"},
-	{key = "F10", buttonName = "ADMINTOOLS_10_BINDING"},
-	{key = "F11", buttonName = "ADMINTOOLS_11_BINDING"},
-	{key = "F12", buttonName = "ADMINTOOLS_12_BINDING"},
-	{key = "F13", buttonName = "ADMINTOOLS_13_BINDING"},
-	{key = "F14", buttonName = "ADMINTOOLS_14_BINDING"},
-	{key = "F15", buttonName = "ADMINTOOLS_15_BINDING"},
-	{key = "F16", buttonName = "ADMINTOOLS_16_BINDING"},
-	{key = "F17", buttonName = "ADMINTOOLS_17_BINDING"},
-	{key = "F18", buttonName = "ADMINTOOLS_18_BINDING"},
-	{key = "F19", buttonName = "ADMINTOOLS_19_BINDING"},
-	{key = "F20", buttonName = "ADMINTOOLS_20_BINDING"},
-	{key = "F21", buttonName = "ADMINTOOLS_21_BINDING"},
-	{key = "F22", buttonName = "ADMINTOOLS_22_BINDING"},
-	{key = "F23", buttonName = "ADMINTOOLS_23_BINDING"},
-	{key = "F24", buttonName = "ADMINTOOLS_24_BINDING"},
+	{ key = AdminUtils.IsClassicClient() and "F1" or "F1", name = "ADMINTOOLS_1_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F2" or "F2", name = "ADMINTOOLS_2_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F3" or "F3", name = "ADMINTOOLS_3_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F4" or "F4", name = "ADMINTOOLS_4_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F5" or "F5", name = "ADMINTOOLS_5_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F6" or "F6", name = "ADMINTOOLS_6_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F7" or "F7", name = "ADMINTOOLS_7_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F8" or "F8", name = "ADMINTOOLS_8_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F9" or "F9", name = "ADMINTOOLS_9_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F10" or "F10", name = "ADMINTOOLS_10_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F11" or "F11", name = "ADMINTOOLS_11_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F12" or "F12", name = "ADMINTOOLS_12_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F13" or "F13", name = "ADMINTOOLS_13_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F14" or "F14", name = "ADMINTOOLS_14_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F15" or "F15", name = "ADMINTOOLS_15_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F16" or "F16", name = "ADMINTOOLS_16_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F17" or "F17", name = "ADMINTOOLS_17_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F18" or "F18", name = "ADMINTOOLS_18_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F19" or "F19", name = "ADMINTOOLS_19_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F20" or "F20", name = "ADMINTOOLS_20_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F21" or "F21", name = "ADMINTOOLS_21_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F22" or "F22", name = "ADMINTOOLS_22_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F23" or "F23", name = "ADMINTOOLS_23_BINDING" },
+	{ key = AdminUtils.IsClassicClient() and "F24" or "F24", name = "ADMINTOOLS_24_BINDING" },
 }
+
+if not AdminUtils.IsClassicClient() then
+    for i = 1, 24 do
+        local functionKeyName = "F" .. i
+        local bindingName = "ADMINTOOLS_" .. i .. "_BINDING"
+        SetBinding(functionKeyName, bindingName)
+    end
+end
+
 
 -- Localized Keybinding Names
 BINDING_HEADER_ADMINTOOLS = "Admin Tools";
@@ -2361,7 +2383,6 @@ function AdminUtils.RunBinding(binding, target)
 		target:GetParent().secureButtons[24]:Click()
 	end
 end
-
 
 function AdminUtils.AddVendorItems(items)
 	for idx = 1, #items do
@@ -2642,8 +2663,6 @@ local function AutorunAddTalents()
 			print("AdminTools: Detected PraeviusCore")
 			serverInfoFrame:UnregisterEvent("CHAT_MSG_SYSTEM")
 			serverInfoDetected = true
-
-
 		end
 	end
 
@@ -2765,17 +2784,34 @@ local function BuildOverlay()
 		overlay:SetScript("OnDragStart", overlay.StartMoving)
 		overlay:SetScript("OnDragStop", overlay.StopMovingOrSizing)
 		
-		local function GetBindingFromClick(key)
-			local numBindings = 24
-			for i = 1, numBindings do
-				local bindingName = "ADMINTOOLS_" .. i .. "_BINDING"
-				local bindingKey = GetBindingKey(bindingName)
-				if bindingKey and bindingKey == key then
-					return bindingName
+		function GetBindingFromClick(key)
+			if AdminUtils.IsClassicClient() then
+				local keyID = GetBindingKey("CLICK " .. key .. ":LeftButton")
+				if keyID then
+					return "CLICK " .. key .. ":LeftButton"
+				end
+			else
+				for _, binding in ipairs(AdminUtils.adminToolsBindings) do
+					local bindingKey = GetBindingKey(binding.name)
+					if bindingKey == key then
+						return binding.name
+					end
 				end
 			end
 			return nil
 		end
+
+		--local function GetBindingFromClick(key)
+		--	local numBindings = 24
+		--	for i = 1, numBindings do
+		--		local bindingName = "ADMINTOOLS_" .. i .. "_BINDING"
+		--		local bindingKey = GetBindingKey(bindingName)
+		--		if bindingKey and bindingKey == key then
+		--			return bindingName
+		--		end
+		--	end
+		--	return nil
+		--end
 		
 		overlay:SetScript("OnKeyDown", function(self, key)
 			local binding = GetBindingFromClick(key)
@@ -2796,10 +2832,12 @@ local function BuildOverlay()
 	local overlay = CreateOverlay()
 
 	local function OverlayButton(name, hOffset, vOffset, overlay, tooltipText, iconPath, customFunc, buttonBind)
-		-- Function to create keybinding for a button
-		local function SetButtonKeybinding(buttonName, key, customAction)
-			SetBinding(key, nil)
-			SetBinding(key, customAction)
+		function SetButtonKeybinding(name, key, macro)
+			if AdminUtils.IsClassicClient() then
+				SetBindingClick(key, macro)
+			else
+				SetBinding(key, name)
+			end
 		end
 
 		-- Create the button
