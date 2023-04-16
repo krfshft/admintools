@@ -2171,6 +2171,7 @@ AdminUtils.adminToolsBindings = {
 	{ key = AdminUtils.IsClassicClient() and "F24" or "F24", name = "ADMINTOOLS_24_BINDING" },
 }
 
+-- Bind function key buttons in newer wow versions
 if not AdminUtils.IsClassicClient() then
     for i = 1, 24 do
         local functionKeyName = "F" .. i
@@ -2779,6 +2780,12 @@ local function BuildOverlay()
 		overlay:SetBackdropColor(0, 0, 0, 0.8)
 		overlay:SetBackdropBorderColor(0.8, 0.8, 0.8, 0.8)
 		overlay:EnableMouse(true)
+		if AdminUtils.IsClassicClient() then
+			overlay:EnableKeyboard(true)
+		else
+			overlay:EnableKeyboard(false)
+			overlay:SetPropagateKeyboardInput(true)
+		end
 		overlay:SetMovable(true)
 		overlay:RegisterForDrag("LeftButton")
 		overlay:SetScript("OnDragStart", overlay.StartMoving)
