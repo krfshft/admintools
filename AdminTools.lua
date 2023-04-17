@@ -2172,6 +2172,7 @@ AdminUtils.adminToolsBindings = {
 
 -- Localized Keybinding Names
 BINDING_HEADER_ADMINTOOLS = "Admin Tools";
+BINDING_CATEGORY_ADMINTOOLS = "Admin Tools";
 BINDING_NAME_ADMINTOOLS_1_BINDING = "Action 1";
 BINDING_NAME_ADMINTOOLS_2_BINDING = "Action 2";
 BINDING_NAME_ADMINTOOLS_3_BINDING = "Action 3";
@@ -2203,12 +2204,9 @@ function AdminUtils.RegisterKeyBindings()
 			SetBindingClick(binding.key, binding.name)
 		end
 	else
+		-- For 7.3.5
 		for _, binding in ipairs(AdminUtils.adminToolsBindings) do
-			local name = binding.name
-			_G["BINDING_NAME_" .. name] = name
-			if not GetBindingKey(name) then
-				SetBinding(name, binding.key)
-			end
+			CreateBinding(binding.name, binding.key, nil, BINDING_CATEGORY_ADMINTOOLS)
 		end
 	end
 end
