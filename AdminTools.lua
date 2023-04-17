@@ -1178,13 +1178,13 @@ AdminUtils.buttonFunctions = {
 	},
 	PlayerBot = {
 		RPGFull = function()
-			AdminUtils.pcmd('nc +dps assist,+grind,+rpg,+rpg explore,+rpg vendor,+rpg craft,+rpg explore,+rpg maintenance,+rpg bg,+rpg player,+rpg quest,+mount,+quest,+chat,+emote,-gather,-duel,+loot')
+			AdminUtils.pcmd('nc +dps assist,+grind,+rpg,+rpg explore,+rpg vendor,+rpg craft,+rpg maintenance,+rpg bg,+rpg player,+rpg quest,+travel,+mount,+quest,+chat,+emote,-gather,-duel,+loot')
 		end,
 		RPGLite = function()
-			AdminUtils.pcmd('nc +dps assist,+grind,-rpg,-rpg explore,+rpg vendor,-rpg craft,-rpg explore,+rpg maintenance,-rpg bg,-rpg player,-rpg quest,-mount,-quest,-chat,-emote,-gather,-duel,-loot')
+			AdminUtils.pcmd('nc +dps assist,+grind,-rpg,-rpg explore,+rpg vendor,-rpg craft,+rpg maintenance,-rpg bg,-rpg player,-rpg quest,-travel,-mount,-quest,-chat,-emote,-gather,-duel,-loot')
 		end,
 		RPGOff = function()
-			AdminUtils.pcmd('nc +dps assist,-grind,-rpg,-rpg explore,-rpg vendor,-rpg craft,-rpg explore,-rpg maintenance,-rpg bg,-rpg player,-rpg quest,-mount,-quest,-chat,-emote,-gather,-duel,-loot')
+			AdminUtils.pcmd('nc +dps assist,-grind,-rpg,-rpg explore,-rpg vendor,-rpg craft,-rpg maintenance,-rpg bg,-rpg player,-rpg quest,-travel,-mount,-quest,-chat,-emote,-gather,-duel,-loot')
 		end,
 		RTSC = function()
 			AdminUtils.pcmd('rtsc')
@@ -1224,7 +1224,7 @@ AdminUtils.buttonFunctions = {
 		end,
 		Free = function()
 			AdminUtils.pcmd('free')
-			AdminUtils.pcmd("nc +grind")
+			AdminUtils.pcmd("nc +grind,+rpg maintenance,+rpg vendor,+travel")
 		end,
 
 	},
@@ -2879,7 +2879,7 @@ local function BuildOverlay()
 
 		-- Set keybinding for the button
 		if buttonBind ~= nil then
-			local bindName = name .. "_BINDING"
+			local bindName = name
 			SetButtonKeybinding(bindName, buttonBind, "MACRO " .. bindName .. "Secure")
 		end
 	end
@@ -2914,14 +2914,9 @@ local function BuildOverlay()
 		ContentMenu2, 
 		"F3"
 	)
---	OverlayButton("AdminOverlayBtn4", 125, -5, overlay, "Open AdminTools Config Panel", 
---		"Spell_frost_summonwaterelemental",
---		ConfigMenu, 
---		"F4"
---	)
-	OverlayButton("ADMINTOOLS_4", 125, -5, overlay, "Rain", 
-		"Spell_frost_summonwaterelemental",
-		AdminUtils.buttonFunction(nil, "Weather", "LightRain"), 
+	OverlayButton("ADMINTOOLS_4", 125, -5, overlay, "Open AdminTools Config Panel", 
+		"Inv_misc_wrench_01",
+		ConfigMenu, 
 		"F4"
 	)
 	OverlayButton("ADMINTOOLS_5", 165, -5, overlay, "Enable GM mode and flying", 
@@ -3109,11 +3104,13 @@ local function WriteOtherAddonSettings()
 end
 
 function AdminTools_1()
+	print("admintools_1 old func")
 	ActionsMenu()
 end
 
 function AdminTools_2()
-	ContentMenu()
+	print("admintools_2 old func")
+	--ContentMenu()
 end
 
 function AdminTools_3()
@@ -3157,12 +3154,15 @@ function AdminTools_12()
 end
 
 function AdminTools_ADMINTOOLS_1()
+	print("admintools_1")
 end
 
 function AdminTools_ADMINTOOLS_2()
+	print("admintools_2")
 end
 
 function AdminTools_ADMINTOOLS_3()
+	print("admintools_1")
 end
 
 function AdminTools_ADMINTOOLS_4()
@@ -3251,9 +3251,9 @@ local function runApp()
 	local overlay = BuildOverlay()
 
 	-- Register the key bindings
-	for _, binding in ipairs(AdminUtils.adminToolsBindings) do
-		SetBinding(binding.key, binding.buttonName)
-	end
+	--for _, binding in ipairs(AdminUtils.adminToolsBindings) do
+	--	SetBinding(binding.key, binding.buttonName)
+	--end
 	
 end
 
