@@ -2168,14 +2168,6 @@ AdminUtils.adminToolsBindings = {
 	{ key = AdminUtils.IsClassicClient() and "F24" or "F24", name = "ADMINTOOLS_24_BINDING" },
 }
 
--- Bind function key buttons in newer wow versions
-if not AdminUtils.IsClassicClient() then
-    for i = 1, 24 do
-        local functionKeyName = "F" .. i
-        local bindingName = "ADMINTOOLS_" .. i .. "_BINDING"
-        SetBinding(functionKeyName, bindingName)
-    end
-end
 
 
 -- Localized Keybinding Names
@@ -2204,6 +2196,35 @@ BINDING_NAME_ADMINTOOLS_21_BINDING = "Action 21";
 BINDING_NAME_ADMINTOOLS_22_BINDING = "Action 22";
 BINDING_NAME_ADMINTOOLS_23_BINDING = "Action 23";
 BINDING_NAME_ADMINTOOLS_24_BINDING = "Action 24";
+
+function AdminUtils.RegisterKeyBindings()
+	if AdminUtils.IsClassicClient() then
+		for _, binding in ipairs(AdminUtils.adminToolsBindings) do
+			SetBindingClick(binding.key, binding.name)
+		end
+	else
+		for _, binding in ipairs(AdminUtils.adminToolsBindings) do
+			local name = binding.name
+			_G["BINDING_NAME_" .. name] = name
+			if not GetBindingKey(name) then
+				SetBinding(name, binding.key)
+			end
+		end
+	end
+end
+
+
+if not AdminUtils.IsClassicClient() then
+    local function AdminToolsOnEvent(self, event, ...)
+        if event == "UPDATE_BINDINGS" then
+            AdminUtils.RegisterKeyBindings()
+        end
+    end
+
+    local frame = CreateFrame("Frame")
+    frame:RegisterEvent("UPDATE_BINDINGS")
+    frame:SetScript("OnEvent", AdminToolsOnEvent)
+end
 
 local waitTable = {};
 local waitFrame = nil;
