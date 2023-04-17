@@ -431,6 +431,8 @@ AdminUtils.buttonFunctions = {
 				48161, 58921,
 				-- Uber heal
 				1908,
+				-- Grow, Shrink
+				18209, 19210,
 
 			}
 			for idx = 1, #spells do
@@ -466,8 +468,14 @@ AdminUtils.buttonFunctions = {
 					end
 				end
 			end
-			FriendsMicroButton:Hide()
-			ChatFrameMenuButton:Hide()			
+
+			-- classic wow
+			if FriendsMicroButton ~= nil then FriendsMicroButton:Hide() end
+			if ChatFrameMenuButton ~= nil then ChatFrameMenuButton:Hide() end
+			
+			-- modern
+			if ChatFrameMenuButton ~= nil then ChatFrameMenuButton:Hide() end
+			if QuickJoinToastButton ~= nil then QuickJoinToastButton:Hide() end
 		end,
 		MinimapToggle = function()
 			-- Calls a function I exposed in my copy of Hide_minimap addon
@@ -2198,36 +2206,19 @@ BINDING_NAME_ADMINTOOLS_22_BINDING = "Action 22";
 BINDING_NAME_ADMINTOOLS_23_BINDING = "Action 23";
 BINDING_NAME_ADMINTOOLS_24_BINDING = "Action 24";
 
-function AdminUtils.RegisterKeyBindings()
-	if AdminUtils.IsClassicClient() then
-		for _, binding in ipairs(AdminUtils.adminToolsBindings) do
-			SetBindingClick(binding.key, binding.name)
-		end
-	else
-		-- For 7.3.5
-		for _, binding in ipairs(AdminUtils.adminToolsBindings) do
-			CreateBinding(binding.name, binding.key, nil, BINDING_CATEGORY_ADMINTOOLS)
-		end
-	end
-end
+BINDING_NAME_ADMINTOOLS_1 = "Action 1";
+BINDING_NAME_ADMINTOOLS_2 = "Action 2";
+BINDING_NAME_ADMINTOOLS_3 = "Action 3";
+BINDING_NAME_ADMINTOOLS_4 = "Action 4";
+BINDING_NAME_ADMINTOOLS_5 = "Action 5";
+BINDING_NAME_ADMINTOOLS_6 = "Action 6";
+BINDING_NAME_ADMINTOOLS_7 = "Action 7";
+BINDING_NAME_ADMINTOOLS_8 = "Action 8";
+BINDING_NAME_ADMINTOOLS_9 = "Action 9";
+BINDING_NAME_ADMINTOOLS_10 = "Action 10";
+BINDING_NAME_ADMINTOOLS_11 = "Action 11";
+BINDING_NAME_ADMINTOOLS_12 = "Action 12"
 
-if not AdminUtils.IsClassicClient() then
-	-- Set the binding names
-	for _, binding in ipairs(AdminUtils.adminToolsBindings) do
-		_G["BINDING_NAME_" .. binding.name] = binding.name
-	end
-
-
-    local function AdminToolsOnEvent(self, event, ...)
-        if event == "UPDATE_BINDINGS" then
-            AdminUtils.RegisterKeyBindings()
-        end
-    end
-
-    local frame = CreateFrame("Frame")
-    frame:RegisterEvent("UPDATE_BINDINGS")
-    frame:SetScript("OnEvent", AdminToolsOnEvent)
-end
 
 local waitTable = {};
 local waitFrame = nil;
@@ -2828,33 +2819,6 @@ local function BuildOverlay()
 			return nil
 		end
 
-		--local function GetBindingFromClick(key)
-		--	local numBindings = 24
-		--	for i = 1, numBindings do
-		--		local bindingName = "ADMINTOOLS_" .. i .. "_BINDING"
-		--		local bindingKey = GetBindingKey(bindingName)
-		--		if bindingKey and bindingKey == key then
-		--			return bindingName
-		--		end
-		--	end
-		--	return nil
-		--end
-		
-		--overlay:SetScript("OnKeyDown", function(self, key)
-		--	local binding = GetBindingFromClick(key)
-		--	if binding then
-		--		AdminUtils.RunBinding(binding, self)
-		--	end
-		--end)
-
-		--overlay:SetScript("OnKeyUp", function(self, key)
-		--	local binding = GetBindingFromClick(key)
-		--	if binding then
-		--		AdminUtils.RunBinding(binding, self)
-		--	end
-		--end)
-		
-		
 		overlay:SetAlpha(0)
 		return overlay
 	end
