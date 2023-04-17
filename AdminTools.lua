@@ -2899,17 +2899,17 @@ local function BuildOverlay()
 	
 	
 	-- Row 1
-	OverlayButton("AdminOverlayBtn1",  5, -5, overlay, "Open AdminTools Actions Panel", 	
+	OverlayButton("ADMINTOOLS_1",  5, -5, overlay, "Open AdminTools Actions Panel", 	
 		"Ability_rogue_tricksofthetrade",
 		ActionsMenu, 
 		"F1"
 	)
-	OverlayButton("AdminOverlayBtn2", 45, -5, overlay, "Open AdminTools Content Panel", 
+	OverlayButton("ADMINTOOLS_2", 45, -5, overlay, "Open AdminTools Content Panel", 
 		"Ability_rogue_tricksofthetrade",
 		ContentMenu, 
 		"F2"
 	)
-	OverlayButton("AdminOverlayBtn3",  85, -5, overlay, "Open AdminTools Content Panel 2", 
+	OverlayButton("ADMINTOOLS_3",  85, -5, overlay, "Open AdminTools Content Panel 2", 
 		"Ability_rogue_tricksofthetrade",
 		ContentMenu2, 
 		"F3"
@@ -2919,49 +2919,49 @@ local function BuildOverlay()
 --		ConfigMenu, 
 --		"F4"
 --	)
-	OverlayButton("AdminOverlayBtn4", 125, -5, overlay, "Rain", 
+	OverlayButton("ADMINTOOLS_4", 125, -5, overlay, "Rain", 
 		"Spell_frost_summonwaterelemental",
 		AdminUtils.buttonFunction(nil, "Weather", "LightRain"), 
 		"F4"
 	)
-	OverlayButton("AdminOverlayBtn5", 165, -5, overlay, "Enable GM mode and flying", 
+	OverlayButton("ADMINTOOLS_5", 165, -5, overlay, "Enable GM mode and flying", 
 		"Ability_vanish",
 		AdminUtils.buttonFunction(nil, "Action", "Fly"), 
 		"F5"
 	)
-	OverlayButton("AdminOverlayBtn6", 205, -5, overlay, "Disable GM mode and flying", 
+	OverlayButton("ADMINTOOLS_6", 205, -5, overlay, "Disable GM mode and flying", 
 		"Ability_vanish",
 		AdminUtils.buttonFunction(nil, "Action", "Land"), 
 		"F6"
 	)
 
 	-- Row 2
-	OverlayButton("AdminOverlayBtn7", 5, -45, overlay, "Walk slowly, barely moving at all", 
+	OverlayButton("ADMINTOOLS_7", 5, -45, overlay, "Walk slowly, barely moving at all", 
 		"Ability_rogue_sprint",
 		AdminUtils.buttonFunction(nil, "Action", "SlowWalk"), 
 		"F7"
 	)
-	OverlayButton("AdminOverlayBtn8", 45, -45, overlay, "Walk normally", 
+	OverlayButton("ADMINTOOLS_8", 45, -45, overlay, "Walk normally", 
 		"Ability_rogue_sprint",
 		AdminUtils.buttonFunction(nil, "Action", "Walk"), 
 		"F8"
 	)
-	OverlayButton("AdminOverlayBtn9", 85, -45, overlay, "Powerwalk", 
+	OverlayButton("ADMINTOOLS_9", 85, -45, overlay, "Powerwalk", 
 		"Ability_rogue_sprint",
 		AdminUtils.buttonFunction(nil, "Action", "FastWalk"), 
 		"F9"
 	)
-	OverlayButton("AdminOverlayBtn10", 125, -45, overlay, "Jog", 
+	OverlayButton("ADMINTOOLS_10", 125, -45, overlay, "Jog", 
 		"Ability_rogue_sprint",
 		AdminUtils.buttonFunction(nil, "Action", "Jog"), 
 		"F10"
 	)
-	OverlayButton("AdminOverlayBtn11", 165, -45, overlay, "Dash", 
+	OverlayButton("ADMINTOOLS_n11", 165, -45, overlay, "Dash", 
 		"Spell_fire_burningspeed",
 		AdminUtils.buttonFunction(nil, "Action", "Dash"), 
 		"F11"
 	)
-	OverlayButton("AdminOverlayBtn12", 205, -45, overlay, "Toggle Stealth", 
+	OverlayButton("ADMINTOOLS_12", 205, -45, overlay, "Toggle Stealth", 
 		"Ability_stealth",
 		AdminUtils.buttonFunction(nil, "Action", "Stealth"), 
 		"F12"
