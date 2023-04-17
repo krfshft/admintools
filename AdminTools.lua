@@ -409,6 +409,7 @@ AdminUtils.buttons = {
 			"Delete the most recently added gobject (warning: no confirmation)" },
 		{ "HDCVars", "Inv_gizmo_01", "Sets game engine settings for high view distance and foliage density" },
 		{ "HDLiteCVars", "Inv_gizmo_01", "Sets game engine settings for high view distance and foliage density" },
+		{ "HDCVarsLegion", "Inv_gizmo_01", "Sets game engine settings for high graphics quality on the legion client" },
 	},
 }
 
@@ -2109,6 +2110,8 @@ AdminUtils.buttonFunctions = {
 			lastObjectId = 0
 		end,
 		HDCVars = function()
+			-- Changing in game graphics settings overwrites these (some? all? dunno)
+			-- I assume there is no need for a resetting function
 			SetCVar("violencelevel", 5)
 			SetCVar("farclip", 1600)
 			SetCVar("groundeffectdensity", 256)
@@ -2122,6 +2125,50 @@ AdminUtils.buttonFunctions = {
 			SetCVar("groundeffectdist", 140)
 			SetCVar("skycloudlod", 3)
 			SetCVar("spelleffectlevel", 2)
+		end,
+		HDCVarsLegion = function()
+			SetCVar('overridefarclip', 1)
+			SetCVar('horizonfarclip', 6226)
+			SetCVar('horizonStart', 24000)
+			SetCVar('farclip', 24000)
+			SetCVar('terrainLodDist', 2000)
+			SetCVar('groundeffectdensity', 256)
+			SetCVar('groundEffectDist', 500)
+			SetCVar('groundEffectFade', 600)
+
+			SetCVar('doodadLodDist', 2000)
+			SetCVar('shadowMode', 3)
+			SetCVar('shadowTextureSize', 2048)
+			SetCVar('smallcull', 0)
+			SetCVar('skycloudlod', 3)
+			SetCVar('extshadowquality', 5)
+			SetCVar('particleDensity', 100)
+			SetCVar('particleMTDensity', 100)
+			SetCVar('showfootprints', 1)
+
+			SetCVar('showfootprintparticles', 1)
+			SetCVar('environmentDetail', 150)
+			SetCVar('terrainMipLevel', 0)
+			SetCVar('worldBaseMip', 0)
+			SetCVar('WeatherDensity', 3)
+			SetCVar('detailDoodadAlpha', 100)
+			SetCVar('characterAmbient', 1)
+
+			SetCVar('ffxGlow', 1)
+			SetCVar('ffxDeath', 1)
+			SetCVar('reflectionMode', 3)
+			SetCVar('rippleDetail', 3)
+			SetCVar('sunshafts', 2)
+			SetCVar('spellEffectLevel', 62)
+
+			SetCVar('componentTextureLevel', 0)
+			SetCVar('componentSpecular', 1)
+			SetCVar('compenentEmissive', 1)
+			SetCVar('lodObjectMinSize', 1000)
+			SetCVar('lodObjectCullSize', 100)
+			SetCVar('lodObjectCullDist', 200)
+			SetCVar('lodObjectFadeScale', 300)
+			SetCVar('SSAODistance', 750)
 		end,
 	},
 	Addons = {
