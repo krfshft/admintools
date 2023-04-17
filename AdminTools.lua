@@ -2213,8 +2213,13 @@ function AdminUtils.RegisterKeyBindings()
 	end
 end
 
-
 if not AdminUtils.IsClassicClient() then
+	-- Set the binding names
+	for _, binding in ipairs(AdminUtils.adminToolsBindings) do
+		_G["BINDING_NAME_" .. binding.name] = binding.name
+	end
+
+
     local function AdminToolsOnEvent(self, event, ...)
         if event == "UPDATE_BINDINGS" then
             AdminUtils.RegisterKeyBindings()
