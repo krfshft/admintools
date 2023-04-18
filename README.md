@@ -166,8 +166,8 @@ Left Trigger (hold) = Activate page 1  (left side actions)\
 Right Trigger (hold) = Activate page 2 (right side actions)\
 Left Shoulder button (hold) Activate page 3 (menu actions)\
 Right Trigger (hold) + Left Trigger (hold) Activate page 4 (not used yet)\
-**Left trigger "release" = Left mouse click** Because this fires on a keyup event this left click bind cannot be used to click and drag things, but it is still useful to have a left click option that is on the main layer.
-Right Shoulder button = "Loot Combo" This rewasd combination hits semicolon, the exit out of mouselook mode, right clicks to loot the target of the cursor. waits  50ms to give looting action chance to happen, then hits semicolon again to return the mouselook mode. This button is the sauce that makes the mode convenient to play in.
+**Left trigger "release" = Left mouse click** Because this fires on a keyup event this left click bind cannot be used to click and drag things, but it is still useful to have a left click option that is on the main layer.\
+Right Shoulder button = "Loot Combo" This rewasd combination hits semicolon, the exit out of mouselook mode, right clicks to loot the target of the cursor. waits  50ms to give looting action chance to happen, then hits semicolon again to return the mouselook mode. This button is the sauce that makes the mode convenient to play in.\
 Right Shoulder button (hold) = Similar to the Loot Combo above, but with one difference: it uses the left click instead of right click. Let's you click things and change selection target without leaving mouse look mode.
 
 #### Page 1 - Left side actions - While holding Left Trigger

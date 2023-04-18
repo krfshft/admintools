@@ -3163,14 +3163,14 @@ local function BuildOverlay()
 	local overlay = CreateOverlay()
 
 	-- Row 1
-	OverlayButton("ADMINTOOLS_1",  5, -5, overlay, "Open AdminTools Actions Panel", 	
-		"Ability_rogue_tricksofthetrade",
-		ActionsMenu, 
-		"F1"
-	)
-	OverlayButton("ADMINTOOLS_2", 45, -5, overlay, "Open AdminTools Content Panel", 
+	OverlayButton("ADMINTOOLS_1",  5, -5, overlay, "Open AdminTools Content Panel", 	
 		"Ability_rogue_tricksofthetrade",
 		ContentMenu, 
+		"F1"
+	)
+	OverlayButton("ADMINTOOLS_2", 45, -5, overlay, "Open AdminTools Actions Panel", 
+		"Ability_rogue_tricksofthetrade",
+		ActionsMenu,
 		"F2"
 	)
 
