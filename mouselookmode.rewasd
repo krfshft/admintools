@@ -1739,8 +1739,8 @@
       "macros": [
         {
           "keyboard": {
-            "buttonId": 60,
-            "description": "DIK_F2"
+            "buttonId": 59,
+            "description": "DIK_F1"
           }
         }
       ]
@@ -1759,8 +1759,8 @@
       "macros": [
         {
           "keyboard": {
-            "buttonId": 59,
-            "description": "DIK_F1"
+            "buttonId": 60,
+            "description": "DIK_F2"
           }
         }
       ]

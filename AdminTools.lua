@@ -3227,7 +3227,7 @@ local function BuildOverlay()
 		AdminUtils.buttonFunction(nil, "Action", "Jog"), 
 		"F10"
 	)
-	OverlayButton("ADMINTOOLS_n11", 165, -45, overlay, "Dash", 
+	OverlayButton("ADMINTOOLS_11", 165, -45, overlay, "Dash", 
 		"Spell_fire_burningspeed",
 		AdminUtils.buttonFunction(nil, "Action", "Dash"), 
 		"F11"
