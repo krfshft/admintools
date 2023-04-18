@@ -22,7 +22,7 @@ I'm not sure atm, but suggestions for new buttons will be welcomed.
 4. New Character Startup buttons. I find myself setting up a lot of alts. And PlayerBots compounds the issue by having me also create multiple bot party members for each alt. These buttons address this with things like "add starter gear for wrath/legion," "add heirlooms for wrath/legion."
 5. Change the weather. In order to work in AzerothCore and PraeviusCore, you will need to apply the weather.sql file from sql patches. cmangos claims you can't change weather in zones without weather records but still changes it anyways.
 6. Button some skills that can be used from other classes, such as Warlock pets (including Doomguard and Infernal!), Warlock Metamorphosis, FrostPath and a Douse button to disable Immolation aura (which I need because I set the duration of Immolation Aura to infinite in my server). Will add more over time.
-7. GM buttons, such as Grow/Shrink, Uber heal over Time, A permanent Charm spell that lasts until logout/travel, and an upgraded version of Tame Beast.
+7. GM buttons, such as Grow/Shrink, Uber Heal Over Time, a permanent Charm spell that lasts until logout/travel, and an upgraded version of Tame Beast.
 8. Random other useful buttons: toggle minimap (requires Hide_Minimap addon for 3.3.5), toggle chat window, bring up Who for current zone, any new thing that would require a keyboard to do would go here.
 
 ## Content Panel 1 "Static Panel"
