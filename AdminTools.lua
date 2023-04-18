@@ -49,16 +49,17 @@ AdminUtils.buttons = {
 		{ "Shrink", "Inv_misc_toy_04" },
 		{ "UberHeal", "Spell_holy_auramastery" },
 		{ "Dispell", "Ability_hunter_beastwithin" },
-		--{ "Morph", "Ability_warlock_demonicpower" },
-		--{ "Unmorph", "Ability_hunter_beastwithin" },
-		--{ "Immolate", "Spell_fire_burnout" },
+		{ "Morph", "Ability_warlock_demonicpower" },
+		{ "Unmorph", "Ability_hunter_beastwithin" },
+		{ "Immolate", "Spell_fire_burnout" },
 		{ "Douse", "Inv_drink_19" },
 		{ "Hat", "Inv_helmet_119" },
 		{ "Cloak", "Inv_misc_cape_18" },
 		{ "Frostpath", "Spell_deathknight_pathoffrost" },
-		--{ "FrostPresence", "Spell_deathknight_frostpresence" },
-		--{ "BloodPresence", "Spell_deathknight_bloodpresence" }, 
-		--{ "UnholyPresence", "Spell_deathknight_unholypresence" },
+		{ "FrostPresence", "Spell_deathknight_frostpresence" },
+		{ "BloodPresence", "Spell_deathknight_bloodpresence" }, 
+		{ "UnholyPresence", "Spell_deathknight_unholypresence" },
+		{ "Who", "Ability_eyeoftheowl" },
 	},
 	Action2 = {
 		{ "GearsWrath", "Inv_misc_bag_07_black" },
@@ -71,13 +72,6 @@ AdminUtils.buttons = {
 		{ "HeirloomsLegion", "Item_icecrownringc" },
 		{ "HeirloomUpgrades", "Item_icecrownringc" },		
 		{ "Keys", "Inv_misc_key_11" },
-		
-		{ "DropOne", "Spell_shadow_unsummonbuilding", "Abandon current quest (warning: no confirmation)" },
-		{ "DropAll", "Spell_shadow_unsummonbuilding", "Abandon all quests (warning: no confirmation)" },
-		{ "QuestComplete", "Inv_misc_trophy_argent" },
-		{ "HideChat", "Inv_letter_11", "Toggle display of the default chat frame" },
-		{ "MinimapToggle", "Inv_misc_map03", "Toggle display of the default chat frame" },
-		{ "Who", "Ability_eyeoftheowl" },
 	},
 	Summon = {
 		{ "Imp", "Spell_shadow_summonimp" },
@@ -170,9 +164,6 @@ AdminUtils.buttons = {
 		{ "Shattrath", "Achievement_zone_terrokar" },
 		{ "Dalaran", "Achievement_zone_crystalsong_01" },
 		{ "GMIsland", "Achievement_zone_easternkingdoms_01" },
-		{ "Waypoint", "Spell_arcane_portalstormwind" },
-		{ "Return", "Spell_arcane_portalexodar" },
-		{ "WaypointSet", "Inv_trinket_naxxramas06" },
 	},
 	TeleHome = {
 		{ "Home1", "Achievement_zone_sholazar_04" },
@@ -182,6 +173,7 @@ AdminUtils.buttons = {
 		{ "Home5", "Achievement_zone_grizzlyhills_06" },
 		{ "Home6", "Achievement_zone_zuldrak_04" },
 		{ "Home7", "Achievement_zone_grizzlyhills_10" },
+		{ "Home8", "Achievement_zone_grizzlyhills_10" },
 	},
 	TeleCamp = {
 		{ "Camp1", "Achievement_zone_hillsbradfoothills" },
@@ -191,7 +183,7 @@ AdminUtils.buttons = {
 		{ "Camp5", "Achievement_zone_grizzlyhills_04" },
 		{ "Camp6", "Achievement_zone_sholazar_05" },
 		{ "Camp7", "Achievement_zone_dragonblight_03" },
-	
+		{ "Camp8", "Achievement_zone_dragonblight_03" },	
 	},
 	TeleShared = {
 		{ "Shared1", "Achievement_zone_hillsbradfoothills" },
@@ -233,6 +225,11 @@ AdminUtils.buttons = {
 		{ "Shared6Set", "Achievement_zone_sholazar_05" },
 		{ "Shared7Set", "Achievement_zone_dragonblight_03" },	
 		{ "Shared8Set", "Achievement_zone_dragonblight_03" },	
+	},
+	TeleOther = {
+		{ "Waypoint", "Spell_arcane_portalstormwind" },
+		{ "Return", "Spell_arcane_portalexodar" },
+		{ "WaypointSet", "Inv_trinket_naxxramas06" },	
 	},
 	NPC = {
 		{ "Banker", "Inv_misc_grouplooking" },
@@ -347,6 +344,8 @@ AdminUtils.buttons = {
 		{ "ForgeHuman", "Trade_blacksmithing" },
 		{ "ForgeDraenei", "Trade_blacksmithing" },
 		{ "ForgeOgre", "Trade_blacksmithing" },
+		{ "BlackAnvil", "Trade_blacksmithing" },
+		{ "BlackForge", "Trade_blacksmithing" },
 		{ "WaterBarrel", "Inv_drink_waterskin_12" },
 		{ "FoodCrate", "Inv_crate_01" },
 		{ "AlchemyLab", "Trade_alchemy" },
@@ -478,6 +477,11 @@ AdminUtils.buttons = {
 		{ "HDCVars", "Inv_gizmo_01", "Sets game engine settings for high view distance and foliage density" },
 		{ "HDLiteCVars", "Inv_gizmo_01", "Sets game engine settings for high view distance and foliage density" },
 		{ "HDCVarsLegion", "Inv_gizmo_01", "Sets game engine settings for high graphics quality on the legion client" },
+		{ "DropOne", "Spell_shadow_unsummonbuilding", "Abandon current quest (warning: no confirmation)" },
+		{ "DropAll", "Spell_shadow_unsummonbuilding", "Abandon all quests (warning: no confirmation)" },
+		{ "HideChat", "Inv_letter_11", "Toggle display of the default chat frame" },
+		{ "MinimapToggle", "Inv_misc_map03", "Toggle display of the default chat frame" },
+		{ "QuestComplete", "Inv_misc_trophy_argent" },
 	},
 }
 
@@ -520,41 +524,9 @@ AdminUtils.buttonFunctions = {
 		Douse = function() 
 			AdminUtils.cmd(".unaura 50589")
 		end,
-		Cloak = function() ShowCloak(not ShowingCloak()) end,
-		Hat = function() ShowHelm(not ShowingHelm()) end,
-		HideChat = function()
-			_CHATHIDE=not _CHATHIDE 
-			for i=1,NUM_CHAT_WINDOWS do 
-				for _,v in pairs{"","Tab"}do
-					local f=_G["ChatFrame"..i..v]
-					if _CHATHIDE then
-						f.v=f:IsVisible()
-					end
-					f.ORShow=f.ORShow or f.Show
-					f.Show=_CHATHIDE and f.Hide or f.ORShow
-					if f.v then
-						f:Show()
-					end
-				end
-			end
-
-			-- classic wow
-			if FriendsMicroButton ~= nil then FriendsMicroButton:Hide() end
-			if ChatFrameMenuButton ~= nil then ChatFrameMenuButton:Hide() end
-			
-			-- modern
-			if ChatFrameMenuButton ~= nil then ChatFrameMenuButton:Hide() end
-			if QuickJoinToastButton ~= nil then QuickJoinToastButton:Hide() end
-		end,
-		MinimapToggle = function()
-		
-			if AdminUtils.IsClassicClient and toggleMiniMap then
-				-- Calls a function I exposed in my copy of Hide_minimap addon
-				toggleMiniMap()
-			else
-				print("This button works in wrath only, and only if you have the Hide_minimap addon")
-			end
-		end,
+		Who = function()
+			SendWho("1-80 " .. GetRealZoneText())
+		end,		
 		SlowWalk = function()
 			AdminUtils.cmd(".modify speed 0.22")
 		end,
@@ -573,17 +545,6 @@ AdminUtils.buttonFunctions = {
 		end,
 		Stealth = function()
 			AdminUtils.cmd(".cast 10032")
-		end,
-		DropAll = function()
-			for i=1,GetNumQuestLogEntries() do 
-				SelectQuestLogEntry(i)
-				SetAbandonQuest()
-				AbandonQuest()
-			end
-		end,
-		DropOne = function()
-			SetAbandonQuest()
-			AbandonQuest()
 		end,
 		UberHeal = function()
 			AdminUtils.cmd(".cast 1908")
@@ -1110,18 +1071,6 @@ AdminUtils.buttonFunctions = {
 				AdminUtils.cmd(".additem " .. items[idx])
 			end
 		end,
-		QuestComplete = function()
-			local questID = AdminUtils.GetSelectedQuestID() or AdminUtils.latestQuestID
-			if questID then
-				SendChatMessage(".quest complete " .. questID, "SAY")
-				print("Completing questID: " .. questID)
-			else
-				print("No quest selected.")
-			end
-		end,
-		Who = function()
-			SendWho("1-80 " .. GetRealZoneText())
-		end,		
 	},
 	Summon = {
 		Ghoul = function()
@@ -1901,6 +1850,12 @@ AdminUtils.buttonFunctions = {
 		end,
 	},
 	Camp = {
+		BlackAnvil = function()
+			AdminUtils.cmd(".gobject add 172911")
+		end,
+		BlackForge = function()
+			AdminUtils.cmd(".gobject add 174045")
+		end,
 		ChemicalWagon = function()
 			AdminUtils.cmd(".gobject add 201716")
 		end,
@@ -2302,6 +2257,41 @@ AdminUtils.buttonFunctions = {
 			SetCVar("skycloudlod", 3)
 			SetCVar("spelleffectlevel", 2)
 		end,
+		Cloak = function() ShowCloak(not ShowingCloak()) end,
+		Hat = function() ShowHelm(not ShowingHelm()) end,
+		HideChat = function()
+			_CHATHIDE=not _CHATHIDE 
+			for i=1,NUM_CHAT_WINDOWS do 
+				for _,v in pairs{"","Tab"}do
+					local f=_G["ChatFrame"..i..v]
+					if _CHATHIDE then
+						f.v=f:IsVisible()
+					end
+					f.ORShow=f.ORShow or f.Show
+					f.Show=_CHATHIDE and f.Hide or f.ORShow
+					if f.v then
+						f:Show()
+					end
+				end
+			end
+
+			-- classic wow
+			if FriendsMicroButton ~= nil then FriendsMicroButton:Hide() end
+			if ChatFrameMenuButton ~= nil then ChatFrameMenuButton:Hide() end
+			
+			-- modern
+			if ChatFrameMenuButton ~= nil then ChatFrameMenuButton:Hide() end
+			if QuickJoinToastButton ~= nil then QuickJoinToastButton:Hide() end
+		end,
+		MinimapToggle = function()
+		
+			if AdminUtils.IsClassicClient and toggleMiniMap then
+				-- Calls a function I exposed in my copy of Hide_minimap addon
+				toggleMiniMap()
+			else
+				print("This button works in wrath only, and only if you have the Hide_minimap addon")
+			end
+		end,				
 		HDCVarsLegion = function()
 			SetCVar('overridefarclip', 1)
 			SetCVar('horizonfarclip', 6226)
@@ -2345,6 +2335,26 @@ AdminUtils.buttonFunctions = {
 			SetCVar('lodObjectCullDist', 200)
 			SetCVar('lodObjectFadeScale', 300)
 			SetCVar('SSAODistance', 750)
+		end,
+		DropOne = function()
+			SetAbandonQuest()
+			AbandonQuest()
+		end,
+		DropAll = function()
+			for i=1,GetNumQuestLogEntries() do 
+				SelectQuestLogEntry(i)
+				SetAbandonQuest()
+				AbandonQuest()
+			end
+		end,
+		QuestComplete = function()
+			local questID = AdminUtils.GetSelectedQuestID() or AdminUtils.latestQuestID
+			if questID then
+				AdminUtils.cmd(".quest complete " .. questID)
+				print("Completing questID: " .. questID)
+			else
+				print("No quest selected.")
+			end
 		end,
 	},
 	Addons = {
@@ -2507,8 +2517,8 @@ local function ActionsMenu()
 	local f = ButtonPanel("ActionsFrame", 960, 405)
 	
 	AdminUtils.MakeButtonColumn(f, "Action", AdminUtils.buttons.Action,         1)
-	AdminUtils.MakeButtonColumn(f, "Pet", AdminUtils.buttons.Pet,               1, 4)	
-	AdminUtils.MakeButtonColumn(f, "Summon", AdminUtils.buttons.Summon,         1, 7)
+	AdminUtils.MakeButtonColumn(f, "Pet", AdminUtils.buttons.Pet,               1, 6)	
+	AdminUtils.MakeButtonColumn(f, "Summon", AdminUtils.buttons.Summon,         1, 8)
 	
 	AdminUtils.MakeButtonColumn(f, "Action", AdminUtils.buttons.Action2,        2)
 	AdminUtils.MakeButtonColumn(f, "NPCBot", AdminUtils.buttons.NPCBot,         2, 7)	
@@ -2520,13 +2530,14 @@ local function ActionsMenu()
 	AdminUtils.MakeButtonColumn(f, "Tele", AdminUtils.buttons.TeleHome,         4)
 	AdminUtils.MakeButtonColumn(f, "Tele", AdminUtils.buttons.TeleCamp,         4, 3)
 	AdminUtils.MakeButtonColumn(f, "Tele", AdminUtils.buttons.TeleShared,       4, 5)
+	AdminUtils.MakeButtonColumn(f, "Tele", AdminUtils.buttons.TeleOther,        4, 7)	
 	
 	AdminUtils.MakeButtonColumn(f, "Tele", AdminUtils.buttons.TeleHomeSet,      5)
 	AdminUtils.MakeButtonColumn(f, "Tele", AdminUtils.buttons.TeleCampSet,      5, 3)
 	AdminUtils.MakeButtonColumn(f, "Tele", AdminUtils.buttons.TeleSharedSet,    5, 5)
 
 	AdminUtils.MakeButtonColumn(f, "Tele", AdminUtils.buttons.Tele,             6)
-	AdminUtils.MakeButtonColumn(f, "Management", AdminUtils.buttons.Management, 6, 7)
+	AdminUtils.MakeButtonColumn(f, "Management", AdminUtils.buttons.Management, 6, 6)
 
 
 
