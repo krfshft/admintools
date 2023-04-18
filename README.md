@@ -1,10 +1,10 @@
 # AdminTools
 
-Originally intended to free up macro space, this addon eventually grow to become a set of Tools for single player MMO games played on a local server.
+Originally intended to free up macro space, this addon eventually grew to become a set broad of tools for single player MMO games played on a local server.
 
 Essentially this is a bunch of Buttons That Do Things. The reason for buttons is that I primarily play using a gamepad, so this addon is all about exposing keyboard functionality is a convenient and intuitive way.
 
-The intuitive part comes from the buttons always being in the same places. The panels may seem intimidating at first, being full of icons and some vague text in the tooltips, but once you learn them the fact that they don't move, can't be moved, means your muscle memory will quickly learn where they are and greatly reduce the need to reach over to a keyboard. 
+The intuitive part comes from the buttons always being in the same places. The panels may seem intimidating at first, being full of icons and some vague text in the tooltips, but once you learn them the fact that they don't move means your muscle memory will quickly learn where they are and greatly reduce the need to reach over to a keyboard.
 
 Compatible with cmangos wotlk, acore 3.3.5, and praevius legion v2, 7.3.5.
 
@@ -42,9 +42,7 @@ I make no commitments to maintain, fix or extend this. But I might, as long as t
 ![Actions Panel](https://i.imgur.com/gNVbxyo.jpg)
 ![Content Panel](https://i.imgur.com/hAm9lKb.jpg)
 
-
-
 ## * Completeness of this Addon
-Some aspects of this addon will be completed at a slow pace. For instance, the shop inventory buttons, will only add materials and reagents up to the point in the game where I have played to. It will take quite a long time before I've covered all of the game's content at my casual pace. So things on this page marked with an asterisk are things that aren't complete now for all three supported cores (cmangos, azerothcore, praeviuscore). I'll accept PRs that complete this stuff it's just not my priority.
+As you can see, there is a lot of open space still, that I can fill with buttons. That part I expect will happen sooner than later.
 
-Having said that, I think the part I will likely get to sooner than later is expanding the content panel with more buttons. 
+Some aspects of the data completed at a slow pace. For instance, the shop inventory buttons, will only add materials and reagents up to the point in the game where I have played to. It will take quite a long time before I've covered all of the game's content at my extremely slow pace. So things on this page marked with an asterisk are things that aren't complete now for all three supported cores (cmangos, azerothcore, praeviuscore). I'll accept PRs that complete this stuff it's just not my priority.
