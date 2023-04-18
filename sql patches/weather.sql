@@ -1,15 +1,5 @@
-/* set 1 rainy, some snow 
-UPDATE game_weather SET 
-spring_rain_chance=45, spring_snow_chance=5, spring_storm_chance=0,
-fall_rain_chance=45, fall_snow_chance=10, fall_storm_chance=0,
-winter_rain_chance=45, winter_snow_chance=35, winter_storm_chance=0
-where `zone` IN ();*/
-
-/* set 2 rainy, never snow */
-/* set 3: rare rain, lots snow */
-/* set 4: rain or sand */
-/*-------------- Eastern Kingdoms ----------------------*/
-/*eastern kingdoms*/
+/*--------------------------- Eastern Kingdoms ------------------------------*/
+/*eastern kingdoms. I don't think this one actually does anything*/
 REPLACE INTO game_weather SET `zone`=0, 
 spring_rain_chance=20, spring_snow_chance=0,  spring_storm_chance=0,
 fall_rain_chance=20,   fall_snow_chance=0,   fall_storm_chance=0,
@@ -109,9 +99,6 @@ spring_rain_chance=86, spring_snow_chance=2,  spring_storm_chance=0,
 fall_rain_chance=86,   fall_snow_chance=2,    fall_storm_chance=0,
 winter_rain_chance=86, winter_snow_chance=2,  winter_storm_chance=0;
 
-
-
-
 /*badlands*/
 REPLACE INTO game_weather SET `zone`=3, 
 spring_rain_chance=18, spring_snow_chance=0,   spring_storm_chance=28,
@@ -151,7 +138,7 @@ fall_rain_chance=18,   fall_snow_chance=0,     fall_storm_chance=8,
 winter_rain_chance=18, winter_snow_chance=0,   winter_storm_chance=8;
 
 
-/*-------------- Kalimdor         ----------------------*/
+/*------------------------------- Kalimdor ----------------------------------*/
 /*darnassus*/
 REPLACE INTO game_weather SET `zone`=1657, 
 spring_rain_chance=23, spring_snow_chance=2, spring_storm_chance=0,
@@ -209,8 +196,7 @@ fall_rain_chance=18,   fall_snow_chance=0,   fall_storm_chance=0,
 winter_rain_chance=18, winter_snow_chance=0, winter_storm_chance=0;
 
 
-
-/*-------------- Outland          ----------------------*/
+/*------------------------------- Outland -----------------------------------*/
 /*outland not sure if this overrides or what*/
 REPLACE INTO game_weather SET `zone`=530, 
 spring_rain_chance=15, spring_snow_chance=3, spring_storm_chance=3,
@@ -252,9 +238,8 @@ fall_rain_chance=23,   fall_snow_chance=0,   fall_storm_chance=0,
 winter_rain_chance=23, winter_snow_chance=0,  winter_storm_chance=0;
 
 
+/*------------------------------ Northrend ----------------------------------*/
 
-
-/*-------------- Northrend        ----------------------*/
 /*northrend*/
 REPLACE INTO game_weather SET `zone`=571, 
 spring_rain_chance=3, spring_snow_chance=45, spring_storm_chance=0,
@@ -337,8 +322,7 @@ spring_rain_chance=3, spring_snow_chance=38, spring_storm_chance=0,
 fall_rain_chance=3,   fall_snow_chance=38,   fall_storm_chance=0,
 winter_rain_chance=3, winter_snow_chance=38,  winter_storm_chance=0;
 
-
-/*-----------------------Cata+--------------------------*/
+/*-------------------------------- Cata+ ------------------------------------*/
 /*northshire burning*/
 REPLACE INTO game_weather SET `zone`=6170, 
 spring_rain_chance=30, spring_snow_chance=0,  spring_storm_chance=0,
