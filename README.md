@@ -14,42 +14,6 @@ Compatible with cmangos wotlk, acore 3.3.5, and praevius legion v2, 7.3.5.
 ### What is the scope
 I'm not sure atm, but suggestions for new buttons will be welcomed.
 
-## How to use
-In order to map your function keys to overlay buttons, you will need these lines in your WTF/Account/NAME/bindings-cache.wtf file:\
-bind F1 CLICK ADMINTOOLS_1:LeftButton\
-bind F2 CLICK ADMINTOOLS_2:LeftButton\
-bind F3 CLICK ADMINTOOLS_3:LeftButton\
-bind F4 CLICK ADMINTOOLS_4:LeftButton\
-bind F5 CLICK ADMINTOOLS_5:LeftButton\
-bind F6 CLICK ADMINTOOLS_6:LeftButton\
-bind F7 CLICK ADMINTOOLS_7:LeftButton\
-bind F8 CLICK ADMINTOOLS_8:LeftButton\
-bind F9 CLICK ADMINTOOLS_9:LeftButton\
-bind F10 CLICK ADMINTOOLS_10:LeftButton\
-bind F11 CLICK ADMINTOOLS_11:LeftButton\
-bind F12 CLICK ADMINTOOLS_12:LeftButton\
-bind F13 CLICK ADMINTOOLS_13:LeftButton\
-bind F14 CLICK ADMINTOOLS_14:LeftButton\
-bind F15 CLICK ADMINTOOLS_13:LeftButton\
-bind F16 CLICK ADMINTOOLS_14:LeftButton\
-bind F17 CLICK ADMINTOOLS_17:LeftButton\
-bind F18 CLICK ADMINTOOLS_18:LeftButton\
-bind F19 CLICK ADMINTOOLS_19:LeftButton\
-bind F20 CLICK ADMINTOOLS_20:LeftButton\
-bind F21 CLICK ADMINTOOLS_21:LeftButton\
-bind F22 CLICK ADMINTOOLS_22:LeftButton\
-bind F23 CLICK ADMINTOOLS_23:LeftButton\
-bind F24 CLICK ADMINTOOLS_24:LeftButton
-
-In order to use the included rewasd profile, add this line to bindings-cache.wtf:
-bind ; TOGGLEMOUSELOOK
-
-
-Some buttons won't work unless you have addons installed, and even then they still won't without my personal edits to other addons.
-* The "Toggle Minimap" button requires the Hide_minimap() addon for 3.3.5.
-* TODO: finish this list, see what dependencies and I can avoid
-
-
 
 ## Actions Panel
 1. Teleports. Contains 16 character-specific teleport buttons, and 8 more that are shared between all characters (on all accounts). Each button also has a corresponding "set" button to update that location. The buttons are named Home and Camp 1-8 but that is just a suggestion about the way they can be used, they are effectively all custom waypoints. All of the teleport buttons also automatically generate a character-specific return point, so you don't have to make waypoints just to return to town and back.
@@ -104,6 +68,51 @@ For this project I prefer to keep the configuration in the code, but for customi
 ![Actions Panel](https://i.imgur.com/gNVbxyo.jpg)
 ![Content Panel](https://i.imgur.com/hAm9lKb.jpg)
 
+## How to use
+In order to map your function keys to overlay buttons, you will need these lines in your WTF/Account/NAME/bindings-cache.wtf file:\
+```
+bind F1 CLICK ADMINTOOLS_1:LeftButton
+bind F2 CLICK ADMINTOOLS_2:LeftButton
+bind F3 CLICK ADMINTOOLS_3:LeftButton
+bind F4 CLICK ADMINTOOLS_4:LeftButton
+bind F5 CLICK ADMINTOOLS_5:LeftButton
+bind F6 CLICK ADMINTOOLS_6:LeftButton
+bind F7 CLICK ADMINTOOLS_7:LeftButton
+bind F8 CLICK ADMINTOOLS_8:LeftButton
+bind F9 CLICK ADMINTOOLS_9:LeftButton
+bind F10 CLICK ADMINTOOLS_10:LeftButton
+bind F11 CLICK ADMINTOOLS_11:LeftButton
+bind F12 CLICK ADMINTOOLS_12:LeftButton
+bind F13 CLICK ADMINTOOLS_13:LeftButton
+bind F14 CLICK ADMINTOOLS_14:LeftButton
+bind F15 CLICK ADMINTOOLS_13:LeftButton
+bind F16 CLICK ADMINTOOLS_14:LeftButton
+bind F17 CLICK ADMINTOOLS_17:LeftButton
+bind F18 CLICK ADMINTOOLS_18:LeftButton
+bind F19 CLICK ADMINTOOLS_19:LeftButton
+bind F20 CLICK ADMINTOOLS_20:LeftButton
+bind F21 CLICK ADMINTOOLS_21:LeftButton
+bind F22 CLICK ADMINTOOLS_22:LeftButton
+bind F23 CLICK ADMINTOOLS_23:LeftButton
+bind F24 CLICK ADMINTOOLS_24:LeftButton
+```
+In order to use the included rewasd profile, add this line to bindings-cache.wtf:\
+bind ; TOGGLEMOUSELOOK
+
+### The rewasd FPS playstyle
+The included rewasd file is optional, and only needed if you want to be ale to map overlay buttons to a gamepad. 
+
+With the keymappings in place, I play the game similarly to how I would play Skyrim or ESO, In first person mode, with a minimalistic UI, and using a much slower speed most of the time. That is why I have different speeds setup as actions and mapped to the gamepad. The mapping scheme is explained further at the end of this file.
+
+Because the movement stick is not sensitive (it's either all of nothing with movement, you can't walk slow by only moving the stick a little bit) I wanted to be able to set my walking speed at any time, easily. As a result of not being able to control speed with the stick, I use autorun with different walking speeds to get around most of the time.
+
+In order to aim the camera smoothly, and also get rid of the cursor, I have an addon called MouserlookHandler, and the rewasd profile is designed around it being played in mouse look mode nearly 100% of the time.  There is an impressive gamepad addon called ConsolePort, but it is not compatible with older game client versions. By configuring the client myself and using rewasd, I can use the exactly same addon configuration on my pc and steam deck, with game versions 3.3.5 or 7.3.5, completely seamlessly.
+
+For instance, if you have mouse look activated, you can still use all your bound hotkeys to fight mobs. And when it's time to look, the right shoulder button is a combo macro that exits mouselook mode, right clicks the mob to autocollect all look, then reenters mouselook mode, all with one button press.
+
+The complete key mapping scheme is listed at the bottom of this document.
+
+
 ## * Completeness of this Addon
 I make no commitments to maintain, fix or extend this. But I probably will, as long as there are things on this page that say "not implemented." 
 
@@ -115,8 +124,11 @@ Some aspects of the data will be completed but at a very slow pace. For instance
 
 Apart from the data, new features I would like to do someday are, in no particular order:
 
-* I want support cross class skills for skills that have multiple levels. Doing that with the code currently would give you rank 10 skills at level 1, which is a bit much, so I want to add a system that only adds spells learnable up to the characters currently level.
-* I want to be able to choose cross class skills and talents. Currently all cross class talents are applied automatically on login, but I want to be able to make custom multiclass builds that are different for each character, which makes implementation of the Config panel a blocker for this.
+* Support cross class skills for skills that have multiple levels. Doing that with the code currently would give you rank 10 skills at level 1, which is a bit much, so I want to add a system that only adds spells learnable up to the characters currently level.
+* Clean up BuildOverlay():
+	* Simplify function signature
+	* Make buttons data driven, with support for configurable icon/grid size
+* Ability to choose cross class skills and talents. Currently all cross class talents are applied automatically on login, but I want to be able to make custom multiclass builds that are different for each character, which makes implementation of the Config panel a blocker for this.
 * Complete all the shop inventory buttons.
 * Convert all of the camp building buttons to a data driven system. It's not bad the way it is now, and will be functionally identical, but the code will be a little leaner and nicer.
 * Collect the IDs from all user-created gameobjects within a certain range, filter out non-user spawned objects, then pass this data to a python (or js maybe) tool that pulls the records from the database and stores in an agnostic format. The goal being to allow a camp to be created in one core and then imported into any supported core. Once that is in place, I can safely devote more time into creating awesome camps, knowing they will never be lost, and I will have the option of synchronizing builds across all three systems.
@@ -126,3 +138,155 @@ Apart from the data, new features I would like to do someday are, in no particul
 
 ## Known Issues (apart from things marked unimplemented)
 1. Make the keymappings appear in the keybinding panel on 3.3.5 and 7.3.5 (will require branching code, the methods are different).
+2. Some buttons won't work unless you have addons installed, and even then they still won't without my personal edits to other addons.
+* The "Toggle Minimap" button requires the Hide_minimap() addon for 3.3.5.
+* TODO: finish this list, see what dependencies and I can avoid
+
+
+
+
+## Xbox Gamepad Mappings
+#### Main Page
+Left Stick = Movement
+Press Right Stick = ; (semicolon) Toggles mouse look mode
+Y = Toggle UI
+X = Quick attack left
+B = Quick attack right (I usually map this to auto fight)
+A = Jump
+Y (hold) = Toggle large map
+X (hold) = Quick attack 2 left
+B (hold) Quick attack 2 right
+(there is no A hold because there are situations in game where you hold A)
+Dpad Up = Page Up (Zoom in)
+Dpad Down = Page Down (Zoom out)
+Dpad Left = Sheathe/Unsheathe
+Dpad Left (hold) = Esc
+Dpad Right = Sit/Swim Downward
+Left Trigger (hold) = Activate page 1  (left side actions)
+Right Trigger (hold) = Activate page 2 (right side actions)
+Left Shoulder button (hold) Activate page 3 (menu actions)
+Right Trigger (hold) + Left Trigger (hold) Activate page 4 (not used yet)
+**Left trigger "release" = Left mouse click** Because this fires on a keyup event this left click bind cannot be used to click and drag things, but it is still useful to have a left click option that is on the main layer.
+Right Shoulder button = "Loot Combo" This rewasd combination hits semicolon, the exit out of mouselook mode, right clicks to loot the target of the cursor. waits  50ms to give looting action chance to happen, then hits semicolon again to return the mouselook mode. This button is the sauce that makes the mode convenient to play in.
+Right Shoulder button (hold) = Similar to the Loot Combo above, but with one difference: it uses the left click instead of right click. Let's you click things and change selection target without leaving mouse look mode.
+
+#### Page 1 - Left side actions - While holding Left Trigger
+Y = Ctrl+O
+X = Ctrl+P
+B = Ctrl + [
+A = Ctrl + ]
+Y (hold) = Ctrl+Q
+X (hold) = Ctrl+W
+B (hold) = Ctrl + E
+A (hold) = Ctrl+R
+Dpad Up = Shift + O
+Dpad Left = Shift + P
+Dpad Right = Shift + [
+Dpad Down = Shift + ]
+Dpad Up (hold) = Shift + Q
+Dpad Left (hold) = Shift + W
+Dpad Right (hold) = Shift + E
+Dpad Down (hold) = Shift + R
+Select = Shift + 5
+Start = Shift + 7
+Left Stick button = F1 (first overlay button - open Actions panel)
+Left Shoulder button = *not mapped yet, can put something here*
+Right Stick button = F2 (second overlay button - open Content panel)
+Right Shoulder button = Ctrl + Left click (for previewing gear in dressing room)
+
+#### Page 2 - Right side actions - While holding Right Trigger
+Left Shoulder button = Home (brings up the reshade menu)
+Y = 1, Left click (by putting ground targeting macros in this spot, you can cast them in one click)
+X = 2
+B = 3
+A = 4
+Y (hold) = 9
+X (hold) = 0
+B (hold) = -
+A (hold) = =
+Dpad Up = Shift + 2
+Dpad Left = Shift + 1
+Dpad Right = Shift + 3
+Dpad Down = Shift + 4
+Dpad Up (hold) = Shift + 9
+Dpad Left (hold) = Shift + 0
+Dpad Right (hold) =  Shift + -
+Dpad Down (hold) = Shift + =
+Select = Ctrl + 1 (not sure why)
+Start = Ctrl + 2 (not sure why)
+Left Stick button = F3 (Respawn targeted dead creature)
+Right Stick button = Light rain 
+
+#### Page 3 - While holding Left Shoulder Button
+Dpad Up = Slow walk
+Dpad Left = Normal walk
+Dpad Right = Fast walk
+Dpad Down = Jog  (normal speed)
+Dpad Right (Hold) = Dash
+Start = N (Talents)
+B = L (Quest Log)
+B (hold) = Alt+L (hotkey for the Carbonite addon's quest log, provided you have enabled that setting in Carbonite called "Open Quest Log with Alt+L." I use the normal quest log by default instead of Carbonite's in 3.3.5 because the normal quest log sets internal variables that allow the "Quest Complete" and Drop One Quest" buttons to work. But sometimes I still want to open up Carbonite's log so it's mapped here.
+
+Left Shoulder button = Shift + Alt + Right click (for the EasyDestroy addon, this bind deletes an item from you inventory)
+Right Shoulder button = Left click. Unlike the left click that occurs on Main Page when you keyup the Left Trigger, this left click can be used for drag-and-drops
+
+#### Page 4 to be used in future
+Page 4 is mostly unused presently, but does have some targeting functions
+Dpad Up/Down = Cycle through enemy targets
+Dpad Left/Right = Cycle through friendly targets
+
+These are mapped in case needed but I accomplish my targeting generally by baking targeting into macros for each skills. 
+
+
+## Macros
+Here are some useful macros to go with the gamepad playstyle.
+
+For most attacks and spells I use a macro like this:
+```
+#showtooltip
+/cleartarget
+/targetenemy
+/cast Smite
+```
+For most encounters you just point yourself at the general direction of your enemy and let the macro handle the targeting. The down side is being enable to pick out targets from a crowd but that's a price I'm willing to pay.
+
+Here's one for healing a friendly ally.
+```
+#showtooltip
+/cleartarget
+/tar [@mouseover,help,nodead,mod:alt][@focus,help,nodead,mod:shift]
+/targetfriend [noexists]
+/cast Lesser Heal
+```
+
+Macro for bringing a PlayerBot online and Inviting them to your party:
+```
+.bot add Botname
+/in 2 /invite Botname
+/in 4 /script SetLootMethod("freeforall")
+```
+A couple notes, I use freeforall loot method, and the all of the RPG____ buttons in the Actions Panel set bots to not loot. Letting them loot was just too much futzy micromanaging for me, but if you want to have your bots loot, I suggest using the Passloot addon (3.3.5) as it allows you to automatically need/greed/pass without even seeing the roll window.
+
+Omni pet attack macro. This macro tells your hunter/warlock pet, your PlayerBots party, and your NPCBots party, to attack your target. One button, to destroy them all.
+```
+/cleartarget
+/targetenemy
+/petattack
+/script SendChatMessage("attack", "PARTY") SendChatMessage(".npcb command order cast auto_attack mytarget", "party")
+```
+
+Omni summon/return/follow macro. Like the Omni attack above, this commands all types of pets to return to your side, and puts them in follow mode if they weren't before. For PlayerBots, the summon command revives them all, but for NPCBots you can revive one at a time by targeting the dead bot before using this.
+```
+/petfollow
+/script local c="party";local f=SendChatMessage;f("follow", c) f("summon",c) f(".npcb rec tele", c) f(".npcb revive",c) f(".npcb co follow") f("nc -grind,-travel,-rpg maintenance,-rpg repair", c)
+```
+
+"bont"
+```
+/bot
+/bonk
+```
+For PlayerBots, the "/bot" command brings up a menu from the PlayerBots addon. 
+For NPCBots, the "bonk" command makes a bot tell you their detailed stats. Therefore "bont."
+
+
