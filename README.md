@@ -15,7 +15,7 @@ Compatible with cmangos wotlk, acore 3.3.5, and praevius legion v2, 7.3.5.
 I'm not sure atm, but suggestions for new buttons will be welcomed.
 
 ## How to use
-In order to map your function keys to overlay buttons, you will need these lines in your WTF/Account/NAME/bindings-cache.wtf file:
+In order to map your function keys to overlay buttons, you will need these lines in your WTF/Account/NAME/bindings-cache.wtf file:\
 bind F1 CLICK ADMINTOOLS_1:LeftButton\
 bind F2 CLICK ADMINTOOLS_2:LeftButton\
 bind F3 CLICK ADMINTOOLS_3:LeftButton\
@@ -25,20 +25,20 @@ bind F6 CLICK ADMINTOOLS_6:LeftButton\
 bind F7 CLICK ADMINTOOLS_7:LeftButton\
 bind F8 CLICK ADMINTOOLS_8:LeftButton\
 bind F9 CLICK ADMINTOOLS_9:LeftButton\
-bind F10 CLICK ADMINTOOLS_10:LeftButton
-bind F11 CLICK ADMINTOOLS_11:LeftButton
-bind F12 CLICK ADMINTOOLS_12:LeftButton
-bind F13 CLICK ADMINTOOLS_13:LeftButton
-bind F14 CLICK ADMINTOOLS_14:LeftButton
-bind F15 CLICK ADMINTOOLS_13:LeftButton
-bind F16 CLICK ADMINTOOLS_14:LeftButton
-bind F17 CLICK ADMINTOOLS_17:LeftButton
-bind F18 CLICK ADMINTOOLS_18:LeftButton
-bind F19 CLICK ADMINTOOLS_19:LeftButton
-bind F20 CLICK ADMINTOOLS_20:LeftButton
-bind F21 CLICK ADMINTOOLS_21:LeftButton
-bind F22 CLICK ADMINTOOLS_22:LeftButton
-bind F23 CLICK ADMINTOOLS_23:LeftButton
+bind F10 CLICK ADMINTOOLS_10:LeftButton\
+bind F11 CLICK ADMINTOOLS_11:LeftButton\
+bind F12 CLICK ADMINTOOLS_12:LeftButton\
+bind F13 CLICK ADMINTOOLS_13:LeftButton\
+bind F14 CLICK ADMINTOOLS_14:LeftButton\
+bind F15 CLICK ADMINTOOLS_13:LeftButton\
+bind F16 CLICK ADMINTOOLS_14:LeftButton\
+bind F17 CLICK ADMINTOOLS_17:LeftButton\
+bind F18 CLICK ADMINTOOLS_18:LeftButton\
+bind F19 CLICK ADMINTOOLS_19:LeftButton\
+bind F20 CLICK ADMINTOOLS_20:LeftButton\
+bind F21 CLICK ADMINTOOLS_21:LeftButton\
+bind F22 CLICK ADMINTOOLS_22:LeftButton\
+bind F23 CLICK ADMINTOOLS_23:LeftButton\
 bind F24 CLICK ADMINTOOLS_24:LeftButton
 
 In order to use the included rewasd profile, add this line to bindings-cache.wtf:
