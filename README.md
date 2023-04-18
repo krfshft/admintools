@@ -72,7 +72,23 @@ Some buttons won't work unless you have addons installed, and even then they sti
 
 
 ## Overlay
-24 buttons which are intended to mapped to function keys 1-24. There overlay has two important reasons for existing: buttons that are mapped, that you can subsequently  
+The overlay makes it so you can have buttons mapped functions that are likely to be common across every single character that you play. If I didn't have the overlay I would be adding macro versions of it's actions to every single character I create.
+
+The overlay is meant to work with the button mappings in the rewasd and bindings-cache.wtf files included in this repo. Not all 24 buttons are mapped, but the most important ones are:
+* Open Actions Panel F1
+* Open Content Panel F2
+* Respawn Targeted Creature F3
+* Change weather to Light Rain F4
+* Enable GM Mode and Flying F5
+* Disable GM Mode and Flying F6
+* Set speed: Slow Walk F7
+* Set speed: Normal Walk F8
+* Set speed: Fast Walk F9
+* Set speed: Jog F10 (this is default movespeed)
+* Set speed: Dash F11 (run very fast)
+* Uber Stealth: F12
+
+Currently the rest of the overlay buttons are not mapped and are only activated by clicking. Still a useful upgrade for playing with gamepad but it's the mappings that really make it.
 
 
 ## Content Panel 2 "Dynamic Panel" (not implemented)
