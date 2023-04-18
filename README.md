@@ -25,6 +25,7 @@ Compatible with cmangos wotlk, acore 3.3.5, and praevius legion v2, 7.3.5.
 3. Herb and Mineral nodes. Nodes created in this way respawn with a short 25 second time (at least on cmangos). 
 4. Buildings. Unless you take the additional steps of creating new server side records for game objects, it is actually quite difficult to find a lot of specific things that you can spawn in. The few I've found for classic game versions have been put in here. The garrison buildings in legion can be added anywhere to the gameworld with these buttons, providing some nice options building camps on the modern game client.
 5. Camp objects: Camp, Home, and Resources. This includes functional things, such as Anvil, Forge (also Black Anvil and Black Forge from BRD), and also some fairly nice-looking decorative furniture that I found valid IDs for. The camp items buttons will be expanded over time, somewhat, although there are more specialized addons that focus solely on object spawning, such as [MarsAdmin](https://github.com/sezeryldz/MarsAdmin) for TrinityCore 7.3.5. In contrast, the focus on this addon is on freeing up macro space and making things easy to do with a gamepad. 
+6. Game Object adjustments. The only part that is implemented is the ability to Delete the nearest gameobject, and ability to Delete the most recently added gameobject. Even if you are using a keyboard, if you want to create a camp in the wilderness these buttons are indispensable. I plan to add controls to let you rotate and move already placed objects, so you don't have to keep deleting/recreating until you the positioning right, but as with all aspects of future development, I make no promises. ![DeleteObj](https://i.imgur.com/ZhhDLh2.png)
 
 ## Content Panel 2 "Dynamic Panel" (not implemented)
 One of the advantages of the Actions Panel and Content Panel 1 is that the buttons never move, so once you learn where things are, your ability to activate buttons quickly will benefit greatly. The down side is that the limited space of the panel becomes an issue, and it is only appropriate for the most commonly accessed buttons.
@@ -38,6 +39,12 @@ Part of the reason Configuration is not a priority for me, is that first goal of
 
 I make no commitments to maintain, fix or extend this. But I might, as long as there are things on this page that say "not implemented." You are welcome to submit PR's and deny me the fulfillment of developing those features, and you have my permission to fork this project for commercial or non-commercial use.
 
+![Actions Panel](https://i.imgur.com/gNVbxyo.jpg)
+![Content Panel](https://i.imgur.com/hAm9lKb.jpg)
+
+
 
 ## * Completeness of this Addon
 Some aspects of this addon will be completed at a slow pace. For instance, the shop inventory buttons, will only add materials and reagents up to the point in the game where I have played to. It will take quite a long time before I've covered all of the game's content at my casual pace. So things on this page marked with an asterisk are things that aren't complete now for all three supported cores (cmangos, azerothcore, praeviuscore). I'll accept PRs that complete this stuff it's just not my priority.
+
+Having said that, I think the part I will likely get to sooner than later is expanding the content panel with more buttons. 
