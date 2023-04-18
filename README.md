@@ -90,7 +90,7 @@ The overlay is meant to work with the button mappings in the rewasd and bindings
 * Uber Stealth: F12
 
 Currently the rest of the overlay buttons are not mapped and are only activated by clicking. Still a useful upgrade for playing with gamepad but it's the mappings that really make it.
-
+![Overlay](https://i.imgur.com/jjO8pBQ.png)
 
 ## Content Panel 2 "Dynamic Panel" (not implemented)
 One of the advantages of the Actions Panel and Content Panel 1 is that the buttons never move, so once you learn where things are, your ability to activate buttons quickly will benefit greatly. The down side is that the limited space of the panel becomes an issue, and it is only appropriate for the most commonly accessed buttons.
