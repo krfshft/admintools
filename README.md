@@ -147,92 +147,91 @@ Apart from the data, new features I would like to do someday are, in no particul
 
 ## Xbox Gamepad Mappings
 #### Main Page
-Left Stick = Movement
-Press Right Stick = ; (semicolon) Toggles mouse look mode
-Y = Toggle UI
-X = Quick attack left
-B = Quick attack right (I usually map this to auto fight)
-A = Jump
-Y (hold) = Toggle large map
-X (hold) = Quick attack 2 left
-B (hold) Quick attack 2 right
-(there is no A hold because there are situations in game where you hold A)
-Dpad Up = Page Up (Zoom in)
-Dpad Down = Page Down (Zoom out)
-Dpad Left = Sheathe/Unsheathe
-Dpad Left (hold) = Esc
-Dpad Right = Sit/Swim Downward
-Left Trigger (hold) = Activate page 1  (left side actions)
-Right Trigger (hold) = Activate page 2 (right side actions)
-Left Shoulder button (hold) Activate page 3 (menu actions)
-Right Trigger (hold) + Left Trigger (hold) Activate page 4 (not used yet)
+Left Stick = Movement\
+Press Right Stick = ; (semicolon) Toggles mouse look mode\
+Y = Toggle UI\
+X = Quick attack left\
+B = Quick attack right (I usually map this to auto fight)\
+A = Jump\
+Y (hold) = Toggle large map\
+X (hold) = Quick attack 2 left\
+B (hold) = Quick attack 2 right\
+(there is no A hold because there are situations in game where you hold A)\
+Dpad Up = Page Up (Zoom in)\
+Dpad Down = Page Down (Zoom out)\
+Dpad Left = Sheathe/Unsheathe\
+Dpad Left (hold) = Esc\
+Dpad Right = Sit/Swim Downward\
+Left Trigger (hold) = Activate page 1  (left side actions)\
+Right Trigger (hold) = Activate page 2 (right side actions)\
+Left Shoulder button (hold) Activate page 3 (menu actions)\
+Right Trigger (hold) + Left Trigger (hold) Activate page 4 (not used yet)\
 **Left trigger "release" = Left mouse click** Because this fires on a keyup event this left click bind cannot be used to click and drag things, but it is still useful to have a left click option that is on the main layer.
 Right Shoulder button = "Loot Combo" This rewasd combination hits semicolon, the exit out of mouselook mode, right clicks to loot the target of the cursor. waits  50ms to give looting action chance to happen, then hits semicolon again to return the mouselook mode. This button is the sauce that makes the mode convenient to play in.
 Right Shoulder button (hold) = Similar to the Loot Combo above, but with one difference: it uses the left click instead of right click. Let's you click things and change selection target without leaving mouse look mode.
 
 #### Page 1 - Left side actions - While holding Left Trigger
-Y = Ctrl+O
-X = Ctrl+P
-B = Ctrl + [
-A = Ctrl + ]
-Y (hold) = Ctrl+Q
-X (hold) = Ctrl+W
-B (hold) = Ctrl + E
-A (hold) = Ctrl+R
-Dpad Up = Shift + O
-Dpad Left = Shift + P
-Dpad Right = Shift + [
-Dpad Down = Shift + ]
-Dpad Up (hold) = Shift + Q
-Dpad Left (hold) = Shift + W
-Dpad Right (hold) = Shift + E
-Dpad Down (hold) = Shift + R
-Select = Shift + 5
-Start = Shift + 7
-Left Stick button = F1 (first overlay button - open Actions panel)
-Left Shoulder button = *not mapped yet, can put something here*
-Right Stick button = F2 (second overlay button - open Content panel)
+Y = Ctrl+O\
+X = Ctrl+P\
+B = Ctrl + [\
+A = Ctrl + ]\
+Y (hold) = Ctrl+Q\
+X (hold) = Ctrl+W\
+B (hold) = Ctrl + E\
+A (hold) = Ctrl+R\
+Dpad Up = Shift + O\
+Dpad Left = Shift + P\
+Dpad Right = Shift + [\
+Dpad Down = Shift + ]\
+Dpad Up (hold) = Shift + Q\
+Dpad Left (hold) = Shift + W\
+Dpad Right (hold) = Shift + E\
+Dpad Down (hold) = Shift + R\
+Select = Shift + 5\
+Start = Shift + 7\
+Left Stick button = F1 (first overlay button - open Actions panel)\
+Left Shoulder button = *not mapped yet, can put something here*\
+Right Stick button = F2 (second overlay button - open Content panel)\
 Right Shoulder button = Ctrl + Left click (for previewing gear in dressing room)
 
 #### Page 2 - Right side actions - While holding Right Trigger
 Left Shoulder button = Home (brings up the reshade menu)
-Y = 1, Left click (by putting ground targeting macros in this spot, you can cast them in one click)
-X = 2
-B = 3
-A = 4
-Y (hold) = 9
-X (hold) = 0
-B (hold) = -
-A (hold) = =
-Dpad Up = Shift + 2
-Dpad Left = Shift + 1
-Dpad Right = Shift + 3
-Dpad Down = Shift + 4
-Dpad Up (hold) = Shift + 9
-Dpad Left (hold) = Shift + 0
-Dpad Right (hold) =  Shift + -
-Dpad Down (hold) = Shift + =
-Select = Ctrl + 1 (not sure why)
-Start = Ctrl + 2 (not sure why)
-Left Stick button = F3 (Respawn targeted dead creature)
-Right Stick button = Light rain 
+Y = 1, Left click (by putting ground targeting macros in this spot, you can cast them in one click)\
+X = 2\
+B = 3\
+A = 4\
+Y (hold) = 9\
+X (hold) = 0\
+B (hold) = -\
+A (hold) = =\
+Dpad Up = Shift + 2\
+Dpad Left = Shift + 1\
+Dpad Right = Shift + 3\
+Dpad Down = Shift + 4\
+Dpad Up (hold) = Shift + 9\
+Dpad Left (hold) = Shift + 0\
+Dpad Right (hold) =  Shift + -\
+Dpad Down (hold) = Shift + =\
+Select = Ctrl + 1 (not sure why)\
+Start = Ctrl + 2 (not sure why)\
+Left Stick button = F3 (Respawn targeted dead creature)\
+Right Stick button = Light rain\
 
 #### Page 3 - While holding Left Shoulder Button
-Dpad Up = Slow walk
-Dpad Left = Normal walk
-Dpad Right = Fast walk
-Dpad Down = Jog  (normal speed)
-Dpad Right (Hold) = Dash
-Start = N (Talents)
-B = L (Quest Log)
-B (hold) = Alt+L (hotkey for the Carbonite addon's quest log, provided you have enabled that setting in Carbonite called "Open Quest Log with Alt+L." I use the normal quest log by default instead of Carbonite's in 3.3.5 because the normal quest log sets internal variables that allow the "Quest Complete" and Drop One Quest" buttons to work. But sometimes I still want to open up Carbonite's log so it's mapped here.
-
-Left Shoulder button = Shift + Alt + Right click (for the EasyDestroy addon, this bind deletes an item from you inventory)
+Dpad Up = Slow walk\
+Dpad Left = Normal walk\
+Dpad Right = Fast walk\
+Dpad Down = Jog  (normal speed)\
+Dpad Right (Hold) = Dash\
+Start = N (Talents)\
+B = L (Quest Log)\
+B (hold) = Alt+L (hotkey for the Carbonite addon's quest log, provided you have enabled that setting in Carbonite called "Open Quest Log with Alt+L." I use the normal quest log by default instead of Carbonite's in 3.3.5 because the normal quest log sets internal variables that allow the "Quest Complete" and Drop One Quest" buttons to work. But sometimes I still want to open up Carbonite's log so it's mapped here.\
+Left Shoulder button = Shift + Alt + Right click (for the EasyDestroy addon, this bind deletes an item from you inventory)\
 Right Shoulder button = Left click. Unlike the left click that occurs on Main Page when you keyup the Left Trigger, this left click can be used for drag-and-drops
 
 #### Page 4 to be used in future
-Page 4 is mostly unused presently, but does have some targeting functions
-Dpad Up/Down = Cycle through enemy targets
+Page 4 is mostly unused presently, but does have some targeting functions\
+Dpad Up/Down = Cycle through enemy targets\
 Dpad Left/Right = Cycle through friendly targets
 
 These are mapped in case needed but I accomplish my targeting generally by baking targeting into macros for each skills. 
