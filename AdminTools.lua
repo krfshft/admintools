@@ -346,6 +346,7 @@ AdminUtils.buttons = {
 		{ "Anvil", "Trade_blacksmithing" },
 		{ "ForgeHuman", "Trade_blacksmithing" },
 		{ "ForgeDraenei", "Trade_blacksmithing" },
+		{ "ForgeOgre", "Trade_blacksmithing" },
 		{ "WaterBarrel", "Inv_drink_waterskin_12" },
 		{ "FoodCrate", "Inv_crate_01" },
 		{ "AlchemyLab", "Trade_alchemy" },
@@ -362,12 +363,18 @@ AdminUtils.buttons = {
 		{ "EmptyShelf", "Inv_misc_bag_12" },
 		{ "Rug2", "Ability_mount_flyingcarpet" },
 		{ "Chair", "Inv_misc_bag_12" },
-		{ "PaddedChair", "Inv_misc_bag_12" },
+		{ "DalaranChair", "Inv_misc_bag_12" },
 		{ "ElfChair", "Inv_misc_bag_12" },
-		{ "FishingChair",	"Inv_misc_bag_12" },
+		{ "FishingChair", "Inv_misc_bag_12" },
+		{ "StoneChair", "Inv_misc_bag_12" },
+		{ "StoneChairBroken", "Inv_misc_bag_12" },
+		{ "StoneThrone", "Inv_misc_bag_12" },
+		{ "WarsongThrone", "Inv_misc_bag_12" },
 		{ "GoblinPlatform", "Inv_misc_bag_12" },
 		{ "GreyBench", "Inv_misc_bag_12" },
 		{ "RoughTable", "Inv_misc_bag_12" },
+		{ "WoodBench", "Inv_misc_bag_12" },
+		{ "StoneBench", "Inv_misc_bag_12" },
 		{ "InnBarrel", "Inv_misc_bag_12" },
 		{ "Armoire", "Inv_misc_enggizmos_17" },
 		{ "Footlocker", "Inv_misc_enggizmos_17" },
@@ -383,6 +390,7 @@ AdminUtils.buttons = {
 		{ "ShadowTorch", "Inv_torch_lit" },
 		{ "Lantern", "Inv_misc_lantern_01" },
 		{ "SkullCandle", "Inv_misc_bone_orcskull_01" },
+		{ "BlackCandle", "Inv_misc_candle_01" },
 		{ "Candle1", "Inv_misc_candle_01" },
 		{ "Jar1", "Inv_misc_bag_12" },
 		{ "Jar2", "Inv_misc_bag_12" },
@@ -390,6 +398,7 @@ AdminUtils.buttons = {
 		{ "CampMug", "Inv_drink_03" },
 		{ "CampJug", "Inv_misc_bag_12" },
 		{ "Jug1", "Inv_misc_bag_12" },
+		{ "Outhouse", "Inv_misc_bag_12" },
 		{ "BookPile", "Inv_misc_book_08" },
 		{ "BookPile2", "Inv_misc_book_08" },
 		{ "BookOpen", "Inv_misc_book_08" },
@@ -400,15 +409,39 @@ AdminUtils.buttons = {
 		{ "Spotlight", "Inv_misc_bag_12" },
 		{ "SpotlightCeiling", "Inv_misc_bag_12" },
 		{ "MetalPlatform", "Inv_misc_bag_12" },
+		{ "StormwindWagon", "Inv_misc_bag_12" },
+		{ "KegWagon", "Inv_cask_04" },
+		{ "HordeKegWagon", "Inv_cask_04" },
+		{ "WagonUnloaded", "Inv_misc_bag_12" },
+	},
+	Camp3 = {
+		{ "FancyTable", "Inv_misc_bag_12" },
+		{ "MetalTable", "Inv_misc_bag_12" },
+		{ "EnergyCube", "Inv_misc_bag_12" },
+		{ "SunwellPlateau", "Inv_misc_bag_12" },
+		{ "GreenSoulsFloor", "Inv_misc_bag_12" },
+		{ "BigSpookyBottle", "Inv_misc_bag_12" },
+		{ "SenjinBatTotem", "Inv_misc_bag_12" },
+		{ "GlassPlatform", "Inv_misc_bag_12" },	
+		{ "MedicalCrateAlly", "Inv_misc_bag_12" },	
+		{ "MedicalCrateHorde", "Inv_misc_bag_12" },	
+		{ "Bandages", "Inv_misc_bag_12" },
+		{ "ChemicalWagon", "Inv_misc_bag_12" },
+		{ "ForsakenWagon", "Inv_misc_bag_12" },
+	},
+	Buildings = {
+		{ "AirshipAlliance", "Inv_misc_bag_12" },
+		{ "AirshipHorde", "Inv_misc_bag_12" },
 		{ "WhiteTent1", "Inv_misc_bag_12" },
 		{ "WhiteTent2", "Inv_misc_bag_12" },
 		{ "LargeTent", "Inv_misc_bag_12" },
 		{ "ColorfulTent", "Inv_misc_bag_12" },
-		{ "StormwindWagon", "Inv_misc_bag_12" },
-		{ "KegWagon", "Inv_cask_04" },
-		{ "HordeKegWagon", "Inv_cask_04" },
-	},
-	Buildings = {
+		{ "NightElfTent", "Inv_misc_bag_12" },
+		{ "DarkmoonFortuneTent", "Inv_misc_bag_12" },
+		{ "DarkmoonFoodTent", "Inv_misc_bag_12" },
+		{ "DarkmoonSouvenirTent", "Inv_misc_bag_12" },
+		{ "DarkmoonTicketTent", "Inv_misc_bag_12" },
+		{ "Necropolis", "Inv_misc_bag_12" },
 		{ "HordeTent", "Inv_misc_bag_12" },
 		{ "SenjinTent", "Inv_misc_bag_12" },
 		{ "ShadowsightTower", "Inv_misc_bag_12" },
@@ -1868,6 +1901,75 @@ AdminUtils.buttonFunctions = {
 		end,
 	},
 	Camp = {
+		ChemicalWagon = function()
+			AdminUtils.cmd(".gobject add 201716")
+		end,
+		ForsakenWagon = function()
+			AdminUtils.cmd(".gobject add 200336")
+		end,
+		MetalTable = function()
+			AdminUtils.cmd(".gobject add 193654")
+		end,
+		MedicalCrateAlly = function()
+			AdminUtils.cmd(".gobject add 193096")
+		end,
+		MedicalCrateHorde = function()
+			AdminUtils.cmd(".gobject add 193110")
+		end,
+		Bandages = function()
+			AdminUtils.cmd(".gobject add 193105")
+		end,
+		BigSpookyBottle = function()
+			AdminUtils.cmd(".gobject add 191261")
+		end,
+		SenjinBatTotem = function()
+			AdminUtils.cmd(".gobject add 202833")
+		end,
+		GlassPlatform = function()
+			AdminUtils.cmd(".gobject add 192517")
+		end,
+		FancyTable = function()
+			AdminUtils.cmd(".gobject add 180324")
+		end,
+		WarsongThrone = function()
+			AdminUtils.cmd(".gobject add 188481")
+		end,
+		GreenSoulSFloor = function()
+			AdminUtils.cmd(".gobject add 191206")
+		end,
+		SunwellPlateau = function()
+			AdminUtils.cmd(".gobject add 187345")
+		end,
+		Outhouse = function()
+			AdminUtils.cmd(".gobject add 180006")
+		end,
+		StoneThrone = function()
+			AdminUtils.cmd(".gobject add 179118")
+		end,
+		StoneChair = function()
+			AdminUtils.cmd(".gobject add 136943")
+		end,
+		StoneChairBroken = function()
+			AdminUtils.cmd(".gobject add 136944")
+		end,
+		WagonUnloaded = function()
+			AdminUtils.cmd(".gobject add 180036")
+		end,
+		StoneBench = function()
+			AdminUtils.cmd(".gobject add 24392")
+		end,
+		WoodBench = function()
+			AdminUtils.cmd(".gobject add 24538")
+		end,
+		EnergyCube = function()
+			AdminUtils.cmd(".gobject add 183945")
+		end,
+		AirshipAlliance = function()
+			AdminUtils.cmd(".gobject add 19001")		
+		end,
+		AirshipHorde = function()
+			AdminUtils.cmd(".gobject add 19000")		
+		end,
 		Anvil = function()
 			AdminUtils.cmd(".gobject add 1744")
 		end,
@@ -1879,6 +1981,9 @@ AdminUtils.buttonFunctions = {
 		end,
 		ForgeDraenei = function()
 			AdminUtils.cmd(".gobject add 194468")
+		end,
+		ForgeOgre = function()
+			AdminUtils.cmd(".gobject add 183944")
 		end,
 		WaterBarrel = function()
 			AdminUtils.cmd(".gobject add 3658")
@@ -1934,6 +2039,9 @@ AdminUtils.buttonFunctions = {
 		end,
 		SkullCandle = function()
 			AdminUtils.cmd(".gobject add 180425")
+		end,
+		BlackCandle = function()
+			AdminUtils.cmd(".gobject add 182415")
 		end,
 		Candle1 = function()
 			AdminUtils.cmd(".gobject add 180338")
@@ -1993,18 +2101,6 @@ AdminUtils.buttonFunctions = {
 		MetalPlatform = function()
 			AdminUtils.cmd(".gobject add 185301")
 		end,
-		WhiteTent1 = function()
-			AdminUtils.cmd(".gobject add 210286")
-		end,
-		WhiteTent2 = function()
-			AdminUtils.cmd(".gobject add 190794")
-		end,
-		LargeTent = function()
-			AdminUtils.cmd(".gobject add 184593")
-		end,
-		ColorfulTent = function()
-			AdminUtils.cmd(".gobject add 188021")
-		end,
 		StormwindWagon = function()
 			AdminUtils.cmd(".gobject add 180045")
 		end,
@@ -2024,7 +2120,7 @@ AdminUtils.buttonFunctions = {
 		Chair = function()
 			AdminUtils.cmd(".gobject add 10192")
 		end,
-		PaddedChair = function()
+		DalaranChair = function()
 			AdminUtils.cmd(".gobject add 191887")
 		end,
 		ElfChair = function()
@@ -2064,6 +2160,35 @@ AdminUtils.buttonFunctions = {
 
 	},
 	Buildings = {
+		WhiteTent1 = function()
+			AdminUtils.cmd(".gobject add 210286")
+		end,
+		WhiteTent2 = function()
+			AdminUtils.cmd(".gobject add 190794")
+		end,
+		LargeTent = function()
+			AdminUtils.cmd(".gobject add 184593")
+		end,
+		ColorfulTent = function()
+			AdminUtils.cmd(".gobject add 188021")
+		end,
+		DarkmoonFortuneTent = function()
+			AdminUtils.cmd(".gobject add 180030")
+		end,
+		DarkmoonFoodTent = function()
+			AdminUtils.cmd(".gobject add 180031")
+		end,
+		DarkmoonSouvenirTent = function()
+			AdminUtils.cmd(".gobject add 180032")
+		end,
+		DarkmoonTicketTent = function()
+			AdminUtils.cmd(".gobject add 180033")
+		end,
+		Necropolis = function()
+			AdminUtils.cmd(".gobject add 181172")
+		end,
+
+
 		HordeTent = function()
 			AdminUtils.cmd(".gobject add 201887")
 		end,
@@ -2334,6 +2459,9 @@ AdminUtils.GROUPS_IN_COLUMN = {}
 
 ----------------------------------------------------------------start functions
 local function ButtonPanel(name, width, height)
+	-- reset the counters for each panel
+	AdminUtils.GROUPS_IN_COLUMN = {}
+
 	local f = CreateFrame("Frame", name, UIParent)
 	tinsert(UISpecialFrames, f:GetName())
 	f:SetSize(width, height)
@@ -2409,10 +2537,10 @@ local function ContentMenu()
 	local f = ButtonPanel("ContentToolsFrame", 962, 495)
 	
 	AdminUtils.MakeButtonColumn(f, "NPC", AdminUtils.buttons.NPC,               1)
-	AdminUtils.MakeButtonColumn(f, "ShopInv", AdminUtils.buttons.ShopInv,       1, 9)
+	AdminUtils.MakeButtonColumn(f, "ShopInv", AdminUtils.buttons.ShopInv,       1, 7)
 
 	AdminUtils.MakeButtonColumn(f, "Minerals", AdminUtils.buttons.Minerals,     2)
-	AdminUtils.MakeButtonColumn(f, "Buildings", AdminUtils.buttons.Buildings,   2, 8)
+	AdminUtils.MakeButtonColumn(f, "Buildings", AdminUtils.buttons.Buildings,   2, 5)
 
 	AdminUtils.MakeButtonColumn(f, "Herbs", AdminUtils.buttons.Herbs,           3)
 
@@ -2421,6 +2549,8 @@ local function ContentMenu()
 	--AdminUtils.MakeButtonColumn(f, "Management", AdminUtils.buttons.Management, 4, 11)
 	
 	AdminUtils.MakeButtonColumn(f, "Camp", AdminUtils.buttons.Camp2,            5)
+	
+	AdminUtils.MakeButtonColumn(f, "Camp", AdminUtils.buttons.Camp3,            6)
 end
 
 local function ContentMenu2()
@@ -2919,7 +3049,7 @@ local function BuildOverlay()
 		if overlayCreated then return nil end
 		
 		local overlay = CreateFrame("Frame", "AdminToolsOverlay", UIParent)
-		overlay:SetSize(250, 174)
+		overlay:SetSize(246, 166)
 		overlay:SetPoint("CENTER", 330, -85)
 		overlay:SetBackdrop({
 			bgFile = "Interface/Tooltips/UI-Tooltip-Background",
