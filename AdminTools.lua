@@ -2330,6 +2330,8 @@ AdminUtils.BUTTONS_PER_ROW = 4
 AdminUtils.ACTION_ICON_SIZE = 36
 AdminUtils.CONTENT_ICON_SIZE = 36
 
+AdminUtils.GROUPS_IN_COLUMN = {}
+
 ----------------------------------------------------------------start functions
 local function ButtonPanel(name, width, height)
 	local f = CreateFrame("Frame", name, UIParent)
@@ -2647,6 +2649,11 @@ end
 function AdminUtils.MakeButtonColumn(actionPanel, buttonsCategory, buttons, column, startingRow)
 	if startingRow == nil then startingRow = 1 end	
 	if buttons == nil then error("MakeButtonColumn(buttons) is nil") end
+	if AdminUtils.GROUPS_IN_COLUMN[column] == nil then
+		AdminUtils.GROUPS_IN_COLUMN[column] = 1
+	else
+		AdminUtils.GROUPS_IN_COLUMN[column] = AdminUtils.GROUPS_IN_COLUMN[column] + 1
+	end
 
 	local s = AdminUtils.CONTENT_ICON_SIZE
 	local rowWidth = s * AdminUtils.BUTTONS_PER_ROW + AdminUtils.CONTENT_ROW_SPACE
@@ -2655,7 +2662,7 @@ function AdminUtils.MakeButtonColumn(actionPanel, buttonsCategory, buttons, colu
 
 	-- spacing for headers
 	if startingRow > 1 then
-		vOffset = vOffset - 14
+		vOffset = vOffset - (14 * (AdminUtils.GROUPS_IN_COLUMN[column] - 1))
 	end
 
 	local startHOffset = hOffset
@@ -2880,6 +2887,7 @@ end
 -- automatically take the bindings for F1-F12 so that some binds that are
 -- constant between many characters are always present without needing to
 -- be configured, but that part isn't working.
+local overlayCreated = false
 local function BuildOverlay()
 	local function isMouseOverAnyButton(buttons)
 		for _, button in ipairs(buttons) do
@@ -2908,6 +2916,8 @@ local function BuildOverlay()
 	end
 
 	local function CreateOverlay()
+		if overlayCreated then return nil end
+		
 		local overlay = CreateFrame("Frame", "AdminToolsOverlay", UIParent)
 		overlay:SetSize(250, 174)
 		overlay:SetPoint("CENTER", 330, -85)
@@ -2949,6 +2959,7 @@ local function BuildOverlay()
 		end
 
 		overlay:SetAlpha(0)
+		overlayCreated = true
 		return overlay
 	end
 
