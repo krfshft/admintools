@@ -160,20 +160,6 @@ AdminUtils.buttons = {
 		
 	},
 	Tele = {
-		{ "Home1", "Achievement_zone_sholazar_04" },
-		{ "Home2", "Achievement_zone_sholazar_02" },
-		{ "Home3", "Achievement_zone_sholazar_06" },
-		{ "Home4", "Achievement_zone_sholazar_09" },
-		{ "Home5", "Achievement_zone_grizzlyhills_06" },
-		{ "Home6", "Achievement_zone_zuldrak_04" },
-		{ "Home7", "Achievement_zone_grizzlyhills_10" },
-		{ "Camp1", "Achievement_zone_hillsbradfoothills" },
-		{ "Camp2", "Achievement_zone_howlingfjord_11" },
-		{ "Camp3", "Achievement_zone_howlingfjord_10" },
-		{ "Camp4", "Achievement_zone_howlingfjord_03" },
-		{ "Camp5", "Achievement_zone_grizzlyhills_04" },
-		{ "Camp6", "Achievement_zone_sholazar_05" },
-		{ "Camp7", "Achievement_zone_dragonblight_03" },
 		{ "Stormwind", "Achievement_zone_elwynnforest" },
 		{ "Ironforge", "Achievement_zone_dunmorogh" },
 		{ "Darnassus", "Achievement_zone_darnassus" },
@@ -184,25 +170,69 @@ AdminUtils.buttons = {
 		{ "Shattrath", "Achievement_zone_terrokar" },
 		{ "Dalaran", "Achievement_zone_crystalsong_01" },
 		{ "GMIsland", "Achievement_zone_easternkingdoms_01" },
-		{ "Waypoint", "Spell_arcane_portalexodar" },
+		{ "Waypoint", "Spell_arcane_portalstormwind" },
+		{ "Return", "Spell_arcane_portalexodar" },
 		{ "WaypointSet", "Inv_trinket_naxxramas06" },
-		{ "Return",  "Spell_arcane_portalstormwind" },
 	},
-	TeleSet = {
+	TeleHome = {
+		{ "Home1", "Achievement_zone_sholazar_04" },
+		{ "Home2", "Achievement_zone_sholazar_02" },
+		{ "Home3", "Achievement_zone_sholazar_06" },
+		{ "Home4", "Achievement_zone_sholazar_09" },
+		{ "Home5", "Achievement_zone_grizzlyhills_06" },
+		{ "Home6", "Achievement_zone_zuldrak_04" },
+		{ "Home7", "Achievement_zone_grizzlyhills_10" },
+	},
+	TeleCamp = {
+		{ "Camp1", "Achievement_zone_hillsbradfoothills" },
+		{ "Camp2", "Achievement_zone_howlingfjord_11" },
+		{ "Camp3", "Achievement_zone_howlingfjord_10" },
+		{ "Camp4", "Achievement_zone_howlingfjord_03" },
+		{ "Camp5", "Achievement_zone_grizzlyhills_04" },
+		{ "Camp6", "Achievement_zone_sholazar_05" },
+		{ "Camp7", "Achievement_zone_dragonblight_03" },
+	
+	},
+	TeleShared = {
+		{ "Shared1", "Achievement_zone_hillsbradfoothills" },
+		{ "Shared2", "Achievement_zone_howlingfjord_11" },
+		{ "Shared3", "Achievement_zone_howlingfjord_10" },
+		{ "Shared4", "Achievement_zone_howlingfjord_03" },
+		{ "Shared5", "Achievement_zone_grizzlyhills_04" },
+		{ "Shared6", "Achievement_zone_sholazar_05" },
+		{ "Shared7", "Achievement_zone_dragonblight_03" },	
+		{ "Shared8", "Achievement_zone_dragonblight_03" },	
+	
+	},
+	TeleHomeSet = {
 		{ "Home1Set", "Achievement_zone_sholazar_04" },
 		{ "Home2Set", "Achievement_zone_sholazar_02" },
 		{ "Home3Set", "Achievement_zone_sholazar_06" },
 		{ "Home4Set", "Achievement_zone_sholazar_09" },
 		{ "Home5Set", "Achievement_zone_grizzlyhills_06" },
 		{ "Home6Set", "Achievement_zone_zuldrak_04" },
-		{ "Home7Set", "Achievement_zone_grizzlyhills_10" },
+		{ "Home7Set", "Achievement_zone_grizzlyhills_10" },	
+		{ "Home8Set", "Achievement_zone_grizzlyhills_10" },	
+	},
+	TeleCampSet = {
 		{ "Camp1Set", "Achievement_zone_hillsbradfoothills" },
 		{ "Camp2Set", "Achievement_zone_howlingfjord_11" },
 		{ "Camp3Set", "Achievement_zone_howlingfjord_10" },
 		{ "Camp4Set", "Achievement_zone_howlingfjord_03" },
 		{ "Camp5Set", "Achievement_zone_grizzlyhills_04" },
 		{ "Camp6Set", "Achievement_zone_sholazar_05" },
-		{ "Camp7Set", "Achievement_zone_dragonblight_03" },
+		{ "Camp7Set", "Achievement_zone_dragonblight_03" },	
+		{ "Camp8Set", "Achievement_zone_dragonblight_03" },	
+	},
+	TeleSharedSet = {
+		{ "Shared1Set", "Achievement_zone_hillsbradfoothills" },
+		{ "Shared2Set", "Achievement_zone_howlingfjord_11" },
+		{ "Shared3Set", "Achievement_zone_howlingfjord_10" },
+		{ "Shared4Set", "Achievement_zone_howlingfjord_03" },
+		{ "Shared5Set", "Achievement_zone_grizzlyhills_04" },
+		{ "Shared6Set", "Achievement_zone_sholazar_05" },
+		{ "Shared7Set", "Achievement_zone_dragonblight_03" },	
+		{ "Shared8Set", "Achievement_zone_dragonblight_03" },	
 	},
 	NPC = {
 		{ "Banker", "Inv_misc_grouplooking" },
@@ -399,6 +429,11 @@ AdminUtils.buttons = {
 		{ "Baggins", "Inv_misc_bag_07_black" },
 	},
 	Management = {
+		{ "LevelUp10", "Inv_potion_112", },
+		{ "LevelUp1", "Inv_potion_106", },
+		{ "LevelDown1", "inv_potion_85", },
+		{ "LevelDown10", "Inv_potion_65", },
+		{ "AddTalentPoint", "Achievement_bg_tophealer_wsg", },
 		{ "KillCreature", "Inv_staff_78", },
 		{ "RespawnCreature", "Spell_shaman_blessingofeternals", },
 		{ "DeleteCreature", "Inv_sigil_mimiron", },
@@ -2085,6 +2120,22 @@ AdminUtils.buttonFunctions = {
 		end,		
 	},
 	Management = {
+		LevelUp1 = function()
+			AdminUtils.cmd(".levelup")
+		end,
+		LevelUp10 = function()
+			AdminUtils.cmd(".levelup 10")
+		end,
+		LevelDown1 = function()
+			AdminUtils.cmd(".levelup -1")
+		end,
+		LevelDown10 = function()
+			AdminUtils.cmd(".levelup -10")
+		end,
+		AddTalentPoint = function()
+			AdminUtils.cmd(".modify tp 3")
+		end,
+		
 		KillCreature = function()
 			AdminUtils.cmd(".die")
 		end,
@@ -2228,8 +2279,6 @@ AdminUtils.adminToolsBindings = {
 	{ key = AdminUtils.IsClassicClient() and "F24" or "F24", name = "ADMINTOOLS_24_BINDING" },
 }
 
-
-
 -- Localized Keybinding Names
 BINDING_HEADER_ADMINTOOLS = "Admin Tools";
 BINDING_CATEGORY_ADMINTOOLS = "Admin Tools";
@@ -2271,7 +2320,6 @@ BINDING_NAME_ADMINTOOLS_10 = "Action 10";
 BINDING_NAME_ADMINTOOLS_11 = "Action 11";
 BINDING_NAME_ADMINTOOLS_12 = "Action 12"
 
-
 local waitTable = {};
 local waitFrame = nil;
 
@@ -2279,8 +2327,8 @@ AdminUtils.deleteNearestObject = false
 AdminUtils.lastObjectId = 0
 AdminUtils.CONTENT_ROW_SPACE = 12
 AdminUtils.BUTTONS_PER_ROW = 4
-AdminUtils.ACTION_ICON_SIZE = 44
-AdminUtils.CONTENT_ICON_SIZE = 44
+AdminUtils.ACTION_ICON_SIZE = 36
+AdminUtils.CONTENT_ICON_SIZE = 36
 
 ----------------------------------------------------------------start functions
 local function ButtonPanel(name, width, height)
@@ -2336,13 +2384,20 @@ local function ActionsMenu()
 	AdminUtils.MakeButtonColumn(f, "NPCBot", AdminUtils.buttons.NPCBot,         2, 7)	
 
 	AdminUtils.MakeButtonColumn(f, "Crafting", AdminUtils.buttons.Crafting,     3)
+	AdminUtils.MakeButtonColumn(f, "Weather", AdminUtils.buttons.Weather,       3, 5)
 	AdminUtils.MakeButtonColumn(f, "PlayerBot", AdminUtils.buttons.PlayerBot,   3, 7)
 	
-	AdminUtils.MakeButtonColumn(f, "Tele", AdminUtils.buttons.Tele,             4)
-	AdminUtils.MakeButtonColumn(f, "Weather", AdminUtils.buttons.Weather,       4, 8)
+	AdminUtils.MakeButtonColumn(f, "Tele", AdminUtils.buttons.TeleHome,         4)
+	AdminUtils.MakeButtonColumn(f, "Tele", AdminUtils.buttons.TeleCamp,         4, 3)
+	AdminUtils.MakeButtonColumn(f, "Tele", AdminUtils.buttons.TeleShared,       4, 5)
 	
-	AdminUtils.MakeButtonColumn(f, "TeleSet", AdminUtils.buttons.TeleSet,       5)
-	AdminUtils.MakeButtonColumn(f, "Management", AdminUtils.buttons.Management, 5, 8)
+	AdminUtils.MakeButtonColumn(f, "Tele", AdminUtils.buttons.TeleHomeSet,      5)
+	AdminUtils.MakeButtonColumn(f, "Tele", AdminUtils.buttons.TeleCampSet,      5, 3)
+	AdminUtils.MakeButtonColumn(f, "Tele", AdminUtils.buttons.TeleSharedSet,    5, 5)
+
+	AdminUtils.MakeButtonColumn(f, "Tele", AdminUtils.buttons.Tele,             6)
+	AdminUtils.MakeButtonColumn(f, "Management", AdminUtils.buttons.Management, 6, 7)
+
 
 
 	--AdminUtils.MakeButtonColumn(f, "Addons", AdminUtils.buttons.Addons,         2, 6)
@@ -2537,49 +2592,71 @@ end
 
 local function TeleButtonHandler(f, btn)
 	f:Hide()
+	-- The dashes being added to the commands here ensure that partial
+	-- tele name matches do not occur
 	local player = AdminUtils.playerName
 	if (string.lower(btn) == "waypointset") then
-		AdminUtils.cmd(".tele del " .. player .. "Waypoint")
-		AdminUtils.cmd(".tele add " .. player .. "Waypoint")
+		AdminUtils.cmd("tele del -" .. player .. "-Waypoint")
+		AdminUtils.cmd("tele add -" .. player .. "-Waypoint")
+
+		AdminUtils.cmd(".tele del -" .. player .. "-Waypoint")
+		AdminUtils.cmd(".tele add -" .. player .. "-Waypoint")
 		return
 	end
 	if (string.lower(btn) ~= "return") then
-		AdminUtils.cmd(".tele del " .. player .. "Return")
-		AdminUtils.cmd(".tele add " .. player .. "Return")
+		AdminUtils.cmd("tele del -" .. player .. "-Return")
+		AdminUtils.cmd("tele add -" .. player .. "-Return")
+		
+		AdminUtils.cmd(".tele del -" .. player .. "-Return")
+		AdminUtils.cmd(".tele add -" .. player .. "-Return")
 	end
 	if (string.lower(btn) == "waypoint") then
-		AdminUtils.cmd(".tele " .. player .. "Waypoint")
+		AdminUtils.cmd("tele -" .. player .. "-Waypoint")
+		AdminUtils.cmd(".tele -" .. player .. "-Waypoint")
 		return
 	end
 
 	if (string.lower(btn) == "return") then
-		AdminUtils.cmd(".tele " .. player .. btn)
+		AdminUtils.cmd("tele -" .. player .. "-" .. btn)
+		AdminUtils.cmd(".tele -" .. player .. "-" .. btn)
 		return
 	end
 
 	suffix = string.sub(btn, string.len(btn) - 2)
+	tele_type = string.lower(string.sub(btn, 0, 4))
+	
 	if suffix == "Set" then
-		location = player .. string.sub(btn, 0, string.len(btn) - 3)
+		location = string.sub(btn, 0, string.len(btn) - 3)
+		if type_type == "camp" or tele_type == "home" then
+			location = "-" .. player .. "-" .. location
+		end
+		AdminUtils.cmd("tele del " .. location)
+		AdminUtils.cmd("tele add " .. location)
 		AdminUtils.cmd(".tele del " .. location)
 		AdminUtils.cmd(".tele add " .. location)
 		return
 	end
 
-	tele_type = string.lower(string.sub(btn, 0, 4))
 	if tele_type == "camp" or tele_type == "home" then
-		btn = player .. btn
+		btn = "-" .. player .. "-" .. btn
 	end
+	AdminUtils.cmd("tele " .. btn)
 	AdminUtils.cmd(".tele " .. btn)
 end
 
 function AdminUtils.MakeButtonColumn(actionPanel, buttonsCategory, buttons, column, startingRow)
 	if startingRow == nil then startingRow = 1 end	
-	if buttons == nil then error("Why is buttons nil?") end
+	if buttons == nil then error("MakeButtonColumn(buttons) is nil") end
 
 	local s = AdminUtils.CONTENT_ICON_SIZE
 	local rowWidth = s * AdminUtils.BUTTONS_PER_ROW + AdminUtils.CONTENT_ROW_SPACE
 	local vOffset = -5 - (startingRow * s) + s
 	local hOffset = 5 + (rowWidth * column) - rowWidth
+
+	-- spacing for headers
+	if startingRow > 1 then
+		vOffset = vOffset - 14
+	end
 
 	local startHOffset = hOffset
 	local innerColumnCount = 1
@@ -2846,7 +2923,7 @@ local function BuildOverlay()
 		if AdminUtils.IsClassicClient() then
 			overlay:EnableKeyboard(true)
 		else
-			overlay:EnableKeyboard(falseF)
+			overlay:EnableKeyboard(false)
 			overlay:SetPropagateKeyboardInput(true)
 		end
 		overlay:SetMovable(true)
@@ -2874,7 +2951,6 @@ local function BuildOverlay()
 		overlay:SetAlpha(0)
 		return overlay
 	end
-	local overlay = CreateOverlay()
 
 	local function OverlayButton(name, hOffset, vOffset, overlay, tooltipText, iconPath, customFunc, buttonBind)
 		function SetButtonKeybinding(name, key, macro)
@@ -2931,20 +3007,9 @@ local function BuildOverlay()
 		end
 	end
 	
-	-- To add to first row
-	-- Content Panel 2: Dynamic buttons
-	-- Config Panel
-	
-	-- Add 4th row:
-	-- Bot/Pet attack (will still be inferior to a macro because it will lack auto target functionality
-	--		workaround this by adding Tab at beginning of rewasd combo for this button
-	-- Bot/Pet return/follow
-	-- Bot/Pet Guard
-	-- Bot/Pet Free
-	-- Respawn
-	-- Rain
-	
-	
+
+	local overlay = CreateOverlay()
+
 	-- Row 1
 	OverlayButton("ADMINTOOLS_1",  5, -5, overlay, "Open AdminTools Actions Panel", 	
 		"Ability_rogue_tricksofthetrade",
@@ -2956,16 +3021,28 @@ local function BuildOverlay()
 		ContentMenu, 
 		"F2"
 	)
-	OverlayButton("ADMINTOOLS_3",  85, -5, overlay, "Open AdminTools Content Panel 2", 
-		"Ability_rogue_tricksofthetrade",
-		ContentMenu2, 
+
+	OverlayButton("ADMINTOOLS_3", 85, -5, overlay, "Respawn targeted dead creature", 
+		"Spell_shaman_blessingofeternals",
+		AdminUtils.buttonFunction(nil, "Management", "RespawnCreature"),
 		"F3"
 	)
-	OverlayButton("ADMINTOOLS_4", 125, -5, overlay, "Open AdminTools Config Panel", 
-		"Inv_misc_wrench_01",
-		ConfigMenu, 
+	OverlayButton("ADMINTOOLS_4", 125, -5, overlay, "Rain", 
+		"Spell_frost_summonwaterelemental",
+		AdminUtils.buttonFunction(nil, "Weather", "LightRain"), 
 		"F4"
 	)
+
+--	OverlayButton("ADMINTOOLS_3",  85, -5, overlay, "Open AdminTools Content Panel 2", 
+--		"Ability_rogue_tricksofthetrade",
+--		ContentMenu2, 
+--		"F3"
+--	)
+--	OverlayButton("ADMINTOOLS_4", 125, -5, overlay, "Open AdminTools Config Panel", 
+--		"Inv_misc_wrench_01",
+--		ConfigMenu, 
+--		"F4"
+--	)
 	OverlayButton("ADMINTOOLS_5", 165, -5, overlay, "Enable GM mode and flying", 
 		"Ability_vanish",
 		AdminUtils.buttonFunction(nil, "Action", "Fly"), 
@@ -3072,6 +3149,8 @@ local function BuildOverlay()
 		AdminUtils.buttonFunction(nil, "Action", "Immolate"),
 		"F24"
 	)
+	
+	return overlay
 end
 
 
@@ -3148,131 +3227,6 @@ local function WriteOtherAddonSettings()
 	frame:RegisterEvent("ADDON_LOADED")
 	frame:SetScript("OnEvent", OnEvent)
 
-end
-
-function AdminTools_1()
-	print("admintools_1 old func")
-	ActionsMenu()
-end
-
-function AdminTools_2()
-	print("admintools_2 old func")
-	--ContentMenu()
-end
-
-function AdminTools_3()
-	ConfigMenu()
-end
-
-function AdminTools_4()
-	AdminUtils.buttonFunction(nil, "Weather", "LightRain")
-end
-
-function AdminTools_5()
-	AdminUtils.buttonFunction(nil, "Action", "Fly")()
-end
-
-function AdminTools_6()
-	AdminUtils.buttonFunction(nil, "Action", "Land")()	
-end
-
-function AdminTools_7()
-	AdminUtils.buttonFunction(nil, "Action", "SlowWalk")()
-end
-
-function AdminTools_8()
-	AdminUtils.buttonFunction(nil, "Action", "Walk")()
-end
-
-function AdminTools_9()
-	AdminUtils.buttonFunction(nil, "Action", "FastWalk")()
-end
-
-function AdminTools_10()
-	AdminUtils.buttonFunction(nil, "Action", "Jog")()
-end
-
-function AdminTools_11()
-	AdminUtils.buttonFunction(nil, "Action", "Dash")()
-end
-
-function AdminTools_12()
-	AdminUtils.buttonFunction(nil, "Action", "Stealth")()
-end
-
-function AdminTools_ADMINTOOLS_1()
-	print("admintools_1")
-end
-
-function AdminTools_ADMINTOOLS_2()
-	print("admintools_2")
-end
-
-function AdminTools_ADMINTOOLS_3()
-	print("admintools_1")
-end
-
-function AdminTools_ADMINTOOLS_4()
-end
-
-function AdminTools_ADMINTOOLS_5()
-end
-
-function AdminTools_ADMINTOOLS_6()
-end
-
-function AdminTools_ADMINTOOLS_7()
-end
-
-function AdminTools_ADMINTOOLS_8()
-end
-
-function AdminTools_ADMINTOOLS_9()
-end
-
-function AdminTools_ADMINTOOLS_10()
-end
-
-function AdminTools_ADMINTOOLS_11()
-end
-
-function AdminTools_ADMINTOOLS_12()
-end
-
-function AdminTools_ADMINTOOLS_13()
-end
-
-function AdminTools_ADMINTOOLS_14()
-end
-
-function AdminTools_ADMINTOOLS_15()
-end
-
-function AdminTools_ADMINTOOLS_16()
-end
-
-function AdminTools_ADMINTOOLS_17()
-end
-
-function AdminTools_ADMINTOOLS_18()
-end
-
-function AdminTools_ADMINTOOLS_19()
-end
-
-function AdminTools_ADMINTOOLS_20()
-end
-
-function AdminTools_ADMINTOOLS_21()
-end
-
-function AdminTools_ADMINTOOLS_22()
-end
-
-function AdminTools_ADMINTOOLS_23()
-end
-
-function AdminTools_ADMINTOOLS_24()
 end
 
 local function runApp()
