@@ -37,11 +37,11 @@ I'm not sure atm, but suggestions for new buttons will be welcomed.
 
 
 ## Overlay
-The overlay makes it so you can have buttons mapped functions that are likely to be common across every single character that you play. If I didn't have the overlay I would be adding macro versions of it's actions to every single character I create.
+The overlay makes it so you can have button mapped to functions that are likely to be common across most or all of your roster. Before I made the overlay I had to add macro versions of it's actions to every single character I made.
 
-The overlay is meant to work with the button mappings in the rewasd and bindings-cache.wtf files included in this repo. Not all 24 buttons are mapped, but the most important ones are:
-* Open Actions Panel F1
-* Open Content Panel F2
+The overlay is meant to work with the button mappings in the rewasd profile and bindings-cache.wtf files included in this repo. Not all 24 buttons are mapped, but the most important ones are:
+* Open Content Panel F1
+* Open Actions Panel F2
 * Respawn Targeted Creature F3
 * Change weather to Light Rain F4
 * Enable GM Mode and Flying F5
