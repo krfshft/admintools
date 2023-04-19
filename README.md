@@ -108,7 +108,7 @@ With the keymappings in place, I play the game similarly to how I would play Sky
 
 Because the movement stick is not sensitive (it's either all of nothing with movement, you can't walk slow by only moving the stick a little bit) I wanted to be able to set my walking speed at any time, easily. As a result of not being able to control speed with the stick, I use autorun with different walking speeds to get around most of the time.
 
-In order to aim the camera smoothly, and also get rid of the cursor, I use an addon called MouserlookHandler, and the rewasd profile is designed around it being played in mouse look mode nearly 100% of the time.  There is an impressive gamepad addon called ConsolePort, but it is not compatible with older game client versions. By configuring the client myself and using rewasd, I can use the exactly same addon configuration on my pc and steam deck, with game versions 3.3.5 or 7.3.5, completely seamlessly.
+In order to aim the camera smoothly, and also get rid of the cursor, I use an addon called MouselookHandler, and the rewasd profile is designed around it being played in mouse look mode nearly 100% of the time.  There is an impressive gamepad addon called ConsolePort, but it is not compatible with older game client versions. By configuring the client myself and using rewasd, I can use the exactly same addon configuration on my pc and steam deck, with game versions 3.3.5 or 7.3.5, completely seamlessly.
 
 For instance, if you have mouse look activated, you can still use all your bound hotkeys to fight mobs. And when it's time to look, the right shoulder button is a combo macro that exits mouselook mode, right clicks the mob to autocollect all look, then reenters mouselook mode, all with one button press.
 

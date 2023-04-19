@@ -2309,7 +2309,6 @@ AdminUtils.buttonFunctions = {
 			end
 		end,				
 		HDCVarsLegion = function()
-			SetCVar('overridefarclip', 1)
 			SetCVar('horizonfarclip', 6226)
 			SetCVar('horizonStart', 24000)
 			SetCVar('farclip', 24000)
@@ -3046,6 +3045,9 @@ end
 -- be configured, but that part isn't working.
 local overlayCreated = false
 local function BuildOverlay()
+	if overlayCreated then return nil end
+	overlayCreated = true
+	
 	local function isMouseOverAnyButton(buttons)
 		for _, button in ipairs(buttons) do
 			if button:IsMouseOver() then
@@ -3073,7 +3075,6 @@ local function BuildOverlay()
 	end
 
 	local function CreateOverlay()
-		if overlayCreated then return nil end
 		
 		local overlay = CreateFrame("Frame", "AdminToolsOverlay", UIParent)
 		overlay:SetSize(246, 166)
@@ -3116,8 +3117,6 @@ local function BuildOverlay()
 		end
 
 		overlay:SetAlpha(0)
-		overlayCreated = true
-		return overlay
 	end
 
 	local function OverlayButton(name, hOffset, vOffset, overlay, tooltipText, iconPath, customFunc, buttonBind)
@@ -3125,6 +3124,7 @@ local function BuildOverlay()
 			if AdminUtils.IsClassicClient() then
 				SetBindingClick(key, macro)
 			else
+				print("setting binding for key (" .. key .. ") with name (" .. name .. ")")
 				SetBinding(key, name)
 			end
 		end
@@ -3317,8 +3317,6 @@ local function BuildOverlay()
 		AdminUtils.buttonFunction(nil, "Action", "Immolate"),
 		"F24"
 	)
-	
-	return overlay
 end
 
 
@@ -3397,6 +3395,8 @@ local function WriteOtherAddonSettings()
 
 end
 
+
+
 local function runApp()
 
 	-- When user opens quest log, save the ID so that quest can be completed or 
@@ -3417,12 +3417,12 @@ local function runApp()
 	-- Adds a bunch of talents from other classes automatically on login. IMBA
 	AutorunAddTalents()
 
-	local overlay = BuildOverlay()
+	BuildOverlay()
 
 	-- Register the key bindings
-	--for _, binding in ipairs(AdminUtils.adminToolsBindings) do
-	--	SetBinding(binding.key, binding.buttonName)
-	--end
+	for _, binding in ipairs(AdminUtils.adminToolsBindings) do
+		SetBinding(binding.key, binding.buttonName)
+	end
 	
 end
 
