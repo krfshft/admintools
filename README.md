@@ -249,7 +249,7 @@ For most attacks and spells I use a macro like this:
 /targetenemy
 /cast Smite
 ```
-For most encounters you just point yourself at the general direction of your enemy and let the macro handle the targeting. The down side is being unable to pick out targets from a crowd but that's a price I'm willing to pay.
+For most encounters you just point yourself at the general direction of your enemy and let the macro handle the targeting. The down side is being unable to pick out targets from a crowd but that's the overall flow of combat improves a lot with these macros, it's totally worth it.
 
 Here's one for healing a friendly ally.
 ```
