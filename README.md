@@ -126,11 +126,11 @@ Some aspects of the data will be completed but at a very slow pace. For instance
 
 Apart from the data, new features I would like to do someday are, in no particular order:
 
-* Support cross class skills for skills that have multiple levels. Doing that with the code currently would give you rank 10 skills at level 1, which is a bit much, so I want to add a system that only adds spells learnable up to the characters currently level.
+* Support cross class skills for skills that have multiple levels. Doing that with the code currently would give you rank 10 skills at level 1, which is a bit much, so I want to add a system that only adds spells learnable up to the character's currently level.
 * Clean up BuildOverlay():
 	* Simplify function signature
 	* Make buttons data driven, with support for configurable icon/grid size
-* Ability to choose cross class skills and talents. Currently all cross class talents are applied automatically on login, but I want to be able to make custom multiclass builds that are different for each character, which makes implementation of the Config panel a blocker for this.
+* Ability to choose cross class skills and talents. Currently all configured cross class talents are applied automatically on login, but I want to be able to make custom multiclass builds that are different for each character, which makes implementation of the Config panel a blocker for this.
 * Complete all the shop inventory buttons.
 * Convert all of the camp building buttons to a data driven system. It's not bad the way it is now, and will be functionally identical, but the code will be a little leaner and nicer.
 * Collect the IDs from all user-created gameobjects within a certain range, filter out non-user spawned objects, then pass this data to a python (or js maybe) tool that pulls the records from the database and stores in an agnostic format. The goal being to allow a camp to be created in one core and then imported into any supported core. Once that is in place, I can safely devote more time into creating awesome camps, knowing they will never be lost, and I will have the option of synchronizing builds across all three systems.
