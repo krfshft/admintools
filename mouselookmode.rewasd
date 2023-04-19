@@ -134,23 +134,13 @@
       "set": [
         {
           "deviceId": 1,
-          "buttonId": 9,
-          "description": "XB, Nintendo: LeftStick / DS4, Stadia: L3"
-        }
-      ]
-    },
-    {
-      "id": 10,
-      "set": [
-        {
-          "deviceId": 1,
           "buttonId": 10,
           "description": "XB, Nintendo: RightStick / DS4, Stadia: R3"
         }
       ]
     },
     {
-      "id": 11,
+      "id": 10,
       "set": [
         {
           "deviceId": 1,
@@ -160,7 +150,7 @@
       ]
     },
     {
-      "id": 12,
+      "id": 11,
       "set": [
         {
           "deviceId": 1,
@@ -170,7 +160,7 @@
       ]
     },
     {
-      "id": 13,
+      "id": 12,
       "set": [
         {
           "deviceId": 1,
@@ -180,7 +170,7 @@
       ]
     },
     {
-      "id": 14,
+      "id": 13,
       "set": [
         {
           "deviceId": 1,
@@ -190,7 +180,7 @@
       ]
     },
     {
-      "id": 15,
+      "id": 14,
       "set": [
         {
           "deviceId": 1,
@@ -200,7 +190,7 @@
       ]
     },
     {
-      "id": 16,
+      "id": 15,
       "set": [
         {
           "deviceId": 1,
@@ -210,7 +200,7 @@
       ]
     },
     {
-      "id": 17,
+      "id": 16,
       "set": [
         {
           "deviceId": 1,
@@ -220,7 +210,7 @@
       ]
     },
     {
-      "id": 18,
+      "id": 17,
       "set": [
         {
           "deviceId": 1,
@@ -230,7 +220,7 @@
       ]
     },
     {
-      "id": 19,
+      "id": 18,
       "set": [
         {
           "deviceId": 1,
@@ -240,7 +230,7 @@
       ]
     },
     {
-      "id": 20,
+      "id": 19,
       "set": [
         {
           "deviceId": 1,
@@ -250,7 +240,7 @@
       ]
     },
     {
-      "id": 21,
+      "id": 20,
       "set": [
         {
           "deviceId": 1,
@@ -260,7 +250,7 @@
       ]
     },
     {
-      "id": 22,
+      "id": 21,
       "set": [
         {
           "deviceId": 1,
@@ -270,7 +260,7 @@
       ]
     },
     {
-      "id": 23,
+      "id": 22,
       "set": [
         {
           "deviceId": 1,
@@ -280,12 +270,22 @@
       ]
     },
     {
-      "id": 24,
+      "id": 23,
       "set": [
         {
           "deviceId": 1,
           "buttonId": 55,
           "description": "BtnRightTrigger"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "set": [
+        {
+          "deviceId": 1,
+          "buttonId": 9,
+          "description": "XB, Nintendo: LeftStick / DS4, Stadia: L3"
         }
       ]
     }
@@ -789,24 +789,6 @@
       },
       "macros": [
         {
-          "mouse": {
-            "buttonId": 1
-          }
-        }
-      ]
-    },
-    {
-      "condition": {
-        "mask": {
-          "id": 10,
-          "activator": {
-            "type": "single",
-            "mode": "hold_until_release"
-          }
-        }
-      },
-      "macros": [
-        {
           "keyboard": {
             "buttonId": 39,
             "description": "DIK_SEMICOLON"
@@ -817,7 +799,7 @@
     {
       "condition": {
         "mask": {
-          "id": 11,
+          "id": 10,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -836,7 +818,7 @@
     {
       "condition": {
         "mask": {
-          "id": 12,
+          "id": 11,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -855,7 +837,7 @@
     {
       "condition": {
         "mask": {
-          "id": 13,
+          "id": 12,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -874,7 +856,7 @@
     {
       "condition": {
         "mask": {
-          "id": 13,
+          "id": 12,
           "activator": {
             "type": "long",
             "mode": "hold_until_release"
@@ -893,7 +875,7 @@
     {
       "condition": {
         "mask": {
-          "id": 14,
+          "id": 13,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -912,7 +894,7 @@
     {
       "condition": {
         "mask": {
-          "id": 15,
+          "id": 14,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -931,7 +913,7 @@
     {
       "condition": {
         "mask": {
-          "id": 16,
+          "id": 15,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -950,7 +932,7 @@
     {
       "condition": {
         "mask": {
-          "id": 17,
+          "id": 16,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -969,7 +951,7 @@
     {
       "condition": {
         "mask": {
-          "id": 18,
+          "id": 17,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -988,7 +970,7 @@
     {
       "condition": {
         "mask": {
-          "id": 19,
+          "id": 18,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -1006,7 +988,7 @@
     {
       "condition": {
         "mask": {
-          "id": 20,
+          "id": 19,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -1024,7 +1006,7 @@
     {
       "condition": {
         "mask": {
-          "id": 21,
+          "id": 20,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -1042,7 +1024,7 @@
     {
       "condition": {
         "mask": {
-          "id": 22,
+          "id": 21,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -1060,7 +1042,7 @@
     {
       "condition": {
         "mask": {
-          "id": 23,
+          "id": 22,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -1074,7 +1056,7 @@
     {
       "condition": {
         "mask": {
-          "id": 23,
+          "id": 22,
           "activator": {
             "type": "release",
             "mode": "onetime",
@@ -1102,7 +1084,7 @@
     {
       "condition": {
         "mask": {
-          "id": 24,
+          "id": 23,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -1116,7 +1098,7 @@
     {
       "condition": {
         "mask": {
-          "id": 24,
+          "id": 23,
           "activator": {
             "type": "release",
             "mode": "onetime",
@@ -1684,52 +1666,7 @@
       "condition": {
         "shiftId": 1,
         "mask": {
-          "id": 8,
-          "activator": {
-            "type": "long",
-            "mode": "onetime",
-            "params": {
-              "expert": true
-            }
-          }
-        }
-      },
-      "macros": [
-        {
-          "keyboard": {
-            "buttonId": 42,
-            "description": "DIK_LSHIFT",
-            "action": "down"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 9,
-            "description": "DIK_8",
-            "action": "down"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 42,
-            "description": "DIK_LSHIFT",
-            "action": "up"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 9,
-            "description": "DIK_8",
-            "action": "up"
-          }
-        }
-      ]
-    },
-    {
-      "condition": {
-        "shiftId": 1,
-        "mask": {
-          "id": 9,
+          "id": 24,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -1749,7 +1686,7 @@
       "condition": {
         "shiftId": 1,
         "mask": {
-          "id": 10,
+          "id": 9,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -1769,7 +1706,7 @@
       "condition": {
         "shiftId": 1,
         "mask": {
-          "id": 11,
+          "id": 10,
           "activator": {
             "type": "single",
             "mode": "onetime",
@@ -1814,6 +1751,96 @@
       "condition": {
         "shiftId": 1,
         "mask": {
+          "id": 10,
+          "activator": {
+            "type": "long",
+            "mode": "onetime",
+            "params": {
+              "expert": true
+            }
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 42,
+            "description": "DIK_LSHIFT",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 16,
+            "description": "DIK_Q",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 16,
+            "description": "DIK_Q",
+            "action": "up"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 42,
+            "description": "DIK_LSHIFT",
+            "action": "up"
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "shiftId": 1,
+        "mask": {
+          "id": 11,
+          "activator": {
+            "type": "single",
+            "mode": "onetime",
+            "params": {
+              "expert": true
+            }
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 42,
+            "description": "DIK_LSHIFT",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 27,
+            "description": "DIK_RBRACKET",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 27,
+            "description": "DIK_RBRACKET",
+            "action": "up"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 42,
+            "description": "DIK_LSHIFT",
+            "action": "up"
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "shiftId": 1,
+        "mask": {
           "id": 11,
           "activator": {
             "type": "long",
@@ -1834,96 +1861,6 @@
         },
         {
           "keyboard": {
-            "buttonId": 16,
-            "description": "DIK_Q",
-            "action": "down"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 16,
-            "description": "DIK_Q",
-            "action": "up"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 42,
-            "description": "DIK_LSHIFT",
-            "action": "up"
-          }
-        }
-      ]
-    },
-    {
-      "condition": {
-        "shiftId": 1,
-        "mask": {
-          "id": 12,
-          "activator": {
-            "type": "single",
-            "mode": "onetime",
-            "params": {
-              "expert": true
-            }
-          }
-        }
-      },
-      "macros": [
-        {
-          "keyboard": {
-            "buttonId": 42,
-            "description": "DIK_LSHIFT",
-            "action": "down"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 27,
-            "description": "DIK_RBRACKET",
-            "action": "down"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 27,
-            "description": "DIK_RBRACKET",
-            "action": "up"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 42,
-            "description": "DIK_LSHIFT",
-            "action": "up"
-          }
-        }
-      ]
-    },
-    {
-      "condition": {
-        "shiftId": 1,
-        "mask": {
-          "id": 12,
-          "activator": {
-            "type": "long",
-            "mode": "onetime",
-            "params": {
-              "expert": true
-            }
-          }
-        }
-      },
-      "macros": [
-        {
-          "keyboard": {
-            "buttonId": 42,
-            "description": "DIK_LSHIFT",
-            "action": "down"
-          }
-        },
-        {
-          "keyboard": {
             "buttonId": 19,
             "description": "DIK_R",
             "action": "down"
@@ -1949,7 +1886,7 @@
       "condition": {
         "shiftId": 1,
         "mask": {
-          "id": 13,
+          "id": 12,
           "activator": {
             "type": "single",
             "mode": "onetime",
@@ -1994,7 +1931,7 @@
       "condition": {
         "shiftId": 1,
         "mask": {
-          "id": 13,
+          "id": 12,
           "activator": {
             "type": "long",
             "mode": "onetime",
@@ -2039,7 +1976,7 @@
       "condition": {
         "shiftId": 1,
         "mask": {
-          "id": 14,
+          "id": 13,
           "activator": {
             "type": "single",
             "mode": "onetime",
@@ -2084,52 +2021,7 @@
       "condition": {
         "shiftId": 1,
         "mask": {
-          "id": 14,
-          "activator": {
-            "type": "long",
-            "mode": "onetime",
-            "params": {
-              "expert": true
-            }
-          }
-        }
-      },
-      "macros": [
-        {
-          "keyboard": {
-            "buttonId": 42,
-            "description": "DIK_LSHIFT",
-            "action": "down"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 18,
-            "description": "DIK_E",
-            "action": "down"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 18,
-            "description": "DIK_E",
-            "action": "up"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 42,
-            "description": "DIK_LSHIFT",
-            "action": "up"
-          }
-        }
-      ]
-    },
-    {
-      "condition": {
-        "shiftId": 1,
-        "mask": {
-          "id": 23,
+          "id": 22,
           "activator": {
             "type": "release",
             "mode": "onetime",
@@ -2147,7 +2039,7 @@
       "condition": {
         "shiftId": 1,
         "mask": {
-          "id": 24,
+          "id": 23,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -2431,51 +2323,6 @@
       "condition": {
         "shiftId": 2,
         "mask": {
-          "id": 7,
-          "activator": {
-            "type": "long",
-            "mode": "onetime",
-            "params": {
-              "expert": true
-            }
-          }
-        }
-      },
-      "macros": [
-        {
-          "keyboard": {
-            "buttonId": 29,
-            "description": "DIK_LCONTROL",
-            "action": "down"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 3,
-            "description": "DIK_2",
-            "action": "down"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 29,
-            "description": "DIK_LCONTROL",
-            "action": "up"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 3,
-            "description": "DIK_2",
-            "action": "up"
-          }
-        }
-      ]
-    },
-    {
-      "condition": {
-        "shiftId": 2,
-        "mask": {
           "id": 8,
           "activator": {
             "type": "single",
@@ -2496,22 +2343,22 @@
         },
         {
           "keyboard": {
-            "buttonId": 4,
-            "description": "DIK_3",
+            "buttonId": 3,
+            "description": "DIK_2",
             "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 3,
+            "description": "DIK_2",
+            "action": "up"
           }
         },
         {
           "keyboard": {
             "buttonId": 29,
             "description": "DIK_LCONTROL",
-            "action": "up"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 4,
-            "description": "DIK_3",
             "action": "up"
           }
         }
@@ -2521,52 +2368,7 @@
       "condition": {
         "shiftId": 2,
         "mask": {
-          "id": 8,
-          "activator": {
-            "type": "long",
-            "mode": "onetime",
-            "params": {
-              "expert": true
-            }
-          }
-        }
-      },
-      "macros": [
-        {
-          "keyboard": {
-            "buttonId": 29,
-            "description": "DIK_LCONTROL",
-            "action": "down"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 5,
-            "description": "DIK_4",
-            "action": "down"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 29,
-            "description": "DIK_LCONTROL",
-            "action": "up"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 5,
-            "description": "DIK_4",
-            "action": "up"
-          }
-        }
-      ]
-    },
-    {
-      "condition": {
-        "shiftId": 2,
-        "mask": {
-          "id": 9,
+          "id": 24,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -2586,7 +2388,7 @@
       "condition": {
         "shiftId": 2,
         "mask": {
-          "id": 10,
+          "id": 9,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -2606,7 +2408,7 @@
       "condition": {
         "shiftId": 2,
         "mask": {
-          "id": 11,
+          "id": 10,
           "activator": {
             "type": "single",
             "mode": "onetime",
@@ -2651,6 +2453,96 @@
       "condition": {
         "shiftId": 2,
         "mask": {
+          "id": 10,
+          "activator": {
+            "type": "long",
+            "mode": "onetime",
+            "params": {
+              "expert": true
+            }
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 42,
+            "description": "DIK_LSHIFT",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 10,
+            "description": "DIK_9",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 10,
+            "description": "DIK_9",
+            "action": "up"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 42,
+            "description": "DIK_LSHIFT",
+            "action": "up"
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "mask": {
+          "id": 11,
+          "activator": {
+            "type": "single",
+            "mode": "onetime",
+            "params": {
+              "expert": true
+            }
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 42,
+            "description": "DIK_LSHIFT",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 5,
+            "description": "DIK_4",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 5,
+            "description": "DIK_4",
+            "action": "up"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 42,
+            "description": "DIK_LSHIFT",
+            "action": "up"
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "shiftId": 2,
+        "mask": {
           "id": 11,
           "activator": {
             "type": "long",
@@ -2671,96 +2563,6 @@
         },
         {
           "keyboard": {
-            "buttonId": 10,
-            "description": "DIK_9",
-            "action": "down"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 10,
-            "description": "DIK_9",
-            "action": "up"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 42,
-            "description": "DIK_LSHIFT",
-            "action": "up"
-          }
-        }
-      ]
-    },
-    {
-      "condition": {
-        "shiftId": 2,
-        "mask": {
-          "id": 12,
-          "activator": {
-            "type": "single",
-            "mode": "onetime",
-            "params": {
-              "expert": true
-            }
-          }
-        }
-      },
-      "macros": [
-        {
-          "keyboard": {
-            "buttonId": 42,
-            "description": "DIK_LSHIFT",
-            "action": "down"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 5,
-            "description": "DIK_4",
-            "action": "down"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 5,
-            "description": "DIK_4",
-            "action": "up"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 42,
-            "description": "DIK_LSHIFT",
-            "action": "up"
-          }
-        }
-      ]
-    },
-    {
-      "condition": {
-        "shiftId": 2,
-        "mask": {
-          "id": 12,
-          "activator": {
-            "type": "long",
-            "mode": "onetime",
-            "params": {
-              "expert": true
-            }
-          }
-        }
-      },
-      "macros": [
-        {
-          "keyboard": {
-            "buttonId": 42,
-            "description": "DIK_LSHIFT",
-            "action": "down"
-          }
-        },
-        {
-          "keyboard": {
             "buttonId": 13,
             "description": "DIK_EQUALS",
             "action": "down"
@@ -2786,7 +2588,7 @@
       "condition": {
         "shiftId": 2,
         "mask": {
-          "id": 13,
+          "id": 12,
           "activator": {
             "type": "single",
             "mode": "onetime",
@@ -2831,7 +2633,7 @@
       "condition": {
         "shiftId": 2,
         "mask": {
-          "id": 13,
+          "id": 12,
           "activator": {
             "type": "long",
             "mode": "onetime",
@@ -2876,7 +2678,7 @@
       "condition": {
         "shiftId": 2,
         "mask": {
-          "id": 14,
+          "id": 13,
           "activator": {
             "type": "single",
             "mode": "onetime",
@@ -2921,7 +2723,7 @@
       "condition": {
         "shiftId": 2,
         "mask": {
-          "id": 14,
+          "id": 13,
           "activator": {
             "type": "long",
             "mode": "onetime",
@@ -2966,7 +2768,7 @@
       "condition": {
         "shiftId": 2,
         "mask": {
-          "id": 23,
+          "id": 22,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -2981,7 +2783,7 @@
       "condition": {
         "shiftId": 2,
         "mask": {
-          "id": 24,
+          "id": 23,
           "activator": {
             "type": "release",
             "mode": "onetime",
@@ -3062,15 +2864,40 @@
           "id": 2,
           "activator": {
             "type": "long",
-            "mode": "hold_until_release"
+            "mode": "onetime",
+            "params": {
+              "expert": true
+            }
           }
         }
       },
       "macros": [
         {
           "keyboard": {
-            "buttonId": 49,
-            "description": "DIK_N"
+            "buttonId": 56,
+            "description": "DIK_LMENU",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 38,
+            "description": "DIK_L",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 38,
+            "description": "DIK_L",
+            "action": "up"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 56,
+            "description": "DIK_LMENU",
+            "action": "up"
           }
         }
       ]
@@ -3244,40 +3071,15 @@
           "id": 8,
           "activator": {
             "type": "single",
-            "mode": "onetime",
-            "params": {
-              "expert": true
-            }
+            "mode": "hold_until_release"
           }
         }
       },
       "macros": [
         {
           "keyboard": {
-            "buttonId": 56,
-            "description": "DIK_LMENU",
-            "action": "down"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 38,
-            "description": "DIK_L",
-            "action": "down"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 38,
-            "description": "DIK_L",
-            "action": "up"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 56,
-            "description": "DIK_LMENU",
-            "action": "up"
+            "buttonId": 49,
+            "description": "DIK_N"
           }
         }
       ]
@@ -3286,7 +3088,7 @@
       "condition": {
         "shiftId": 3,
         "mask": {
-          "id": 9,
+          "id": 24,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -3306,7 +3108,7 @@
       "condition": {
         "shiftId": 3,
         "mask": {
-          "id": 10,
+          "id": 9,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -3326,7 +3128,7 @@
       "condition": {
         "shiftId": 3,
         "mask": {
-          "id": 11,
+          "id": 10,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -3346,7 +3148,7 @@
       "condition": {
         "shiftId": 3,
         "mask": {
-          "id": 12,
+          "id": 11,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -3366,7 +3168,7 @@
       "condition": {
         "shiftId": 3,
         "mask": {
-          "id": 12,
+          "id": 11,
           "activator": {
             "type": "long",
             "mode": "hold_until_release"
@@ -3386,7 +3188,7 @@
       "condition": {
         "shiftId": 3,
         "mask": {
-          "id": 13,
+          "id": 12,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -3406,7 +3208,7 @@
       "condition": {
         "shiftId": 3,
         "mask": {
-          "id": 14,
+          "id": 13,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -3426,7 +3228,7 @@
       "condition": {
         "shiftId": 3,
         "mask": {
-          "id": 14,
+          "id": 13,
           "activator": {
             "type": "long",
             "mode": "hold_until_release"
@@ -3446,7 +3248,7 @@
       "condition": {
         "shiftId": 3,
         "mask": {
-          "id": 23,
+          "id": 22,
           "activator": {
             "type": "start",
             "mode": "onetime",
@@ -3503,7 +3305,7 @@
       "condition": {
         "shiftId": 3,
         "mask": {
-          "id": 24,
+          "id": 23,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -3602,7 +3404,7 @@
       "condition": {
         "shiftId": 4,
         "mask": {
-          "id": 9,
+          "id": 24,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -3622,7 +3424,7 @@
       "condition": {
         "shiftId": 4,
         "mask": {
-          "id": 10,
+          "id": 9,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -3642,7 +3444,7 @@
       "condition": {
         "shiftId": 4,
         "mask": {
-          "id": 11,
+          "id": 10,
           "activator": {
             "type": "single",
             "mode": "hold_until_release"
@@ -3662,7 +3464,7 @@
       "condition": {
         "shiftId": 4,
         "mask": {
-          "id": 12,
+          "id": 11,
           "activator": {
             "type": "single",
             "mode": "onetime",
@@ -3691,6 +3493,51 @@
           "keyboard": {
             "buttonId": 42,
             "description": "DIK_LSHIFT",
+            "action": "up"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 15,
+            "description": "DIK_TAB",
+            "action": "up"
+          }
+        }
+      ]
+    },
+    {
+      "condition": {
+        "shiftId": 4,
+        "mask": {
+          "id": 12,
+          "activator": {
+            "type": "single",
+            "mode": "onetime",
+            "params": {
+              "expert": true
+            }
+          }
+        }
+      },
+      "macros": [
+        {
+          "keyboard": {
+            "buttonId": 29,
+            "description": "DIK_LCONTROL",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 15,
+            "description": "DIK_TAB",
+            "action": "down"
+          }
+        },
+        {
+          "keyboard": {
+            "buttonId": 29,
+            "description": "DIK_LCONTROL",
             "action": "up"
           }
         },
@@ -3727,51 +3574,6 @@
         },
         {
           "keyboard": {
-            "buttonId": 15,
-            "description": "DIK_TAB",
-            "action": "down"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 29,
-            "description": "DIK_LCONTROL",
-            "action": "up"
-          }
-        },
-        {
-          "keyboard": {
-            "buttonId": 15,
-            "description": "DIK_TAB",
-            "action": "up"
-          }
-        }
-      ]
-    },
-    {
-      "condition": {
-        "shiftId": 4,
-        "mask": {
-          "id": 14,
-          "activator": {
-            "type": "single",
-            "mode": "onetime",
-            "params": {
-              "expert": true
-            }
-          }
-        }
-      },
-      "macros": [
-        {
-          "keyboard": {
-            "buttonId": 29,
-            "description": "DIK_LCONTROL",
-            "action": "down"
-          }
-        },
-        {
-          "keyboard": {
             "buttonId": 42,
             "description": "DIK_LSHIFT",
             "action": "down"
@@ -3811,7 +3613,7 @@
       "condition": {
         "shiftId": 4,
         "mask": {
-          "id": 23,
+          "id": 22,
           "activator": {
             "type": "release",
             "mode": "onetime",
@@ -3829,7 +3631,7 @@
       "condition": {
         "shiftId": 4,
         "mask": {
-          "id": 24,
+          "id": 23,
           "activator": {
             "type": "release",
             "mode": "onetime",

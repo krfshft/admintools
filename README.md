@@ -249,7 +249,7 @@ For most attacks and spells I use a macro like this:
 /targetenemy
 /cast Smite
 ```
-For most encounters you just point yourself at the general direction of your enemy and let the macro handle the targeting. The down side is being unable to pick out targets from a crowd but that's the overall flow of combat improves a lot with these macros, it's totally worth it.
+For most encounters you just point yourself at the general direction of your enemy and let the macro handle the targeting. The down side is being unable to pick out targets from a crowd but the overall flow of combat improves so much with the addition of these macros that it is completely worth it.
 
 Here's one for healing a friendly ally.
 ```
@@ -260,13 +260,13 @@ Here's one for healing a friendly ally.
 /cast Lesser Heal
 ```
 
-Macro for bringing a PlayerBot online and Inviting them to your party:
+Macro for bringing a PlayerBot online and Inviting them to your party. In order to control PlayerBots that are not alts of the same account, the server will let you control them if they are a member of your guild.
 ```
 .bot add Botname
 /in 2 /invite Botname
 /in 4 /script SetLootMethod("freeforall")
 ```
-A couple notes, I use freeforall loot method, and the all of the RPG____ buttons in the Actions Panel set bots to not loot. Letting them loot was just too much futzy micromanaging for me, but if you want to have your bots loot, I suggest using the Passloot addon (3.3.5) as it allows you to automatically need/greed/pass without even seeing the roll window.
+I use freeforall loot method, and disable bot looting completely, but if you want to have your bots loot, I suggest using the Passloot addon (3.3.5) as it allows you to automatically need/greed/pass without even seeing the roll window. IMO cmangos needs some kind of infinite storage bank before letting bots loot would be worth doing. It's just too much micromanaging to let them do anything with items.
 
 Omni pet attack macro. This macro tells your hunter/warlock pet, your PlayerBots party, and your NPCBots party, to attack your target. One button, to destroy them all.
 ```
@@ -276,7 +276,7 @@ Omni pet attack macro. This macro tells your hunter/warlock pet, your PlayerBots
 /script SendChatMessage("attack", "PARTY") SendChatMessage(".npcb command order cast auto_attack mytarget", "party")
 ```
 
-Omni summon/return/follow macro. Like the Omni attack above, this commands all types of pets to return to your side, and puts them in follow mode if they weren't before. For PlayerBots, the summon command revives them all, but for NPCBots you can revive one at a time by targeting the dead bot before using this.
+Omni summon/return/follow macro. Like the Omni attack above, this commands all types of pets to return to your side, and puts them in follow mode if they weren't before. For PlayerBots, the summon command revives them all, but for NPCBots you can revive one at a time by targeting the dead bot and using this.
 ```
 /petfollow
 /script local c="party";local f=SendChatMessage;f("follow", c) f("summon",c) f(".npcb rec tele", c) f(".npcb revive",c) f(".npcb co follow") f("nc -grind,-travel,-rpg maintenance,-rpg repair", c)
