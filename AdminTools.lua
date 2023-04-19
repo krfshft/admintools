@@ -369,7 +369,7 @@ AdminUtils.buttons = {
 		{ "StoneChairBroken", "Inv_misc_bag_12" },
 		{ "StoneThrone", "Inv_misc_bag_12" },
 		{ "WarsongThrone", "Inv_misc_bag_12" },
-		{ "GoblinPlatform", "Inv_misc_bag_12" },
+		{ "GreyChair", "Inv_misc_bag_12" },
 		{ "GreyBench", "Inv_misc_bag_12" },
 		{ "RoughTable", "Inv_misc_bag_12" },
 		{ "WoodBench", "Inv_misc_bag_12" },
@@ -391,9 +391,12 @@ AdminUtils.buttons = {
 		{ "SkullCandle", "Inv_misc_bone_orcskull_01" },
 		{ "BlackCandle", "Inv_misc_candle_01" },
 		{ "Candle1", "Inv_misc_candle_01" },
+		{ "Candle2", "Inv_misc_candle_01" },
+		{ "Candle3", "Inv_misc_candle_01" },
 		{ "Jar1", "Inv_misc_bag_12" },
 		{ "Jar2", "Inv_misc_bag_12" },
 		{ "Jar3", "Inv_misc_bag_12" },
+		{ "JarOrc", "Inv_misc_bag_12" },
 		{ "CampMug", "Inv_drink_03" },
 		{ "CampJug", "Inv_misc_bag_12" },
 		{ "Jug1", "Inv_misc_bag_12" },
@@ -407,6 +410,7 @@ AdminUtils.buttons = {
 		{ "PotbellyStove", "Spell_fire_flameshock" },
 		{ "Spotlight", "Inv_misc_bag_12" },
 		{ "SpotlightCeiling", "Inv_misc_bag_12" },
+		{ "GoblinPlatform", "Inv_misc_bag_12" },
 		{ "MetalPlatform", "Inv_misc_bag_12" },
 		{ "StormwindWagon", "Inv_misc_bag_12" },
 		{ "KegWagon", "Inv_cask_04" },
@@ -1850,6 +1854,18 @@ AdminUtils.buttonFunctions = {
 		end,
 	},
 	Camp = {
+		Candle2 = function()
+			AdminUtils.cmd(".gobject add 180339")
+		end,
+		Candle3 = function()
+			AdminUtils.cmd(".gobject add 180340")
+		end,
+		JarOrc = function()
+			AdminUtils.cmd(".gobject add 180341")
+		end,
+		GreyChair = function()
+			AdminUtils.cmd(".gobject add 193787")
+		end,
 		BlackAnvil = function()
 			AdminUtils.cmd(".gobject add 172911")
 		end,

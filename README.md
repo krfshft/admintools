@@ -276,7 +276,7 @@ Omni pet attack macro. This macro tells your hunter/warlock pet, your PlayerBots
 /script SendChatMessage("attack", "PARTY") SendChatMessage(".npcb command order cast auto_attack mytarget", "party")
 ```
 
-Omni summon/return/follow macro. Like the Omni attack above, this commands all types of pets to return to your side, and puts them in follow mode if they weren't before. For PlayerBots, the summon command revives them all, but for NPCBots you can revive one at a time by targeting the dead bot and using this.
+Omni summon/return/follow macro. Like the Omni attack above, this commands all types of pets to return to your side, and puts them in follow mode if they weren't before. For PlayerBots, the summon command revives them all, but for NPCBots you can revive them one-at-a-time by targeting the dead bot and using this.
 ```
 /petfollow
 /script local c="party";local f=SendChatMessage;f("follow", c) f("summon",c) f(".npcb rec tele", c) f(".npcb revive",c) f(".npcb co follow") f("nc -grind,-travel,-rpg maintenance,-rpg repair", c)
