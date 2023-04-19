@@ -2,7 +2,7 @@
 # AdminTools
 
 ### What is this?
-Originally intended to free up macro space, this addon eventually grew to become a set broad of tools for single player MMO games played on a local server.
+Originally intended to free up macro space, this addon eventually grew to become a broad set of tools for single player MMO games played on a local server.
 
 Essentially this is a bunch of Buttons That Do Things. The reason for buttons is that I primarily play using a gamepad, so this addon is all about exposing keyboard functionality in a convenient and intuitive way.
 
