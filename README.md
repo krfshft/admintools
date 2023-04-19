@@ -4,7 +4,7 @@
 ### What is this?
 Originally intended to free up macro space, this addon eventually grew to become a set broad of tools for single player MMO games played on a local server.
 
-Essentially this is a bunch of Buttons That Do Things. The reason for buttons is that I primarily play using a gamepad, so this addon is all about exposing keyboard functionality is a convenient and intuitive way.
+Essentially this is a bunch of Buttons That Do Things. The reason for buttons is that I primarily play using a gamepad, so this addon is all about exposing keyboard functionality in a convenient and intuitive way.
 
 The intuitive part comes from the buttons always being in the same places. The panels may seem intimidating at first, being full of icons and some vague text in the tooltips, but once you learn them the fact that they don't move means your muscle memory will quickly learn where they are and greatly reduce the need to reach over to a keyboard.
 
