@@ -37,7 +37,7 @@ I'm not sure atm, but suggestions for new buttons will be welcomed.
 
 
 ## Overlay
-The overlay makes it so you can have button mapped to functions that are likely to be common across most or all of your roster. Before I made the overlay I had to add macro versions of it's actions to every single character I made.
+The overlay makes it so you can have buttons mapped to functions that are likely to be common across most or all of your roster. Before I made the overlay I had to add macro versions of it's actions to every single character I made.
 
 The overlay is meant to work with the button mappings in the rewasd profile and bindings-cache.wtf files included in this repo. Not all 24 buttons are mapped, but the most important ones are:
 * Open Content Panel F1
