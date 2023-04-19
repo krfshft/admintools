@@ -97,7 +97,9 @@ bind F23 CLICK ADMINTOOLS_23:LeftButton
 bind F24 CLICK ADMINTOOLS_24:LeftButton
 ```
 In order to use the included rewasd profile, add this line to bindings-cache.wtf:\
+```
 bind ; TOGGLEMOUSELOOK
+```
 
 ### The rewasd FPS playstyle
 The included rewasd file is optional, and only needed if you want to be able to map overlay buttons to a gamepad. 
