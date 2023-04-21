@@ -237,6 +237,12 @@ AdminUtils.buttons = {
 		{ "AllyGuildBank", "Inv_misc_grouplooking" },
 		{ "HordeGuildBank", "Inv_misc_grouplooking" },
 		{ "VendTrade", "Inv_misc_grouplooking" },
+		{ "VendTrade2", "Inv_misc_grouplooking" },
+		{ "VendMisc", "Inv_misc_grouplooking" },
+		--TODO: find more vendors who aren't accessible to spots, or
+		--select some and delete their original from the gameworld
+		{ "VendRepairAlly", "Inv_hammer_20" },
+		--{ "VendRepairHorde", "Inv_hammer_20" },
 		{ "WeaponVisual", "Inv_misc_grouplooking" },
 		{ "TransmogWrath", "Inv_misc_grouplooking" },
 		{ "TransmogLegion", "Inv_misc_grouplooking" },
@@ -431,6 +437,7 @@ AdminUtils.buttons = {
 		{ "Bandages", "Inv_misc_bag_12" },
 		{ "ChemicalWagon", "Inv_misc_bag_12" },
 		{ "ForsakenWagon", "Inv_misc_bag_12" },
+		{ "Fire", "Inv_summerfest_firespirit", "Only fire lives here now" },
 	},
 	Buildings = {
 		{ "AirshipAlliance", "Inv_misc_bag_12" },
@@ -1328,8 +1335,30 @@ AdminUtils.buttonFunctions = {
 			AdminUtils.cmd(".npc add 190012")
 		end,
 		VendTrade = function()
-			--Fester the Ghoul
+			--Fester the Ghoul, from Acherus
 			AdminUtils.cmd(".npc add 29208")
+		end,
+		VendTrade2 = function()
+			--Alchemist Karloff, from Acherus
+			AdminUtils.cmd(".npc add 29203")
+		end,
+		VendMisc = function()
+			--Gangrenous the Zombie, from Acherus
+			AdminUtils.cmd(".npc add 29207")
+		end,
+		VendMounts1 = function()
+			AdminUtils.cmd(".npc add ")
+		end,
+		VendMoounts2 = function()
+			AdminUtils.cmd(".npc add ")
+		end,
+		VendRepairAlly = function()
+			-- Corina from Goldshire
+			AdminUtils.cmd(".npc add 54")
+		end,
+		VendRepairHorde = function()
+			-- dunno yet
+			AdminUtils.cmd(".npc add ")
 		end,
 		TransmogWrath = function()
 			AdminUtils.cmd(".npc add 190010")
@@ -1854,6 +1883,9 @@ AdminUtils.buttonFunctions = {
 		end,
 	},
 	Camp = {
+		Fire = function()
+			AdminUtils.cmd(".gobject add 190791")
+		end,
 		Candle2 = function()
 			AdminUtils.cmd(".gobject add 180339")
 		end,
@@ -1905,7 +1937,7 @@ AdminUtils.buttonFunctions = {
 		WarsongThrone = function()
 			AdminUtils.cmd(".gobject add 188481")
 		end,
-		GreenSoulSFloor = function()
+		GreenSoulsFloor = function()
 			AdminUtils.cmd(".gobject add 191206")
 		end,
 		SunwellPlateau = function()
@@ -2309,6 +2341,7 @@ AdminUtils.buttonFunctions = {
 			end
 		end,				
 		HDCVarsLegion = function()
+			SetCVar('overridefarclip', 1)
 			SetCVar('horizonfarclip', 6226)
 			SetCVar('horizonStart', 24000)
 			SetCVar('farclip', 24000)
@@ -2563,7 +2596,7 @@ local function ContentMenu()
 	local f = ButtonPanel("ContentToolsFrame", 962, 495)
 	
 	AdminUtils.MakeButtonColumn(f, "NPC", AdminUtils.buttons.NPC,               1)
-	AdminUtils.MakeButtonColumn(f, "ShopInv", AdminUtils.buttons.ShopInv,       1, 7)
+	AdminUtils.MakeButtonColumn(f, "ShopInv", AdminUtils.buttons.ShopInv,       1, 9)
 
 	AdminUtils.MakeButtonColumn(f, "Minerals", AdminUtils.buttons.Minerals,     2)
 	AdminUtils.MakeButtonColumn(f, "Buildings", AdminUtils.buttons.Buildings,   2, 5)
@@ -3045,9 +3078,6 @@ end
 -- be configured, but that part isn't working.
 local overlayCreated = false
 local function BuildOverlay()
-	if overlayCreated then return nil end
-	overlayCreated = true
-	
 	local function isMouseOverAnyButton(buttons)
 		for _, button in ipairs(buttons) do
 			if button:IsMouseOver() then
@@ -3075,6 +3105,7 @@ local function BuildOverlay()
 	end
 
 	local function CreateOverlay()
+		if overlayCreated then return nil end
 		
 		local overlay = CreateFrame("Frame", "AdminToolsOverlay", UIParent)
 		overlay:SetSize(246, 166)
@@ -3117,6 +3148,8 @@ local function BuildOverlay()
 		end
 
 		overlay:SetAlpha(0)
+		overlayCreated = true
+		return overlay
 	end
 
 	local function OverlayButton(name, hOffset, vOffset, overlay, tooltipText, iconPath, customFunc, buttonBind)
@@ -3124,7 +3157,6 @@ local function BuildOverlay()
 			if AdminUtils.IsClassicClient() then
 				SetBindingClick(key, macro)
 			else
-				print("setting binding for key (" .. key .. ") with name (" .. name .. ")")
 				SetBinding(key, name)
 			end
 		end
@@ -3317,6 +3349,8 @@ local function BuildOverlay()
 		AdminUtils.buttonFunction(nil, "Action", "Immolate"),
 		"F24"
 	)
+	
+	return overlay
 end
 
 
@@ -3395,8 +3429,6 @@ local function WriteOtherAddonSettings()
 
 end
 
-
-
 local function runApp()
 
 	-- When user opens quest log, save the ID so that quest can be completed or 
@@ -3417,12 +3449,12 @@ local function runApp()
 	-- Adds a bunch of talents from other classes automatically on login. IMBA
 	AutorunAddTalents()
 
-	BuildOverlay()
+	local overlay = BuildOverlay()
 
 	-- Register the key bindings
-	for _, binding in ipairs(AdminUtils.adminToolsBindings) do
-		SetBinding(binding.key, binding.buttonName)
-	end
+	--for _, binding in ipairs(AdminUtils.adminToolsBindings) do
+	--	SetBinding(binding.key, binding.buttonName)
+	--end
 	
 end
 
