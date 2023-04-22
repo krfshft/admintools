@@ -2175,6 +2175,9 @@ AdminUtils.buttonFunctions = {
 		ColorfulTent = function()
 			AdminUtils.cmd(".gobject add 188021")
 		end,
+		NightElfTent = function()
+			AdminUtils.cmd(".gobject add 201388")
+		end,
 		DarkmoonFortuneTent = function()
 			AdminUtils.cmd(".gobject add 180030")
 		end,
