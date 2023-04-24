@@ -786,8 +786,6 @@ AdminUtils.buttonFunctions = {
 			talents["any"] = {
 				--Dual Wield, 
 				674,
-				--Plate Mail, Mail Armor
-				--750, 8737, 
 			}
 			talents["Warrior"] = {
 				-- Titan's grip
@@ -811,12 +809,16 @@ AdminUtils.buttonFunctions = {
 				18127, 47231, 18707, 
 				--master summoner 2, demonic tactics 5, imp. demonic tactics 3,
 				18710, 30248, 54349, 
-				--summon felguard, metamorphosis 
-				30146, 59672, 
+				--summon felguard, 
+				--30146, 
+				--metamorphosis 
+				59672, 
 			}
 			talents["Hunter"] = {
 				--deflection 3
 				19298,
+				--spirit bond 2
+				20895, 
 				--ferocity lv5, unleashed fury lv5, Beast Mastery
 				19602, 19620, 53270,
 			}
