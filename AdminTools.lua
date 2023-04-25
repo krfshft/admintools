@@ -540,19 +540,31 @@ AdminUtils.buttonFunctions = {
 		end,		
 		SlowWalk = function()
 			AdminUtils.cmd(".modify speed 0.22")
+
+			--these commands only work on cmangos
+			AdminUtils.cmd(".modify swim 0.22")
+			AdminUtils.cmd(".modify fly 0.22")
 		end,
 		Walk = function()
 			AdminUtils.cmd(".modify speed 0.34")		
+			AdminUtils.cmd(".modify swim 0.34")
+			AdminUtils.cmd(".modify fly 0.34")
 		end,
 		FastWalk = function()
 			AdminUtils.cmd(".modify speed 0.52")
+			AdminUtils.cmd(".modify swim 0.52")
+			AdminUtils.cmd(".modify fly 0.52")
 		
 		end,
 		Jog = function()
 			AdminUtils.cmd(".modify speed 1")		
+			AdminUtils.cmd(".modify swim 1")
+			AdminUtils.cmd(".modify fly 1")
 		end,
 		Dash = function()
 			AdminUtils.cmd(".modify speed 3.5")		
+			AdminUtils.cmd(".modify swim 3.5")
+			AdminUtils.cmd(".modify fly 3.5")
 		end,
 		Stealth = function()
 			AdminUtils.cmd(".cast 10032")
