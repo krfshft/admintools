@@ -1659,6 +1659,9 @@ AdminUtils.buttonFunctions = {
 				--Portable Hole
 				51809,
 				
+				--Fishing Pole, Strong Fishing Pole, Big Iron Fishing Pole
+				6256, 6365, 6367, 
+				
 				--Ranged ammo and throwing-------------------------------------
 				--Accurate Slugs, Impact Shot, Ironbite Shell
 				11284, 28060, 28061,
