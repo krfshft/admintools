@@ -1336,11 +1336,11 @@ AdminUtils.buttonFunctions = {
 		end,
 	},
 	PlayerBot = {
-		RPGFull = function()
-			AdminUtils.pcmd('nc +dps assist,+grind,+rpg,+rpg explore,+rpg vendor,+rpg craft,+rpg maintenance,+rpg bg,+rpg player,+rpg quest,+travel,+mount,+quest,+chat,+emote,-gather,-duel,+loot')
+		RPGOn = function()
+			AdminUtils.pcmd('nc +dps assist,+grind,+rpg,+rpg explore,+rpg vendor,+rpg craft,-rpg maintenance,-rpg bg,-rpg player,+rpg quest,+travel,+mount,+quest,+chat,+emote,-gather,-duel,-loot')
 		end,
 		RPGLite = function()
-			AdminUtils.pcmd('nc +dps assist,+grind,-rpg,-rpg explore,+rpg vendor,-rpg craft,+rpg maintenance,-rpg bg,-rpg player,-rpg quest,-travel,-mount,-quest,-chat,-emote,-gather,-duel,-loot')
+			AdminUtils.pcmd('nc +dps assist,+grind,-rpg,-rpg explore,+rpg vendor,-rpg craft,-rpg maintenance,-rpg bg,-rpg player,-rpg quest,-travel,-mount,-quest,-chat,-emote,-gather,-duel,-loot')
 		end,
 		RPGOff = function()
 			AdminUtils.pcmd('nc +dps assist,-grind,-rpg,-rpg explore,-rpg vendor,-rpg craft,-rpg maintenance,-rpg bg,-rpg player,-rpg quest,-travel,-mount,-quest,-chat,-emote,-gather,-duel,-loot')
@@ -1383,7 +1383,6 @@ AdminUtils.buttonFunctions = {
 		end,
 		Free = function()
 			AdminUtils.pcmd('free')
-			AdminUtils.pcmd("nc +grind,+rpg maintenance,+rpg vendor,+travel")
 		end,
 
 	},
