@@ -124,7 +124,7 @@ AdminUtils.buttons = {
 		{ "Prospecting", "Inv_jewelcrafting_gem_38" },
 	},
 	PlayerBot = {
-		{ "RPGFull", "Inv_shirt_purple_01" },
+		{ "RPGOn", "Inv_shirt_purple_01" },
 		{ "RPGLite", "Inv_shirt_grey_01" },
 		{ "RPGOff", "Inv_shirt_black_01" },
 		{ "RTSC", "Inv_gizmo_02" },
