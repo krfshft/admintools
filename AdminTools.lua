@@ -148,7 +148,7 @@ AdminUtils.buttons = {
 		{ "npcbWalk", "Spell_fire_burningspeed" },
 		{ "npcbHide", "Ability_stealth" },
 		{ "npcbUnhide", "Ability_stealth" },
-		{ "npcbSummon", "Ability_hunter_beastcall" },
+		{ "npcbReturn", "Ability_hunter_beastcall" },
 		{ "npcbStopFully", "Spell_nature_timestop" },
 		{ "npcbStandstill", "Spell_nature_timestop" },
 		
@@ -496,11 +496,14 @@ AdminUtils.buttons = {
 	},
 }
 
+--Don't try to edit this without code folding
 AdminUtils.buttonFunctions = {
 	Action = {
 		Fly = function()
 			AdminUtils.cmd(".gm fly on")
 			AdminUtils.cmd(".gm on")
+			--Toggling GM mode cures resurrection sickness
+			AdminUtils.cmd(".unaura 15007")
 		end,
 		Land = function()
 			AdminUtils.cmd(".gm fly off")
@@ -3488,81 +3491,6 @@ local function BuildOverlay()
 	return overlay
 end
 
-
--- The purpose of this function is to save me having to configure addons and 
--- settings individually through a gui for each character I make. Running into
--- weird issues however, and not sure I'll be able to make it work in 3.3.5
-local function WriteOtherAddonSettings()
-	local function DumpElvUIConfig()
-		if not ElvUI then return end
-		local E, L, V, P, G = unpack(ElvUI)
-		DumpObjectString(E.db)
-	end
-
-	-- Call the function after ElvUI has loaded
-	local function OnEvent(self, event, addon)
-		if addon == "ElvUI" then
-			print(DumpElvUIConfig())
-			self:UnregisterEvent(event)
-		end
-	end
-
-	local frame = CreateFrame("Frame")
-	frame:RegisterEvent("ADDON_LOADED")
-	frame:SetScript("OnEvent", OnEvent)
-
-	local function SetupElvUIConfig()
-		if not ElvUI then return end
-		local E, L, V, P, G = unpack(ElvUI)
-		
-		-- Disable bags and bag bar
-		E.db.bags.enable = false
-		E.db.bags.bagBar.enable = false
-
-		-- Disable chat
-		E.db.chat.enable = false
-
-		-- Disable action bars
-		E.db.actionbar.enable = false
-
-		-- Disable nameplates
-		E.db.nameplates.enable = false
-
-		-- Enable unitframes
-		E.db.unitframe.enable = true
-
-		-- Skins settings
-		--E.db.skins.ace3Enable = false
-		--E.db.skins.checkBoxSkin = false
-		--E.db.skins.blizzardEnable = true
-		--E.db.skins.trainerFrame = false
-		--E.db.skins.tradeSkill = false
-
-		-- Disable map and minimap
-		--E.db.map.enable = false
-		--E.db.minimap.enable = false
-
-		-- Set profile to default and delete automatically-created playername profile
-		local playerNameProfile = E.myname.." - "..E.myrealm
-		--if E.data.profiles[playerNameProfile] then
-		--	E.data.profiles[playerNameProfile] = nil
-		--end
-		E.db.profileSelection = "default"
-	end
-
-	-- Call the function after ElvUI has loaded
-	local function OnEvent(self, event, addon)
-		if addon == "ElvUI" then
-			SetupElvUIConfig()
-			self:UnregisterEvent(event)
-		end
-	end
-
-	local frame = CreateFrame("Frame")
-	frame:RegisterEvent("ADDON_LOADED")
-	frame:SetScript("OnEvent", OnEvent)
-
-end
 
 local function runApp()
 
