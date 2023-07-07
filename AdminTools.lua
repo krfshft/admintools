@@ -2400,6 +2400,7 @@ AdminUtils.buttonFunctions = {
 		end,
 		AddTalentPoint = function()
 			AdminUtils.cmd(".modify tp 3")
+			AdminUtils.cmd(".modify talentpoints 3")
 		end,
 		
 		KillCreature = function()
@@ -3506,8 +3507,6 @@ local function runApp()
 	-- created will be used to delete it
 	DeleteLastObjectIfFlagged()
 		
-	-- Attempt to write my preferred settings for other addons
-	--WriteOtherAddonSettings()
 	
 	-- Adds a bunch of talents from other classes automatically on login. IMBA
 	AutorunAddTalents()
@@ -3515,9 +3514,9 @@ local function runApp()
 	local overlay = BuildOverlay()
 
 	-- Register the key bindings
-	--for _, binding in ipairs(AdminUtils.adminToolsBindings) do
-	--	SetBinding(binding.key, binding.buttonName)
-	--end
+	for _, binding in ipairs(AdminUtils.adminToolsBindings) do
+		SetBinding(binding.key, binding.buttonName)
+	end
 	
 end
 
