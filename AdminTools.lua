@@ -605,6 +605,22 @@ AdminUtils.buttonFunctions = {
 				51809, 51809, 51809, 51809, 
 				--cargo pants
 				5016,
+				--weapons
+				--Hellfrost Traverse/Guardian/Eternal
+				49706,
+				
+				--my amulets
+				35511, 22935, 35507,
+				--my rings
+				--Ring of Arcane Darkness, Darkband of the Summoner, Band of the Black City
+				18543, 22961, 23031, 
+				--my trinkets
+				--Blessing of Spite, Crackling Idol, Blademaster's Insight, Font of Arcana
+				23047, 23042, 23046, 23207,
+				--Demigod's Crushing Wrath, Crest of the Sorcerer King, Glory of the Dark Summit
+				38290, 37128, 23206,
+				--Timewarped Icon
+				38289
 			}
 			for idx = 1, #gears do
 				AdminUtils.cmd(".additem " .. gears[idx])
@@ -2957,7 +2973,7 @@ local function TeleButtonHandler(f, btn)
 	
 	if suffix == "Set" then
 		location = string.sub(btn, 0, string.len(btn) - 3)
-		if type_type == "camp" or tele_type == "home" then
+		if tele_type == "camp" or tele_type == "home" then
 			location = "-" .. player .. "-" .. location
 		end
 		AdminUtils.cmd("tele del " .. location)
