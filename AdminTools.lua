@@ -254,6 +254,10 @@ AdminUtils.buttons = {
 		{ "UndercityGuard", "Ability_warrior_stalwartprotector" },
 		--Thunder Bluff, dunno other horde cities
 		--Gadgetzan?
+		--Dark Portal defenders
+		{ "StormwindMage", "Ability_warrior_stalwartprotector" },
+		{ "DarnassianArcher", "Ability_warrior_stalwartprotector" },
+		{ "IronforgePaladin", "Ability_warrior_stalwartprotector" },
 
 		{ "LichKing", "Achievement_boss_lichking" },
 		{ "KelThuzad", "Achievement_boss_kelthuzad_01" },
@@ -599,28 +603,31 @@ AdminUtils.buttonFunctions = {
 		end,
 		GearsWrath = function()
 			local gears = {
-				--Band of Reanimation, Ring of Entropy, Eye of the Dead
-				22961, 18543, 23047,
 				--portable hole
 				51809, 51809, 51809, 51809, 
-				--cargo pants
-				5016,
 				--weapons
 				--Hellfrost Traverse/Guardian/Eternal
 				49706,
+				--cargo pants
+				5016,
 				
-				--my amulets
-				35511, 22935, 35507,
-				--my rings
+				--necks
+				--Dragonslayer's Medallion, Amulet of Annihilation, The Living Mountain
+				22935, 35511, 35507,
+
+				--rings
 				--Ring of Arcane Darkness, Darkband of the Summoner, Band of the Black City
 				18543, 22961, 23031, 
-				--my trinkets
+				--Ring of Glory, Ring of Death, Ring of Love, Icon of the Void
+				34073, 34074, 34075, 23061, 
+				
+				--trinkets
 				--Blessing of Spite, Crackling Idol, Blademaster's Insight, Font of Arcana
 				23047, 23042, 23046, 23207,
 				--Demigod's Crushing Wrath, Crest of the Sorcerer King, Glory of the Dark Summit
 				38290, 37128, 23206,
 				--Timewarped Icon
-				38289
+				38289,
 			}
 			for idx = 1, #gears do
 				AdminUtils.cmd(".additem " .. gears[idx])
@@ -634,8 +641,8 @@ AdminUtils.buttonFunctions = {
 				22961, 18543,
 				--horseman's signet ring (minion dmg +higher lv stats)
 				34073, 
-				--ring of faith
-				23061, 
+				--ring of faith, band of the inevitable
+				23061, 23031,
 				--witches band, ring of ghoulish delight
 				34074, 34075,
 				--36 slot bag (must be modded on server)
@@ -960,6 +967,10 @@ AdminUtils.buttonFunctions = {
 				--30146, 
 				--metamorphosis 
 				59672, 
+				--Improved Shadow Bolt 5, Bane 5, Ruin 5, Destructive Reach 2
+				17803, 17792, 59741, 17918, 
+				--Emberstorm 5, Shadow and Flame 5, empowered imp 3, intensity 2
+				17958, 30292, 47223, 18136, 
 			}
 			talents["Hunter"] = {
 				--deflection 3
@@ -995,6 +1006,10 @@ AdminUtils.buttonFunctions = {
 			talents["Priest"] = {
 			}
 			talents["Mage"] = {
+				--Improved Fireball 5, Improved Fire Blast 2, Ignite 5, Burning Soul 2
+				12341, 11080, 12848, 12351,
+				--Fire Power 5, Flame Throwing 2, Empowered Fire 3
+				12400, 12353, 31658,
 			}
 			talents["Druid"] = {
 			}
@@ -1497,7 +1512,7 @@ AdminUtils.buttonFunctions = {
 		VendMounts1 = function()
 			AdminUtils.cmd(".npc add ")
 		end,
-		VendMoounts2 = function()
+		VendMounts2 = function()
 			AdminUtils.cmd(".npc add ")
 		end,
 		VendRepairAlly = function()
@@ -1508,11 +1523,24 @@ AdminUtils.buttonFunctions = {
 			-- dunno yet
 			AdminUtils.cmd(".npc add ")
 		end,
+		WeaponVisual = function()
+			--Eron Glowpride
+			AdminUtils.cmd(".npc add 190011")
+		end,
 		TransmogWrath = function()
 			AdminUtils.cmd(".npc add 190010")
 		end,
 		TransmogLegion = function()
 			AdminUtils.cmd(".npc add 85291")
+		end,
+		StormwindMage = function()
+			AdminUtils.cmd(".npc add 18949")
+		end,
+		IronforgePaladin = function()
+			AdminUtils.cmd(".npc add 18986")		
+		end,
+		DarnassianArcher = function()
+			AdminUtils.cmd(".npc add 18965")
 		end,
 		StormwindCityGuard = function()
 			AdminUtils.cmd(".npc add 68")
@@ -1526,6 +1554,7 @@ AdminUtils.buttonFunctions = {
 		UndercityGuard = function()
 			AdminUtils.cmd(".npc add 16432")
 		end,
+
 		LichKing = function()
 			AdminUtils.cmd(".npc add 37857")
 		end,
