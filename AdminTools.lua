@@ -360,6 +360,7 @@ AdminUtils.buttons = {
 		{ "FoodCrate", "Inv_crate_01" },
 		{ "AlchemyLab", "Trade_alchemy" },
 		{ "CookingTableHorde", "Inv_misc_food_115_condorsoup" },
+		{ "LexiconOfPower", "Inv_misc_book_08" },
 		{ "Runeforge", "Spell_deathknight_frozenruneweapon" },
 		{ "AlchemyTable", "Trade_alchemy" },
 		{ "AlchemyRack", "Trade_alchemy" },
@@ -393,6 +394,7 @@ AdminUtils.buttons = {
 		{ "Campfire", "Spell_fire_fire" },
 		{ "Bonfire", "Inv_summerfest_firespirit" },
 		{ "WeaponRack", "Inv_sword_04" },
+		{ "BlackhoofRack", "Inv_sword_04" },
 		{ "Bunkbed", "Inv_misc_bag_12" },
 		{ "CanopyBed", "Inv_misc_bag_12" },
 		{ "StandingTorch", "Inv_torch_lit" },
@@ -765,15 +767,29 @@ AdminUtils.buttonFunctions = {
 			end
 
 			local spells = {
+				--NPC/Special
+				--Water Breathing (group/30 mins)
+				52909,
+			
 				--Death Knight------------------------------
 				--Blood Presence, Frost Presence, Unholy Presence, Raise Dead
 				48266, 48263, 48265, 46585,
-				--Death Grip
-				49576, 
+				--Death Grip, Path of Frost, 
+				49576, 3714, 
 				
 				--Warrior-----------------------------------
 				
 				--Paladin-----------------------------------
+				--Redemption
+				{ 12, 7328, 24, 10322, 36, 10324, 48, 20772, 60, 20773, 72, 48949, 79, 48950 },
+				--Devotion Aura
+				{ 1,  465, 10, 10290, 20, 643, 30, 10291, 40, 1032, 50, 10292, 60, 10293, 70, 27149, 74, 48941, 79, 48942 },
+				--Retribution Aura
+				{ 16, 7294, 26, 10298, 36, 10299, 46, 10300, 56, 10301, 66, 27150, 76, 54043 },
+				--Holy Wrath
+				{ 50, 2812, 60, 10318, 69, 27139, 72, 48816, 78, 48817 },
+				--Crusader Strike, Divine Storm
+				35395, 53385,
 
 				--Hunter------------------------------------
 				--tame beast, revive pet, mend pet 1, call pet, dismiss pet
@@ -794,95 +810,66 @@ AdminUtils.buttonFunctions = {
 				{ 20, 1953 },
 				
 				--Warlock-----------------------------------
-				--imp, voidwalker, succubus, felhunter, felguard, infernal, doomguard
-				688, 697, 712, 691, 30146, 1122, 22865,
-				--Shadow Bolt
-				{ 1, 686, 6, 695, 12, 705, 20, 1088, 28, 1106, 36, 7641, 44, 11659, 
-				52, 11660, 60, 11661, 69, 27209, 74, 47808, 79, 47809 },
-				--Chaos Bolt
-				{ 60, 50796, 70, 59170, 75, 59171, 80, 59172 },
+				--Corruption
+				{ 4, 172, 14, 6222, 24, 6223, 34, 7648, 44, 11671, 54, 11672, 60, 25311, 65, 27216, 71, 47812 },
 				--Drain Soul
 				{ 10, 1120, 24, 8288, 34, 8289, 44, 11675, 53, 11676, 61, 11677, 69, 27217, 76, 47855, 80, 47856 },
+
+				--imp, voidwalker, succubus, felhunter, felguard, infernal, doomguard
+				688, 697, 712, 691, 30146, 1122, 22865,
+				--Metamorphosis
+				{ 45, 47241 },
+				
+				--Shadow Bolt
+				{ 1, 686, 6, 695, 12, 705, 20, 1088, 28, 1106, 36, 7641, 44, 11659, 52, 11660, 60, 11661, 69, 27209, 74, 47808, 79, 47809 },
+				--Chaos Bolt
+				{ 60, 50796, 70, 59170, 75, 59171, 80, 59172 },
+				--Immolate
+				{ 1, 348, 10, 707, 20, 1094, 30, 2941, 40, 11665, 50, 11667, 60, 11668, 62, 25309, 69, 27215, 75, 47810, 80, 47811 },
+				--Rain of Fire
+				{ 20, 5740, 34, 6219, 46, 11677, 58, 11678, 69, 27212, 72, 47819, 79, 47820 },
 
 				--Rogue-------------------------------------
 
 				--Shaman------------------------------------
 				-- Lightning Bolt
-				{ 1, 403, 8, 529, 14, 548, 20, 915, 32, 6041, 38, 10391, 44, 10392, 
-				50, 15207, 56, 15208, 62, 25448, 67, 25449, 73, 49237, 79, 49238 },
+				{ 1, 403, 8, 529, 14, 548, 20, 915, 32, 6041, 38, 10391, 44, 10392, 50, 15207, 56, 15208, 62, 25448, 67, 25449, 73, 49237, 79, 49238 },
 				-- Earth Shock
-				{ 4, 8042, 8, 8044, 16, 8045, 24, 8046, 32, 10412, 40, 10413, 48, 10414,
-				56, 10447, 64, 25454, 70, 49230, 75, 49231 },
+				{ 4, 8042, 8, 8044, 16, 8045, 24, 8046, 32, 10412, 40, 10413, 48, 10414, 56, 10447, 64, 25454, 70, 49230, 75, 49231 },
 				-- Flame Shock
-				--{ 6, 8050, 12, 8052, 20, 8053, 28, 10447, 36, 10448, 44, 29228,
-				--52, 25457, 60, 25464, 68, 49232, 77, 49233 },
-				-- Stoneclaw Totem
-				--{ 8, 5730, 16, 6390, 26, 6391, 36, 6392, 46, 10427, 56, 10428,
-				--66, 25525 },
+				{ 6, 8050, 12, 8052, 20, 8053, 28, 10447, 36, 10448, 44, 29228, 52, 25457, 60, 25464, 68, 49232, 77, 49233 },
 				-- Healing Wave
-				--{ 1, 331, 6, 332, 12, 547, 18, 913, 24, 939, 32, 959, 40, 8004,
-				--48, 8005, 54, 10395, 60, 10396, 68, 25357, 74, 49272, 80, 49273 },
-				-- Earthbind Totem
-				--{ 6, 2484 },
-				-- Frost Shock
-				--{ 10, 8056, 20, 8058, 32, 10472, 42, 10473, 52, 25464, 61, 49235,
-				--70, 49236 },
+				{ 1, 331, 6, 332, 12, 547, 18, 913, 24, 939, 32, 959, 40, 8004, 48, 8005, 54, 10395, 60, 10396, 68, 25357, 74, 49272, 80, 49273 },
 				-- Lesser Healing Wave
 				{ 20, 8004, 28, 8008, 36, 8010, 44, 10466, 52, 10467, 60, 10468,
 				69, 25420, 75, 49275, 80, 49276 },
-				-- Ancestral Spirit
-				--{ 12, 2008, 24, 20609, 40, 20610, 58, 20776, 70, 49277 },
 				-- Chain Lightning
-				--{ 32, 421, 40, 930, 48, 1128, 56, 2860, 63, 25439, 70, 25442,
-				--75, 49270, 80, 49271 },
+				{ 32, 421, 40, 930, 48, 1128, 56, 2860, 63, 25439, 70, 25442, 75, 49270, 80, 49271 },
 				-- Purge
-				--{ 12, 370 },
-				-- Wind Shear
-				--{ 16, 57994 },
+				{ 12, 370, 32, 8012 },
 				-- Reincarnation
 				{ 30, 20608 },
-				-- Water Walking
-				--{ 28, 546 },
 				-- Chain Heal
-				--{ 40, 1064, 46, 10622, 54, 10623, 61, 25396, 70, 25397, 74, 49275, 80, 49276 },
-				-- Tremor Totem
-				--{ 18, 8143 },
+				{ 40, 1064, 46, 10622, 54, 10623, 61, 25396, 70, 25397, 74, 49275, 80, 49276 },
 				-- Healing Stream Totem
-				--{ 20, 5394, 28, 6375, 38, 6377, 48, 10462, 58, 10463, 68, 25567 },
-				-- Mana Spring Totem
-				--{ 24, 5675, 34, 10495, 44, 10496, 54, 10497, 65, 25570 },
-				-- Grounding Totem
-				--{ 30, 8177 },
+				{ 20, 5394, 30, 6375, 40, 6377, 50, 10462, 60, 10463, 69, 25567, 71, 58755, 76, 58756, 80, 58757 }, 
 				-- Searing Totem
-				--{ 10, 3599, 20, 6363, 30, 6364, 40, 6365, 50, 10437, 60, 10438, 69, 25533 },
+				{ 10, 3599, 20, 6363, 30, 6364, 40, 6365, 50, 10437, 60, 10438, 69, 25533, 71, 58699, 75, 58703, 80, 58704 },
 				-- Magma Totem
-				{ 26, 8190, 36, 10585, 46, 10586, 56, 10587, 66, 25552 },
-				-- Windfury Totem
-				--{ 30, 8512, 42, 10613, 54, 10614, 67, 25585 },
+				{ 26, 8190, 36, 10585, 46, 10586, 56, 10587, 65, 25552, 73, 58731, 78, 58734 },
+				-- Windfury Weapon
+				{ 30, 8232, 40, 8235, 50, 10486, 60, 16362, 68, 25505, 71, 58801, 76, 58803, 80, 58804 }, 
 				-- Fire Nova Totem
-				--{ 12, 1535, 22, 8498, 32, 8499, 42, 8500, 52, 10447, 62, 10448 },
-				-- Fire Resistance Totem
-				--{ 28, 8184, 38, 10537, 48, 10538, 58, 25563 },
-				-- Flametongue Totem
-				--{ 28, 8227, 38, 8249, 48, 10526, 58, 16387, 69, 25557 },
-				-- Frost Resistance Totem
-				--{ 24, 8181, 34, 10478, 44, 10479, 54, 25560 },
-				-- Nature Resistance Totem
-				{ 22, 10595, 32, 10600, 42, 10601, 52, 25574 },
-				-- Stoneskin Totem
-				--{ 4, 8071, 14, 8154, 24, 8155, 34, 10406, 44, 10407, 54, 10408, 64, 25508 },
-				-- Strength of Earth Totem
-				--{ 10, 8075, 20, 8160, 30, 8161, 41, 10442, 51, 25361, 61, 25527 },
-				-- Wrath of Air Totem
-				--{ 62, 2894 },
-				-- Bloodlust
-				--{ 50, 2825 },
-				-- Heroism
-				--{ 50, 32182 },
-				-- Elemental Mastery
-				--{ 40, 16166 },
+				{ 12, 1535, 22, 8498, 32, 8499, 42, 11314, 52, 11315 },
+				--Flametongue Totem
+				{ 28, 8227, 38, 8249, 48, 10526, 58, 16387, 67, 25557, 71, 58649, 75, 58652, 80, 58656 },
+				-- Flametongue Weapon
+				{ 10, 8024, 18, 8027, 26, 8030, 36, 16339, 46, 16341, 56, 16342, 64, 25489, 71, 58785, 76, 58789, 80, 58790 },
+				-- Fire Nova
+				--wowhead is ambiguous for this one
+				--{ 12, 1535, },
 				-- Stormstrike
-				--{ 40, 17364 },
+				{ 40, 17364 },
 				-- Lava Lash
 				{ 75, 60103 },
 				--Priest------------------------------------
@@ -892,6 +879,8 @@ AdminUtils.buttonFunctions = {
 				{ 4, 774, 10, 1058, 16, 1430, 22, 2090, 28, 2091, 34, 3627, 40, 8910, 
 				46, 9839, 52, 9840, 58, 9841, 61, 25299, 65, 26980, 70, 26981, 
 				75, 48441, 80, 48442 },
+				--Thorns
+				{ 1, 467, 14, 782, 24, 1075, 34, 8914, 44, 9756, 54, 9910, 64, 26992, 74, 53307 },
 			
 				
 				--Gamemaster--------------------------------
@@ -939,52 +928,79 @@ AdminUtils.buttonFunctions = {
 			local talents = {}
 			talents["any"] = {
 				--Dual Wield, 
-				674,
+				--674,
 			}
 			talents["Warrior"] = {
 				-- Titan's grip
 				46917, 49152,	
 			}
 			talents["Death Knight"] = {
-				--Anticipation 5, Ravenous Dead 3, Master of Ghouls 1
-				55133, 49572, 52143,
-				--Dark Conviction 5, 
-				49480,
+				--Anticipation 5, Dark Conviction 5, Abomination's Might 2
+				55133, 49480, 53138, 
+				
+				--Ravenous Dead 3, Night of the Dead 2, Master of Ghouls 1
+				49572, 55623, 52143, 
 			}
 			talents["Paladin"] = {
 				--anticipation 5, deflection 5, conviction 5
 				20100, 20064, 20121,
+				--Sanctified Retribution, Imp. Devotion Aura 3, Imp. Concentration Aura 3
+				31869, 20140, 20256,
 			
 			}
 			talents["Warlock"] = {
+				--imp. corruption 5, fel concentration 3, emp. corruption 3
+				17814, 17785, 32383, 
+				--shadow mastery 5, contagion 5, malediction 3, everlasting aff 5
+				18275, 30064, 32484, 47205,
+				--grim reach 2, imp. felhunter 2, imp. drain soul 2, soul siphon 2
+				18219, 54038, 18372, 17805,
+				--siphon life, pandemic
+				63108, 58435, 
+			
 				--improved imp
 				18696, 
 				--demonic power 2, fel synergy 2, demonic brutality 3
 				18127, 47231, 18707, 
 				--master summoner 2, demonic tactics 5, imp. demonic tactics 3,
 				18710, 30248, 54349, 
-				--summon felguard, 
-				--30146, 
-				--metamorphosis 
-				59672, 
+				--summon felguard, metamorphosis
+				30146, 59672, 
+
 				--Improved Shadow Bolt 5, Bane 5, Ruin 5, Destructive Reach 2
 				17803, 17792, 59741, 17918, 
 				--Emberstorm 5, Shadow and Flame 5, empowered imp 3, intensity 2
 				17958, 30292, 47223, 18136, 
 			}
 			talents["Hunter"] = {
-				--deflection 3
+				--Deflection 3
 				19298,
-				--spirit bond 2
-				20895, 
-				--ferocity lv5, unleashed fury lv5, Beast Mastery
+				--ferocity lv5, unleashed fury 5, Beast Mastery
 				19602, 19620, 53270,
+				--Animal Handler 2, Kindred Spirits 5, Serpent's Swiftness 5
+				34454, 56318, 34470,
 			}
 			talents["Shaman"] = {
-				--Thundering Strikes
-				--16305,
-				--unrelenting storm 3
-				30666,	
+				--Concussion 5, call of flame 3, elemental fury 5,
+				16108, 16161, 60188,
+				--reverberation 5, eye of the storm 3, lightning mastery, 
+				16116, 29065, 16582, 
+				--call of thunder, elemental reach 2, storm each and fire 3
+				16041, 29000, 51486,
+				--lightning overload 3, booming echoes 2, shamanism 5,
+				30679, 63372, 62101,
+				
+				--Elemental Weapons 3, Enhancing Totems 3, Anticipation 3,
+				29080, 52456, 16272,
+				--Imp. Windfury Totem 2, Feral Spirit
+				29193, 51533, 
+				
+				--Healing Way 3, Healing Grace 3, Imp. Healing Wave 5
+				29202, 29191, 16229, 
+				--Imp. Reincarnation, Purification 5, Healing Focus 3
+				16209, 16213, 16232, 
+				--Tidal Mastery 5, Focused Mind 3
+				16221, 30866, 
 			}
 			talents["Rogue"] = {
 				--Vigor 1, Master of Deception 3, Precision 5
@@ -994,7 +1010,7 @@ AdminUtils.buttonFunctions = {
 				--Nerves of Steel
 				31131,
 				--Unfair Advantage (even for me this might be too op)
-				51674,
+				--51674,
 				--Heightened Senses
 				30895, 
 				--Cheat Death
@@ -1004,14 +1020,42 @@ AdminUtils.buttonFunctions = {
 				
 			}
 			talents["Priest"] = {
+				--Shadow Reach 2
+				17323, 
 			}
 			talents["Mage"] = {
-				--Improved Fireball 5, Improved Fire Blast 2, Ignite 5, Burning Soul 2
-				12341, 11080, 12848, 12351,
+				--Arcane Stability 5, Arcane Focus 3, Arcane Subtlety 2
+				16770, 12840, 12592,
+				--Spell Impact 3, Magic Attunement 2, Arcane Empowerment 2
+				12469, 12606, 31582,
+				--Arcane Barrage
+				44425,
+			
+				--Improved Fireball 5, Improved Fire Blast 2, Ignite 5
+				12341, 11080, 12848,
 				--Fire Power 5, Flame Throwing 2, Empowered Fire 3
 				12400, 12353, 31658,
+				--Burning Soul 2, Missile Barrage 5, Netherwind Presence 3
+				12351, 54490, 44403,
+				--Incineration 3, World in Flames 3, Critical Mass 3
+				54734, 12350, 11368,
+				--Dragon's Breath 
+				31661, 
+				
+				--Imp. Frostbolt, Ice Floes, Forstbite, Ice Shards 3,
+				16766, 55094, 12497, 15047, 
+				--Permafrost 3, Piercing Ice 3, Imp. Blizzard 3, Arctic Reach 2
+				12571, 12953, 12488, 16758,
+				--Imp. Cone of Cold 3, Winters Chill 3, Arctic Winds 5,
+				12490, 28593, 31678,
+				--Emp. Frostbolt, Summon Water Elemental, Enduring Winter 3
+				31683, 31687, 44561, 
+				--Chilled to the Bone 5
+				44571,
 			}
 			talents["Druid"] = {
+				--Force of Nature
+				33831,
 			}
 			
 			local curclass = ""
@@ -2177,6 +2221,9 @@ AdminUtils.buttonFunctions = {
 		Runeforge = function()
 			AdminUtils.cmd(".gobject add 191758")
 		end,
+		LexiconOfPower = function()
+			AdminUtils.cmd(".gobject add 193981")
+		end,
 		CookingTableHorde = function()
 			AdminUtils.cmd(".gobject add 180337")
 		end,
@@ -2203,6 +2250,9 @@ AdminUtils.buttonFunctions = {
 		end,
 		WeaponRack = function()
 			AdminUtils.cmd(".gobject add 183269")
+		end,
+		BlackhoofRack = function()
+			AdminUtils.cmd(".gobject add 186301")
 		end,
 		Bunkbed = function()
 			AdminUtils.cmd(".gobject add 193167")
