@@ -3541,14 +3541,14 @@ local function BuildOverlay()
 		AdminUtils.buttonFunction(nil, "AllBot", "Grind"),
 		"F16"
 	)
-	OverlayButton("ADMINTOOLS_17", 165, -85, overlay, "Respawn targeted dead creature", 
-		"Spell_shaman_blessingofeternals",
-		AdminUtils.buttonFunction(nil, "Management", "RespawnCreature"),
+	OverlayButton("ADMINTOOLS_17", 165, -85, overlay, "Completes the active quest", 
+		"Inv_misc_trophy_argent",
+		AdminUtils.buttonFunction(nil, "Management", "QuestComplete"),
 		"F17"
 	)
-	OverlayButton("ADMINTOOLS_18", 205, -85, overlay, "Rain", 
-		"Spell_frost_summonwaterelemental",
-		AdminUtils.buttonFunction(nil, "Weather", "LightRain"), 
+	OverlayButton("ADMINTOOLS_18", 205, -85, overlay, "Toggle Chat", 
+		"Inv_letter_11",
+		AdminUtils.buttonFunction(nil, "Management", "HideChat"), 
 		"F18"
 	)
 
