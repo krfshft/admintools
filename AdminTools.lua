@@ -3392,6 +3392,7 @@ local function BuildOverlay()
 				SetBindingClick(key, macro)
 			else
 				SetBinding(key, name)
+				--SetOverrideBindingClick(overlay, true, key, macro)
 			end
 		end
 
@@ -3436,8 +3437,7 @@ local function BuildOverlay()
 
 		-- Set keybinding for the button
 		if buttonBind ~= nil then
-			local bindName = name
-			SetButtonKeybinding(bindName, buttonBind, "MACRO " .. bindName .. "Secure")
+			SetButtonKeybinding(name, buttonBind, "MACRO " .. name .. "Secure")
 		end
 	end
 	
@@ -3583,6 +3583,10 @@ local function BuildOverlay()
 		AdminUtils.buttonFunction(nil, "Action", "Immolate"),
 		"F24"
 	)
+	
+	if not AdminUtils.IsClassicClient() then
+		--SaveBindings(1)
+	end
 	
 	return overlay
 end
