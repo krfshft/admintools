@@ -17,12 +17,21 @@ AdminUtils.playerClass, AdminUtils.playerClassID = UnitClass("player")
 
 
 function AdminUtils.GetSelectedQuestID()
-	local questIndex = GetQuestLogSelection()
-	if questIndex then
-		local _, _, _, _, _, _, _, _, questID = GetQuestLogTitle(questIndex)
-		return questID
+	if AdminUtils.IsClassicClient() then
+		local questIndex = GetQuestLogSelection()
+		if questIndex then
+			local _, _, _, _, _, _, _, _, questID = GetQuestLogTitle(questIndex)
+			return questID
+		end
+		return nil
+	else
+		local questIndex = GetQuestLogSelection()
+		if questIndex then
+			local _, _, _, _, _, _, _, questID = GetQuestLogTitle(questIndex)
+			return questID
+		end
+		return nil
 	end
-	return nil
 end
 
 -- Watches for the quest log and saves the ID from the last opened quest, so it can
