@@ -40,6 +40,9 @@ The Actions Panel is more helpful during normal playing and question. It has tel
 8. Random other useful buttons: toggle minimap (requires Hide_Minimap addon for 3.3.5), toggle chat window, bring up Who for current zone, any new thing that would require a keyboard to do would go here.
 ![Actions Panel](https://i.imgur.com/gNVbxyo.jpg)
 
+![DeleteObj](https://i.imgur.com/ZhhDLh2.png)
+
+
 ## Overlay
 The overlay was made to hold buttons or macros that I used on most or all of my characters, and across multiple versions of the client.
 
@@ -60,7 +63,6 @@ The movement speed hotkeys in particular. If you play with a gamepad and in firs
 
 ![Overlay](https://i.imgur.com/jjO8pBQ.png)
 
-![DeleteObj](https://i.imgur.com/ZhhDLh2.png)
 
 ## How to use
 You can map the 24 buttons on the overlay in the keybind menu. 
