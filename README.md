@@ -13,7 +13,9 @@ The reason you might use this addon, instead of working entirely through console
 1. It is actually quite hard to find working, placeable gobjects on these servers. When I find nice ones that look useful, I add them to the Content Panel. 
 2. Two buttons in the Actions Panel are "Delete last object" and "Delete Nearest Object." If you are trying to build anything in the gameworld, having buttons for these functions is a livesaver.
 
-The Actions Panel is more helpful during normal playing and question. It has teleport and save location buttons (the Home and Camp rows are character specific, while Shared is not), buttons for every type of crafting (so you don't have to put these things on your action bar or map them), and other useful things, such as a button which completes your current quest. 
+The Actions Panel is more helpful during normal playing and questing. It has teleport and save location buttons (the Home and Camp rows are character specific, while Shared is not), buttons for every type of crafting (so you don't have to put these things on your action bar or map them), and other useful things, such as a button which completes your current quest.
+
+This addon is only useful if you have GM role on your server. For things like Warlock Metamorphosis to work on other classes you will need to give your character the relevant skills first.
 
 
 
