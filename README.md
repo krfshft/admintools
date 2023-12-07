@@ -25,8 +25,8 @@ The Actions Panel is more helpful during normal playing and question. It has tel
 5. Camp objects: Camp, Home, and Resources. This includes functional things, such as Anvil, Forge (also Black Anvil and Black Forge from BRD), and also some fairly nice-looking decorative furniture that I found valid IDs for. The camp items buttons will be expanded over time, somewhat, although there are more specialized addons that focus solely on object spawning, such as [MarsAdmin](https://github.com/sezeryldz/MarsAdmin) for TrinityCore 7.3.5. In contrast, the focus of this addon is on freeing up macro space and making things easy to do with a gamepad. 
 6. Game Object adjustments. Currently it has the ability to delete the nearest game object, and ability to delete the most recently added game object. Even if you are using a keyboard, if you want to create a camp in the wilderness these buttons are indispensable. I plan to add controls to let you rotate and move already placed objects, so you don't have to keep deleting/recreating until get you the positioning right, but as with all aspects of future development, I make no promises. 
 
-![DeleteObj](https://i.imgur.com/ZhhDLh2.png)
 
+![Content Panel](https://i.imgur.com/hAm9lKb.jpg)
 
 
 ## Actions Panel
@@ -38,7 +38,7 @@ The Actions Panel is more helpful during normal playing and question. It has tel
 6. Button some skills that can be used from other classes, such as Warlock pets (including Doomguard and Infernal!), Warlock Metamorphosis, FrostPath and a Douse button to disable Immolation aura (which I need because I set the duration of Immolation Aura to infinite in my server). Will add more over time.
 7. GM buttons, such as Grow/Shrink, Uber Heal Over Time, a permanent Charm spell that lasts until logout/travel, and an upgraded version of Tame Beast.
 8. Random other useful buttons: toggle minimap (requires Hide_Minimap addon for 3.3.5), toggle chat window, bring up Who for current zone, any new thing that would require a keyboard to do would go here.
-
+![Actions Panel](https://i.imgur.com/gNVbxyo.jpg)
 
 ## Overlay
 The overlay was made to hold buttons or macros that I used on most or all of my characters, and across multiple versions of the client.
@@ -60,9 +60,7 @@ The movement speed hotkeys in particular. If you play with a gamepad and in firs
 
 ![Overlay](https://i.imgur.com/jjO8pBQ.png)
 
-
-![Actions Panel](https://i.imgur.com/gNVbxyo.jpg)
-![Content Panel](https://i.imgur.com/hAm9lKb.jpg)
+![DeleteObj](https://i.imgur.com/ZhhDLh2.png)
 
 ## How to use
 You can map the 24 buttons on the overlay in the keybind menu. 
