@@ -2,9 +2,11 @@
 # AdminTools
 
 ### What is this?
-Two panels, and an overlay, containing many useful buttons for private MMO servers.
+Two panels, and an overlay, containing many useful buttons for private MMO servers. This addon is only useful if you have GM role on your server. For things like Warlock Metamorphosis to work on other classes you will need to give your character the relevant skills first.
 
 Compatible with cmangos wotlk, acore 3.3.5, and praevius legion v2, 7.3.5. As a single version of this addons supports all of those versions, not every button shown works in all versions.
+
+The Actions Panel is more helpful during normal playing and questing. It has teleport and save location buttons (the Home and Camp rows are character specific, while Shared is not), buttons for every type of crafting (so you don't have to put these things on your action bar or map them), and other useful things, such as a button which completes your current quest.
 
 The Content Panel is for creating objects and placing NPCs in the gameworld. You can place tents, beds, chairs, tables, forges, and some entire buildings and towers, and then populate them with furniture and NPCs. 
 
@@ -13,22 +15,6 @@ The reason you might use this addon, instead of working entirely through console
 1. It is actually quite hard to find working, placeable gobjects on these servers. When I find nice ones that look useful, I add them to the Content Panel. 
 2. Two buttons in the Actions Panel are "Delete last object" and "Delete Nearest Object." If you are trying to build anything in the gameworld, having buttons for these functions is a livesaver.
 
-The Actions Panel is more helpful during normal playing and questing. It has teleport and save location buttons (the Home and Camp rows are character specific, while Shared is not), buttons for every type of crafting (so you don't have to put these things on your action bar or map them), and other useful things, such as a button which completes your current quest.
-
-This addon is only useful if you have GM role on your server. For things like Warlock Metamorphosis to work on other classes you will need to give your character the relevant skills first.
-
-
-
-## Content Panel
-1. NPC Creation buttons.  Mostly, these are meant to be practical: service NPCs, such as those for Banking, Trade and Transmog. There are also City Guard type NPCs for both factions, which you can spawn at your camps to have protection from bots of the opposite faction (cmangos only), or creatures. On top of those useful NPCs I also added all the faction leaders, in case you wanted to make them fight each other. I assume everyone wants to make them do that, at least once.
-2. Shop inventory buttons. These cover a lot. There are buttons for trade goods*, tier gear*, scrolls*, mounts and misc.* The two mounts buttons add every single mount  (up to 3.3.5, does not include >= cata), and I have included an optional SQL patch if you want to give them prices.
-3. Herb and Mineral nodes. Nodes created in this way respawn with a short 25 second time (at least on cmangos). 
-4. Buildings. Unless you take the additional steps of creating new server side records for game objects, it is actually quite difficult to find a lot of specific things that you can spawn in. The few buildings I've found for classic game versions have been put in here. The garrison buildings in legion can be added anywhere to the gameworld with these buttons, providing some nice options for building camps on the modern game client.
-5. Camp objects: Camp, Home, and Resources. This includes functional things, such as Anvil, Forge (also Black Anvil and Black Forge from BRD), and also some fairly nice-looking decorative furniture that I found valid IDs for. The camp items buttons will be expanded over time, somewhat, although there are more specialized addons that focus solely on object spawning, such as [MarsAdmin](https://github.com/sezeryldz/MarsAdmin) for TrinityCore 7.3.5. In contrast, the focus of this addon is on freeing up macro space and making things easy to do with a gamepad. 
-6. Game Object adjustments. Currently it has the ability to delete the nearest game object, and ability to delete the most recently added game object. Even if you are using a keyboard, if you want to create a camp in the wilderness these buttons are indispensable. I plan to add controls to let you rotate and move already placed objects, so you don't have to keep deleting/recreating until get you the positioning right, but as with all aspects of future development, I make no promises. 
-
-
-![Content Panel](https://i.imgur.com/hAm9lKb.jpg)
 
 
 ## Actions Panel
@@ -44,6 +30,18 @@ This addon is only useful if you have GM role on your server. For things like Wa
 
 ![DeleteObj](https://i.imgur.com/ZhhDLh2.png)
 
+
+
+## Content Panel
+1. NPC Creation buttons.  Mostly, these are meant to be practical: service NPCs, such as those for Banking, Trade and Transmog. There are also City Guard type NPCs for both factions, which you can spawn at your camps to have protection from bots of the opposite faction (cmangos only), or creatures. On top of those useful NPCs I also added all the faction leaders, in case you wanted to make them fight each other. I assume everyone wants to make them do that, at least once.
+2. Shop inventory buttons. These cover a lot. There are buttons for trade goods*, tier gear*, scrolls*, mounts and misc.* The two mounts buttons add every single mount  (up to 3.3.5, does not include >= cata), and I have included an optional SQL patch if you want to give them prices.
+3. Herb and Mineral nodes. Nodes created in this way respawn with a short 25 second time (at least on cmangos). 
+4. Buildings. Unless you take the additional steps of creating new server side records for game objects, it is actually quite difficult to find a lot of specific things that you can spawn in. The few buildings I've found for classic game versions have been put in here. The garrison buildings in legion can be added anywhere to the gameworld with these buttons, providing some nice options for building camps on the modern game client.
+5. Camp objects: Camp, Home, and Resources. This includes functional things, such as Anvil, Forge (also Black Anvil and Black Forge from BRD), and also some fairly nice-looking decorative furniture that I found valid IDs for. The camp items buttons will be expanded over time, somewhat, although there are more specialized addons that focus solely on object spawning, such as [MarsAdmin](https://github.com/sezeryldz/MarsAdmin) for TrinityCore 7.3.5. In contrast, the focus of this addon is on freeing up macro space and making things easy to do with a gamepad. 
+6. Game Object adjustments. Currently it has the ability to delete the nearest game object, and ability to delete the most recently added game object. Even if you are using a keyboard, if you want to create a camp in the wilderness these buttons are indispensable. I plan to add controls to let you rotate and move already placed objects, so you don't have to keep deleting/recreating until get you the positioning right, but as with all aspects of future development, I make no promises. 
+
+
+![Content Panel](https://i.imgur.com/hAm9lKb.jpg)
 
 ## Overlay
 The overlay was made to hold buttons or macros that I used on most or all of my characters, and across multiple versions of the client.

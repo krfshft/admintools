@@ -64,6 +64,7 @@ AdminUtils.buttons = {
 		{ "Douse", "Inv_drink_19" },
 		{ "Hat", "Inv_helmet_119" },
 		{ "Cloak", "Inv_misc_cape_18" },
+		{ "WaterWalkLegion", "Spell_deathknight_pathoffrost" },
 		{ "Frostpath", "Spell_deathknight_pathoffrost" },
 		{ "FrostPresence", "Spell_deathknight_frostpresence" },
 		{ "BloodPresence", "Spell_deathknight_bloodpresence" }, 
@@ -255,6 +256,8 @@ AdminUtils.buttons = {
 		{ "WeaponVisual", "Inv_misc_grouplooking" },
 		{ "TransmogWrath", "Inv_misc_grouplooking" },
 		{ "TransmogLegion", "Inv_misc_grouplooking" },
+		{ "ItemUpgradeWodAlly", "Inv_misc_grouplooking" },
+		{ "ItemUpgradeWodHorde", "Inv_misc_grouplooking" },
 		
 		{ "StormwindCityGuard", "Ability_warrior_stalwartprotector" },
 		{ "DarnassusGuard", "Ability_warrior_stalwartprotector" },
@@ -609,6 +612,9 @@ AdminUtils.buttonFunctions = {
 			AdminUtils.cmd(".unaura 18209")
 			AdminUtils.cmd(".unaura 18210")
 		end,
+		WaterWalkLegion = function()
+			AdminUtils.cmd(".cast 210634")
+		end,
 		Frostpath = function()
 			AdminUtils.cmd(".cast 3714")	
 		end,
@@ -905,7 +911,8 @@ AdminUtils.buttonFunctions = {
 		SpellsLegion = function()
 			local spells = {
 				--Death Knight------------------------------
-			
+				--Raise Dead
+				46584,
 				--Warrior-----------------------------------
 				
 				--Paladin-----------------------------------
@@ -917,15 +924,15 @@ AdminUtils.buttonFunctions = {
 				--688, 697, 712, 691, 30146, 1122, 157898,
 				--Rogue-------------------------------------
 				--Shaman------------------------------------
-				--searing totem, stoneclaw totem, earthbind totem
 				--Priest------------------------------------
 				--Druid-------------------------------------
+				--Rejuvenation
+				774,
 				
 				
 				--Gamemaster--------------------------------
-				--uber stealth
-				10032,
-				
+				--uber stealth, water walk
+				10032, 210634,
 			}
 			for idx = 1, #spells do
 				AdminUtils.cmd(".learn " .. spells[idx])
@@ -1091,8 +1098,6 @@ AdminUtils.buttonFunctions = {
 			local function TalentsLegionWarlock()
 				local talents = {
 					--Warlock-----------------------------------
-					--Shadowburn
-					17877, 
 					--Grimoire of Supremacy, Service, Soul Conduit
 					152107, 108501, 215941,
 					--Dreadlash, Bilescourge Bombers
@@ -1105,8 +1110,6 @@ AdminUtils.buttonFunctions = {
 					6789,
 					--Hand of Doom
 					196283,
-					--Summon Darkglare
-					205180,
 					--Demon Skin
 					219272,
 					--Summon Vilefiend
@@ -1126,8 +1129,8 @@ AdminUtils.buttonFunctions = {
 					210643,
 					--Lightning Surge Totem
 					192058, 
-					--Earthgrab Totem, Voodoo Totem
-					51485, 196932,
+					--Voodoo Totem
+					196932,
 					--Aftershock, Ancestral Swiftness
 					210707, 192087,
 					--Primal Elementalist
@@ -1585,6 +1588,12 @@ AdminUtils.buttonFunctions = {
 		end,
 		TransmogLegion = function()
 			AdminUtils.cmd(".npc add 85291")
+		end,
+		ItemUpgradeWodAlly = function()
+			AdminUtils.cmd(".npc add 101989")
+		end,
+		ItemUpgradeWodHorde = function()
+			AdminUtils.cmd(".npc add 101988")
 		end,
 		StormwindMage = function()
 			AdminUtils.cmd(".npc add 18949")
@@ -3454,14 +3463,14 @@ local function BuildOverlay()
 	local overlay = CreateOverlay()
 
 	-- Row 1
-	OverlayButton("ADMINTOOLS_1",  5, -5, overlay, "Open AdminTools Content Panel", 	
-		"Ability_rogue_tricksofthetrade",
-		ContentMenu, 
-		"F1"
-	)
-	OverlayButton("ADMINTOOLS_2", 45, -5, overlay, "Open AdminTools Actions Panel", 
+	OverlayButton("ADMINTOOLS_1",  5, -5, overlay, "Open AdminTools Actions Panel", 	
 		"Ability_rogue_tricksofthetrade",
 		ActionsMenu,
+		"F1"
+	)
+	OverlayButton("ADMINTOOLS_2", 45, -5, overlay, "Open AdminTools Content Panel", 
+		"Ability_rogue_tricksofthetrade",
+		ContentMenu, 
 		"F2"
 	)
 
@@ -3476,16 +3485,7 @@ local function BuildOverlay()
 		"F4"
 	)
 
---	OverlayButton("ADMINTOOLS_3",  85, -5, overlay, "Open AdminTools Content Panel 2", 
---		"Ability_rogue_tricksofthetrade",
---		ContentMenu2, 
---		"F3"
---	)
---	OverlayButton("ADMINTOOLS_4", 125, -5, overlay, "Open AdminTools Config Panel", 
---		"Inv_misc_wrench_01",
---		ConfigMenu, 
---		"F4"
---	)
+
 	OverlayButton("ADMINTOOLS_5", 165, -5, overlay, "Enable GM mode and flying", 
 		"Ability_vanish",
 		AdminUtils.buttonFunction(nil, "Action", "Fly"), 
