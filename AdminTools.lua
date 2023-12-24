@@ -955,6 +955,9 @@ AdminUtils.buttonFunctions = {
 		
 			local talents = {}
 			talents["any"] = {
+				-- Dual wield used to be here, but I found that adding it to 
+				-- classes that can't normally get it caused sql errors on 
+				-- azerothcore
 			}
 			talents["Warrior"] = {
 				-- Titan's grip
