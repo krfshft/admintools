@@ -1,5 +1,4 @@
 
-
 --For sharing functions and data internally
 AdminUtils = {}
 
@@ -56,6 +55,8 @@ AdminUtils.buttons = {
 	Action = {
 		{ "Grow", "Spell_holy_spellwarding" },
 		{ "Shrink", "Inv_misc_toy_04" },
+		{ "GrowLegion", "Spell_holy_spellwarding" },
+		{ "ShrinkLegion", "Inv_misc_toy_04" },
 		{ "UberHeal", "Spell_holy_auramastery" },
 		{ "Dispell", "Ability_hunter_beastwithin" },
 		{ "Morph", "Ability_warlock_demonicpower" },
@@ -536,9 +537,10 @@ AdminUtils.buttonFunctions = {
 				48161, 58921,
 				-- Uber heal
 				1908,
-				-- Grow, Shrink
-				18209, 19210,
-
+				-- Grow, Shrink, Grow (Legion), Shrink (Legion)
+				18209, 19210, 163679, 181327,
+				-- Warlock Corruption (the permanent Corruption will hit target dummies forever)
+				146739,
 			}
 			for idx = 1, #spells do
 				AdminUtils.cmd(".unaura " .. spells[idx])
@@ -594,10 +596,20 @@ AdminUtils.buttonFunctions = {
 			AdminUtils.cmd(".cast 1908")
 		end,
 		Grow = function()
+			AdminUtils.cmd(".unaura 18210")
 			AdminUtils.cmd(".cast 18209")
 		end,
 		Shrink = function()
+			AdminUtils.cmd(".unaura 18209")
 			AdminUtils.cmd(".cast 18210")
+		end,
+		GrowLegion = function()
+			AdminUtils.cmd(".unaura 181327")
+			AdminUtils.cmd(".cast 163679")
+		end,
+		ShrinkLegion = function()
+			AdminUtils.cmd(".unaura 163679")
+			AdminUtils.cmd(".cast 181327")
 		end,
 		FrostPresence = function()
 			AdminUtils.cmd(".cast 48263")
@@ -943,12 +955,11 @@ AdminUtils.buttonFunctions = {
 		
 			local talents = {}
 			talents["any"] = {
-				--Dual Wield, 
-				--674,
 			}
 			talents["Warrior"] = {
 				-- Titan's grip
-				46917, 49152,	
+				46917, 49152,
+	
 			}
 			talents["Death Knight"] = {
 				--Anticipation 5, Dark Conviction 5, Abomination's Might 2
@@ -1110,14 +1121,12 @@ AdminUtils.buttonFunctions = {
 					6789,
 					--Hand of Doom
 					196283,
-					--Demon Skin
-					219272,
 					--Summon Vilefiend
 					264119,
 					--Inner Demons
 					267216,
-					--Grimoire: Felguard
-					11898,
+					--Cremation
+					212282,
 				}
 				for idx = 1, #talents do
 					AdminUtils.cmd(".learn " .. talents[idx])
