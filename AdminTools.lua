@@ -524,6 +524,9 @@ AdminUtils.buttonFunctions = {
 			--Toggling GM mode cures resurrection sickness
 			AdminUtils.cmd(".unaura 15007")
 		end,
+		FlyOnly = function()
+			AdminUtils.cmd(".gm fly on")
+		end,
 		Land = function()
 			AdminUtils.cmd(".gm fly off")
 			AdminUtils.cmd(".gm off")
@@ -841,6 +844,9 @@ AdminUtils.buttonFunctions = {
 				{ 4, 172, 14, 6222, 24, 6223, 34, 7648, 44, 11671, 54, 11672, 60, 25311, 65, 27216, 71, 47812 },
 				--Drain Soul
 				{ 10, 1120, 24, 8288, 34, 8289, 44, 11675, 53, 11676, 61, 11677, 69, 27217, 76, 47855, 80, 47856 },
+
+				--eye of kilrogg
+				{ 17, 126 },
 
 				--imp, voidwalker, succubus, felhunter, felguard, infernal, doomguard
 				688, 697, 712, 691, 30146, 1122, 22865,
